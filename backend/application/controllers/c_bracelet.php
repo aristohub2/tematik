@@ -36,7 +36,7 @@ class c_bracelet extends CI_Controller {
             $_FILES['berkas']['size']     = $file_uploaded["size"][$i];
             // var_dump( $_FILES);
             // File upload configuration
-            $config['upload_path']          = '../frontend/uploads/bracelet/';
+            $config['upload_path']          = '../frontend/uploads/bracelets/';
 			$config['allowed_types']        = 'gif|jpg|png';
 			$config['max_size']             = 10000;
 			$config['max_width']            = 100000;

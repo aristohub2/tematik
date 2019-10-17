@@ -45,7 +45,7 @@ class m_earrings extends CI_Model
 	function gf_transact_uploads($data,$upload_id){
 		$sReturn = null;
 		$hideMode = $this->input->post('hideMode', TRUE);
-		$sql = "call sp_tmtk_product_uploads('".$hideMode."','".$upload_id."','null','"."uploads/banner/".$data['upload_data']['file_name']."');";
+		$sql = "call sp_tmtk_product_uploads('".$hideMode."','".$upload_id."','null','"."uploads/earrings/".$data['upload_data']['file_name']."');";
 		$this->db->query($sql);
 		return $sReturn; 
 	}
