@@ -29,13 +29,13 @@
 
 
   <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(D:/xampp/htdocs/tematik/backend/uploads/banner/77a53169b08ed7d80ae2f5f8193b6ed4.jpg")>
+  <div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url('assets/'); ?>img/bg-about.jpg)">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4"><?php echo base_url('./../');?></h1>
+          <h1 class="intro-title mb-4">Passion Prive</h1>
         </div>
       </div>
     </div>
@@ -213,7 +213,7 @@
       <hr class="line-mf">
       <ul class="row">
         <li class="col-md-4" style="height: 218px;" align="center">
-          <img src="D:/xampp/htdocs/tematik/backend/uploads/banner/77a53169b08ed7d80ae2f5f8193b6ed4.jpg" width="318" height="218" alt>
+          <img src="https://www.harrywinston.com/sites/default/files/styles/listing_products/public/winston_gates_by_harry_winston_bracelet_diamond_rose_gold_BRDRRD1MWG_trans_1.png?itok=KZbLXqS1" width="318" height="218" alt>
           <h5 style="color:#B8860B;">Bracelets</h5>
         </li>
         <li class="col-md-4" style="height: 218px;" align="center">
@@ -243,8 +243,15 @@
     </div>
   </section>
 
+  <!-- Footer -->
+  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(<?php echo base_url('assets/'); ?>img/)">
+    <div class="overlay-mf"></div>
+    <?php 
+      echo $footer; 
+    ?>
+  </section>
+
   <?php
-    echo $footer; 
     echo $js;
   ?>
 

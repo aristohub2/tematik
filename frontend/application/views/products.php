@@ -25,15 +25,13 @@
 
 
   <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url('assets/'); ?>img/test1.jpg)">
+  <div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url('assets/'); ?>img/earring1.jpg)">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">Passion Prive</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">alvin,timi,aristo,alex,leon</span><strong class="text-slider"></strong></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+          <h1 class="intro-title mb-4">Earrings</h1>
         </div>
       </div>
     </div>
@@ -56,11 +54,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="work-box">
-            <a href="<?php echo base_url('assets/'); ?>img/work-1.jpg" data-lightbox="gallery-mf">
+            <a href="<?php echo base_url('index.php/Individual_Product')?>">
               <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/work-1.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url('assets/'); ?>img/earring2.jpg" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -74,9 +72,9 @@
         </div>
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('assets/'); ?>img/work-2.jpg" data-lightbox="gallery-mf">
+            <a href="<?php echo base_url('index.php/Individual_Product')?>">
               <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/work-2.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url('assets/'); ?>img/earring3.jpg" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -90,9 +88,9 @@
         </div>
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('assets/'); ?>img/work-3.jpg" data-lightbox="gallery-mf">
+            <a href="<?php echo base_url('index.php/Individual_Product')?>">
               <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/work-3.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url('assets/'); ?>img/earring4.jpg" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -103,30 +101,21 @@
               </div>
             </a>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="work-box">
-            <a href="<?php echo base_url('assets/'); ?>img/work-4.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/work-4.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">Lorem impsum dolor</h2>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>        
+        </div>     
       </div>
     </div>
   </section>
   <!--/ Section Portfolio End /-->
 
+  <!-- Footer -->
+  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(<?php echo base_url('assets/'); ?>img/)">
+    <div class="overlay-mf"></div>
+    <?php 
+      echo $footer; 
+    ?>
+  </section>
+
   <?php
-    echo $footer; 
     echo $js;
   ?>
 

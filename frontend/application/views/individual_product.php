@@ -37,7 +37,7 @@
         <div class="work-box">
           <a href="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" data-lightbox="gallery-mf">
             <div class="work-img">
-              <img src="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" class="img-fluid" style="margin-bottom: 4vh;" alt="Foto produk">
+              <img src="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" class="img-fluid" alt="Foto produk">
             </div>
           </a>
         </div>
@@ -166,9 +166,17 @@
   <!--/ Section Portfolio End /-->
 </div>
 
-<?php 
-  echo $footer;
-  echo $js; 
-?>
+  <!-- Footer -->
+  <section class="paralax-mf footer-paralax bg-image route" style="background-image: url(<?php echo base_url('assets/'); ?>img/)">
+    <div class="overlay-mf"></div>
+    <?php 
+      echo $footer; 
+    ?>
+  </section>
+
+  <?php
+    echo $js;
+  ?>
+
 </body>
 </html>

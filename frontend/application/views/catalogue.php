@@ -91,7 +91,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Individual_Product')?>">
+            <a href="<?php echo base_url('index.php/Products')?>">
               <div class="work-img">
                 <img src="<?php echo base_url('assets/'); ?>img/img1.jpg" alt="" class="img-fluid">
               </div>
@@ -107,7 +107,7 @@
         </div>
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Individual_Product')?>">
+            <a href="<?php echo base_url('index.php/Products')?>">
               <div class="work-img">
                 <img src="<?php echo base_url('assets/'); ?>img/img2.jpg" alt="" class="img-fluid">
               </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Individual_Product')?>">
+            <a href="<?php echo base_url('index.php/Products')?>">
               <div class="work-img">
                 <img src="<?php echo base_url('assets/'); ?>img/img3.jpg" alt="" class="img-fluid">
               </div>
@@ -139,7 +139,7 @@
         </div>
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Individual_Product')?>">
+            <a href="<?php echo base_url('index.php/Products')?>">
               <div class="work-img">
                 <img src="<?php echo base_url('assets/'); ?>img/img4.jpg" alt="" class="img-fluid">
               </div>
@@ -166,12 +166,18 @@
     </a>
   
   </section>
-  <!--/ Section Portfolio End /-->
 
+  <!-- Footer -->
+  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(<?php echo base_url('assets/'); ?>img/)">
+    <div class="overlay-mf"></div>
     <?php 
-        echo $footer;
-        echo $js;
+      echo $footer; 
     ?>
+  </section>
+
+  <?php
+    echo $js;
+  ?>
     <script src="<?php echo base_url('assets/'); ?>js/catalogue.js"></script>
 
 </body>
