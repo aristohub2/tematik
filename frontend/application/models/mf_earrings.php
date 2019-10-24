@@ -6,6 +6,17 @@ class mf_earrings extends CI_Model
 	{ 
 		$this->load->database();
 	} 
+
+	public function get_products(){
+		$query = "SELECT * FROM tmtk_banner";
+
+		$this->db->query($query);
+
+		foreach ($query->result_array() as $key) {
+			return $key["BannerPath"];
+		}
+	}
+
 	function gf_transact() 
 	{ 
 		// var_dump($_POST);

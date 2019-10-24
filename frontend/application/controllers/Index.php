@@ -5,6 +5,7 @@ class Index extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('mf_index');
 	}
 
 	public function index()
@@ -13,6 +14,11 @@ class Index extends CI_Controller {
 		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
+
+		//data dari database
+		$data['banner'] = $this->mf_index->get_banner();
+
+
 		$this->load->view('index.php',$data);
 	}
 }
