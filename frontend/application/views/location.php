@@ -33,7 +33,7 @@
   }
 
 
-  .card {
+  .cardClick {
     
   }
 
@@ -45,6 +45,20 @@
 
   .btn-gold{
     background-color: #D4AF37;
+  }
+
+  .detail{
+    z-index: 10; 
+    position: absolute; 
+    top: 2%;
+    height: 96%; 
+    left: 26%;
+    margin: auto;
+    background-color: black;
+  }
+  
+  .detail .card{
+    width: 100%;
   }
 
 </style>
@@ -67,7 +81,7 @@
             <br>
             <!-- foreach card start-->
 
-            <div class="card">
+            <div class="card cardClick">
               <div class="row">
                 <div class="col-sm-12 full">
                   <div class="card-block">
@@ -79,9 +93,52 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card cardClick">
               <div class="row">
                 <div class="col-sm-12 full">
+                  <div class="card-block">
+                    <h5>Passion Prive Plaza Indonesia</h5>
+                    <p>Plaza Indonesia Lantai 3 Galeria Grand Hyatt Blok H010-H010A, RT.1/RW.5, Duri Kosambi, Cengkareng, West Jakarta City, Jakarta 11750</p>
+                    <button id="testpi" class="btn btn-gold btn-sm">Take me there !</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- foreach card end-->
+
+
+            <a href="<?php echo base_url('index.php/') ?>"><button class="btn btn-gold btn-sm" style="width: 80%; margin: 20px;">Back to Home</button></a>
+
+          </div>
+        </div>
+        <div class="col-lg-3 detail">
+          <div class="title-box text-center">
+            <h3 class="title-a" style="padding-top: 10%">
+              Our Location
+            </h3>
+            <p class="subtitle-a" style="color: #ddd">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </p>
+            <div class="line-mf"></div>
+            <br>
+            <!-- foreach card start-->
+
+            <div class="card">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card-block">
+                    <h5>Passion Prive Thamrin</h5>
+                    <p>Jl. M.H. Thamrin No.11, RT.9/RW.5, Kuningan, Kb. Kacang, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10240</p>
+                    <button id="testbt" class="btn btn-gold btn-sm">Take me there !</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="row">
+                <div class="col-sm-12">
                   <div class="card-block">
                     <h5>Passion Prive Plaza Indonesia</h5>
                     <p>Plaza Indonesia Lantai 3 Galeria Grand Hyatt Blok H010-H010A, RT.1/RW.5, Duri Kosambi, Cengkareng, West Jakarta City, Jakarta 11750</p>
@@ -111,6 +168,23 @@
   ?>
 
   <script>
+    $(document).ready(function(){
+      $('.detail').hide();
+      var show = false;
+
+        $('.cardClick').on('click', function(){
+          if(show == false) {
+            $('.detail').show();
+            show = true;
+          }
+          else {
+            show = false;
+            $('.detail').hide();
+          }
+        });
+      }
+    )
+
     function initMap() 
     {
       // The location of Uluru
