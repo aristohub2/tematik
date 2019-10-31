@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class c_backend extends CI_Controller {
+class c_about extends CI_Controller {
 
 	public function __construct() 
 	{ 
 		parent::__construct(); 
-		$this->load->model(array('m_banner'));
+		$this->load->model(array('m_about'));
 		//ini buat upload
 		$this->load->helper(array('form', 'url'));
 	} 
@@ -15,9 +15,9 @@ class c_backend extends CI_Controller {
 	{
 		$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
-		$data['img'] = $this->m_banner->gf_load_data(1);
+		$data['img'] = $this->m_about->gf_load_data(2);
 		// var_dump($data['img']);
-		$this->load->view('backend/src/index',$data);
+		$this->load->view('backend/src/v_about',$data);
 	}
 	public function gf_transact() 
 	{ 
@@ -38,9 +38,9 @@ class c_backend extends CI_Controller {
 		}
 
 
-		$this->m_banner->gf_transact($data);
+		$this->m_about->gf_transact($data);
 		// $this->load->view('backend/src/index',$data);
-		// header('Location: '.base_url().'');
+		header('Location: '.base_url().'index.php/c_about/');
 	}
 	// public function aksi_upload(){
 	// 	$config['upload_path']          = './uploads/';
