@@ -33,6 +33,8 @@ CREATE TABLE `tmtk_banner` (
 
 /*Data for the table `tmtk_banner` */
 
+insert  into `tmtk_banner`(`IdBanner`,`BannerTitle`,`BannerDescription`,`BannerPath`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'Banner Welcome','Banner Description Welcome','uploads/banner/4b0c5b7da47530879723d5d9aa35f198.jpg','2019-10-31',NULL,NULL),(2,'qweqwe','asdasd','uploads/banner/f60d1720035c00502d2476a1092a86a1.jpg',NULL,NULL,NULL),(3,'qweqwe','asdasd','uploads/banner/44216867e1559acdcf43860d399a4bc6.jpg',NULL,NULL,NULL),(4,'axcxzc','zcqsdqwd','uploads/banner/31d85be8f407a9995c4527d8fd60bb70.jpg',NULL,NULL,NULL),(5,'qweqwe','asdasd','uploads/banner/fa8e00a259dea17cc781e826779e19c5.jpg',NULL,NULL,NULL),(6,'sccascasca','123123','uploads/banner/c38b13970f6d0d8cb3a8d8ba0b85a77c.jpg',NULL,NULL,NULL);
+
 /*Table structure for table `tmtk_bracelet` */
 
 DROP TABLE IF EXISTS `tmtk_bracelet`;
@@ -49,6 +51,8 @@ CREATE TABLE `tmtk_bracelet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tmtk_bracelet` */
+
+insert  into `tmtk_bracelet`(`IdBracelet`,`BraceletName`,`BraceletDescription`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'bracelet','qweqwe','5da7d449f137e','2019-10-17',NULL,NULL);
 
 /*Table structure for table `tmtk_earrings` */
 
@@ -99,6 +103,8 @@ CREATE TABLE `tmtk_product_uploads` (
 
 /*Data for the table `tmtk_product_uploads` */
 
+insert  into `tmtk_product_uploads`(`IdUpload`,`ProductId`,`ProductPath`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values ('5da7d449f137e',1,'uploads/banner/347456fa1337da640f0d5888f83e618b.jpg','2019-10-17',NULL,NULL),('5da7d449f137e',2,'uploads/banner/b932d256038c5916d8fe025972bee453.jpg','2019-10-17',NULL,NULL);
+
 /* Procedure structure for procedure `sp_tmtk_banner` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `sp_tmtk_banner` */;
@@ -128,12 +134,11 @@ DECLARE oId INT;
 END;
 ELSEIF p_sMode = 'U' THEN 
 BEGIN
- UPDATE sp_tmtk_banner SET 
-nUnitId_fk = p_nUnitId_fk,
-nSeqNo = p_nSeqNo,
-sUUID = MD5(UUID()),
-sLastEditBy = p_sUserInput, dLastEditOn = CURRENT_TIMESTAMP 
-WHERE nUserId_fk = p_nUserId_fk  ;
+ UPDATE tmtk_banner SET 
+BannerTitle = p_BannerTitle,
+BannerDescription = p_BannerDescription,
+BannerPath = p_BannerPath
+WHERE IdBanner = p_IdBanner  ;
 END;
 ELSEIF p_sMode = 'D' THEN 
 BEGIN
