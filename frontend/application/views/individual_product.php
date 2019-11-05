@@ -32,44 +32,49 @@
   <div class="overlay-itro"></div>
   <div id="main_content" class="container">
     <div class="row">
-      <div id="product_imgs" class="col-left col-md-8 text-center" style="padding-top: 2.5vh;">
-        <!-- foto produk -->
-        <div class="work-box">
-          <a href="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" data-lightbox="gallery-mf">
-            <div class="work-img">
-              <img src="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" class="img-fluid" alt="Foto produk">
-            </div>
-          </a>
-        </div>
-        <!-- ~3 foto tambahan -->
-        <div class="row justify-content-space-evenly">
-          <div class="col-4">
+      <div id="product_imgs" class="col-md-8" style="padding: 2.5vh 2vw 0 2vw;">
+        <div class="row">
+          <div class="col-left col-lg-10 text-center" style="padding: 0 2vw 0 0;">
+            <!-- foto produk -->
             <div class="work-box">
-              <a href="<?php echo base_url('assets/'); ?>img/ring1.jpg" data-lightbox="gallery-mf">
+              <a href="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" data-lightbox="gallery-mf">
                 <div class="work-img">
-                  <img src="<?php echo base_url('assets/'); ?>img/ring1.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <div class="col-4">
-            <div class="work-box">
-              <a href="<?php echo base_url('assets/'); ?>img/ring2.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="<?php echo base_url('assets/'); ?>img/ring2.jpg" alt="" class="img-fluid">
+                  <img src="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" class="img-fluid" alt="Foto produk">
                 </div>
               </a>
             </div>
           </div>
 
-          <div class="col-4">
-            <div class="work-box">
-              <a href="<?php echo base_url('assets/'); ?>img/ring3.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="<?php echo base_url('assets/'); ?>img/ring3.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
+          <!-- foto2 tambahan -->
+          <div class="col-2 text-center justify-content-space-evenly" style="max-height: 55vh; overflow-y: scroll;">
+            <div class="row">
+              <div class="work-box" style="margin-bottom: 3vh;">
+                <a href="<?php echo base_url('assets/'); ?>img/ring1.jpg" data-lightbox="gallery-mf">
+                  <div class="work-img">
+                    <img src="<?php echo base_url('assets/'); ?>img/ring1.jpg" alt="" class="img-fluid">
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="work-box" style="margin-bottom: 3vh;">
+                <a href="<?php echo base_url('assets/'); ?>img/ring2.jpg" data-lightbox="gallery-mf">
+                  <div class="work-img">
+                    <img src="<?php echo base_url('assets/'); ?>img/ring2.jpg" alt="" class="img-fluid">
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="work-box" style="margin-bottom: 0;">
+                <a href="<?php echo base_url('assets/'); ?>img/ring3.jpg" data-lightbox="gallery-mf">
+                  <div class="work-img">
+                    <img src="<?php echo base_url('assets/'); ?>img/ring3.jpg" alt="" class="img-fluid">
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -105,7 +110,7 @@
         <div class="col-sm-12">
           <div class="title-box text-center">
             <h2 style="color: white;">
-              <b>See other products</b>
+              <b>Related products</b>
             </h2>
             <div class="line-mf"></div>
           </div>
