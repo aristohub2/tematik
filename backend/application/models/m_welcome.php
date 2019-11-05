@@ -1,6 +1,6 @@
 <?php 
 
-class m_banner extends CI_Model 
+class m_welcome extends CI_Model 
 { 
 	public function __construct() 
 	{ 

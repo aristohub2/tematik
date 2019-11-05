@@ -61,7 +61,19 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href=" <?php echo base_url() ?>">Home Page
+                                        <a href=" <?php echo base_url('index.php/c_welcome') ?>">Home Page
+                                            <span class="badge badge-pill badge-success"></span>
+                                        </a>
+                                    </li>
+
+                                     <li>
+                                        <a href=" <?php echo base_url('index.php/c_about') ?>">About Page
+                                            <span class="badge badge-pill badge-success"></span>
+                                        </a>
+                                    </li>
+
+                                     <li>
+                                        <a href=" <?php echo base_url('index.php/c_catalogue') ?>">Catalogue Page
                                             <span class="badge badge-pill badge-success"></span>
                                         </a>
                                     </li>
