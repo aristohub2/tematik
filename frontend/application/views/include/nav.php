@@ -16,10 +16,13 @@
         
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="<?php echo base_url('index.php/About')?>">Company</a>
+          <a class="nav-link js-scroll" href="<?php echo base_url('index.php/Catalogue')?>">Catalogue</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="<?php echo base_url('index.php/Catalogue')?>">Catalogue</a>
+          <a class="nav-link js-scroll" href="<?php echo base_url('index.php/Offers')?>">Offers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll" href="<?php echo base_url('index.php/About')?>">Company</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll" href="<?php echo base_url('index.php/Location')?>">Our Boutique</a>
