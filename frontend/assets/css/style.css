@@ -1087,3 +1087,9 @@ footer .credits a {
     bottom: 15px;
   }
 }
+
+/* tes custom */
+.hide-scroll::-webkit-scrollbar
+{
+  display: none;
+}
