@@ -102,9 +102,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href=" <?php echo base_url('index.php/c_necklaces') ?>">
+                            <a href=" <?php echo base_url('index.php/c_pendant') ?>">
                                 <i class="fa fa-calendar"></i>
-                                <span class="menu-text">Necklaces</span>
+                                <span class="menu-text">Pendant</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=" <?php echo base_url('index.php/c_ring') ?>">
+                                <i class="fa fa-calendar"></i>
+                                <span class="menu-text">Ring</span>
                             </a>
                         </li>
                     </ul>
