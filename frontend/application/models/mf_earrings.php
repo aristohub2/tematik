@@ -9,17 +9,11 @@ class mf_earrings extends CI_Model
 
 	public function get_products(){
 
-		$query = "SELECT * FROM tmtk_earrings";
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_earrings )";
 
-		$this->db->query($query);
+		$query_res = $this->db->query($query);
 
-		$arr = [];
-
-		foreach ($query->result_array() as $key) {
-			array_push($arr, $key['UploadFk']);
-		}
-
-		//ini harus di ambil lagi fotonya di product _upload
+		return $query_res->result_array();
 
 
 	}
@@ -28,11 +22,9 @@ class mf_earrings extends CI_Model
 
 		$query = "SELECT * FROM tmtk_earrings";
 
-		$this->db->query($query);
+		$output=$this->db->query($query);
 
-		foreach ($query->result_array() as $key) {
-			return $key["BannerPath"];
-		}
+		return $output;
 	}
 }
 ?>
