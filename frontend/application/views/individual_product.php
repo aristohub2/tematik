@@ -46,7 +46,7 @@
           </div>
 
           <!-- foto2 tambahan -->
-          <div class="col-2 text-center justify-content-space-evenly" style="max-height: 55vh; overflow-y: scroll;">
+          <div class="hide-scroll col-2 text-center justify-content-space-evenly" style="max-height: 55vh; overflow-y: scroll;">
             <div class="row">
               <div class="work-box" style="margin-bottom: 3vh;">
                 <a href="<?php echo base_url('assets/'); ?>img/ring1.jpg" data-lightbox="gallery-mf">

@@ -1,6 +1,6 @@
 <?php 
 
-class mf_earrings extends CI_Model 
+class mf_bracelet extends CI_Model 
 { 
 	public function __construct() 
 	{ 
@@ -9,7 +9,7 @@ class mf_earrings extends CI_Model
 
 	public function get_products(){
 
-		$query = "SELECT * FROM tmtk_earrings";
+		$query = "SELECT * FROM tmtk_bracelet";
 
 		$this->db->query($query);
 
@@ -26,7 +26,7 @@ class mf_earrings extends CI_Model
 
 	public function get_featured_products(){
 
-		$query = "SELECT * FROM tmtk_earrings where";
+		$query = "SELECT * FROM tmtk_bracelet";
 
 		$this->db->query($query);
 
