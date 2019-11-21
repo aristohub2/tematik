@@ -16,6 +16,7 @@ class Products_earrings extends CI_Controller {
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 
 		$data['products'] = $this->mf_earrings->get_products();
+		$data['banner'] = $this->mf_earrings->get_banner();
 
 		$this->load->view('products_earrings.php',$data);
 	}

@@ -18,6 +18,17 @@ class mf_earrings extends CI_Model
 
 	}
 
+	public function get_banner(){
+
+		$query = "SELECT * FROM tmtk_banner WHERE IdBanner LIKE '2'";
+
+		$query_res = $this->db->query($query);
+
+		foreach ($query_res->result_array() as $key) {
+			return $key['BannerPath'];
+		}
+	}
+
 	public function get_featured_products(){
 
 		$query = "SELECT * FROM tmtk_earrings";

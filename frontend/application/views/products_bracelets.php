@@ -25,13 +25,13 @@
 
 
   <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url($banner); ?>)">
+  <div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url('assets/'); ?>img/earring1.jpg)">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">Earrings</h1>
+          <h1 class="intro-title mb-4">Bracelets</h1>
         </div>
       </div>
     </div>

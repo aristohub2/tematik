@@ -107,7 +107,7 @@
         </div>
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Products')?>">
+            <a href="<?php echo base_url('index.php/Products_earrings')?>">
               <div class="work-img">
                 <img src="<?php echo base_url('assets/'); ?>img/img2.jpg" alt="" class="img-fluid">
               </div>
