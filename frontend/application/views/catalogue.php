@@ -91,7 +91,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Products')?>">
+            <a href="<?php echo base_url('index.php/Products_bracelets')?>">
               <div class="work-img">
                 <img src="<?php echo base_url('assets/'); ?>img/img1.jpg" alt="" class="img-fluid">
               </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Products')?>">
+            <a href="<?php echo base_url('index.php/Products_pendants')?>">
               <div class="work-img">
                 <img src="<?php echo base_url('assets/'); ?>img/img3.jpg" alt="" class="img-fluid">
               </div>
@@ -139,7 +139,7 @@
         </div>
         <div class="col-md-6">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Products')?>">
+            <a href="<?php echo base_url('index.php/Products_rings')?>">
               <div class="work-img">
                 <img src="<?php echo base_url('assets/'); ?>img/img4.jpg" alt="" class="img-fluid">
               </div>

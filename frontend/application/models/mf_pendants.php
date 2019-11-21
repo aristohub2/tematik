@@ -1,6 +1,6 @@
 <?php 
 
-class mf_earrings extends CI_Model 
+class mf_pendants extends CI_Model 
 { 
 	public function __construct() 
 	{ 
@@ -9,30 +9,47 @@ class mf_earrings extends CI_Model
 
 	public function get_products(){
 
-		$query = "SELECT * FROM tmtk_earrings";
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendants )";
 
-		$this->db->query($query);
+		$query_res = $this->db->query($query);
 
-		$arr = [];
+		return $query_res->result_array();
 
-		foreach ($query->result_array() as $key) {
-			array_push($arr, $key['UploadFk']);
+
+	}
+
+	public function get_banner(){
+
+		$query = "SELECT * FROM tmtk_banner WHERE IdBanner LIKE '9'";
+
+		$query_res = $this->db->query($query);
+
+		foreach ($query_res->result_array() as $key) {
+			return $key['BannerPath'];
 		}
-
-		//ini harus di ambil lagi fotonya di product _upload
-
-
 	}
 
 	public function get_featured_products(){
 
-		$query = "SELECT * FROM tmtk_earrings";
+		$query = "SELECT * FROM tmtk_pendants";
 
-		$this->db->query($query);
+		$output=$this->db->query($query);
 
-		foreach ($query->result_array() as $key) {
-			return $key["BannerPath"];
-		}
+		return $output;
 	}
 }
 ?>
+
+<!-- 
+1: welcome 
+2: about
+3: banner catalogue [ 0 ]
+4: banner catalogue [ 1 ]
+5: banner catalogue [ 2 ]
+6: banner catalogue [ 3 ]
+7: Bracelets 
+8: Earrings 
+9: Pendant 
+10: Rings 
+
+-->

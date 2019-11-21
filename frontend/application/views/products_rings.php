@@ -31,7 +31,7 @@
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">Pendants</h1>
+          <h1 class="intro-title mb-4">Rings</h1>
         </div>
       </div>
     </div>

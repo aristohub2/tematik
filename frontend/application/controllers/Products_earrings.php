@@ -23,3 +23,5 @@ class Products_earrings extends CI_Controller {
 
 
 }
+
+

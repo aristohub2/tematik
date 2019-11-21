@@ -17,3 +17,17 @@ class mf_index extends CI_Model
 	}
 }
 ?>
+
+<!-- 
+1: welcome 
+2: about
+3: banner catalogue [ 0 ]
+4: banner catalogue [ 1 ]
+5: banner catalogue [ 2 ]
+6: banner catalogue [ 3 ]
+7: Bracelets 
+8: Earrings 
+9: Pendant 
+10: Rings 
+
+-->
