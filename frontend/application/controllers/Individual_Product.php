@@ -5,6 +5,7 @@ class Individual_Product extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('mf_individual_product');
 	}
 
 	public function index()
@@ -13,6 +14,13 @@ class Individual_Product extends CI_Controller {
 		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
+		
+
+
+		$id=$_GET['p'];
+
+		$query = $this->mf_individual_product->get_product_info();
+
 		$this->load->view('individual_product.php',$data);
 	}
 }
