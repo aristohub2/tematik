@@ -49,7 +49,8 @@
 
                                  <div class="form-group col-md-6">
                                     <label>Banner Description</label>
-                                    <input allow-empty="false" type="text" placeholder="Banner Description" name="BannerDescription" id="BannerDescription" class="form-control" maxlength="50" value="" >
+                                    <!-- <input allow-empty="false" type="text" placeholder="Banner Description" name="BannerDescription" id="BannerDescription" class="form-control" maxlength="50" value="" > -->
+                                    <textarea name="BannerDescription" rows="10" cols="30" class="form-control">Banner Description</textarea>
                                 </div>
 
                                 <div class="form-group col-md-6">

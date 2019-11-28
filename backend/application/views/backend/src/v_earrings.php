@@ -37,7 +37,8 @@
 
                      <div class="form-group col-md-6">
                         <label>Earring Description</label>
-                        <input allow-empty="false" type="text" placeholder="Earring Description" name="EarringsDescription" id="EarringsDescription" class="form-control" maxlength="50" value="" >
+                        <!-- <input allow-empty="false" type="text" placeholder="Earring Description" name="EarringsDescription" id="EarringsDescription" class="form-control" maxlength="50" value="" > -->
+                        <textarea name="EarringsDescription" rows="10" cols="30" class="form-control">Banner Description</textarea>
                     </div>
 
                     <div class="form-group col-md-6">

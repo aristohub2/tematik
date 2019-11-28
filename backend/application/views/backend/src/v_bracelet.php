@@ -37,8 +37,10 @@
 
                      <div class="form-group col-md-6">
                         <label>Bracelet Description</label>
-                        <input allow-empty="false" type="text" placeholder="Bracelet Description" name="BraceletDescription" id="BraceletDescription" class="form-control" maxlength="50" value="" >
+                        <textarea name="BraceletDescription" rows="10" cols="30" class="form-control">Banner Description</textarea>
+                        <!-- <input allow-empty="false" type="text" placeholder="Bracelet Description" name="BraceletDescription" id="BraceletDescription" class="form-control" maxlength="50" value="" > -->
                     </div>
+                      <!-- <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea> -->
 
                     <div class="form-group col-md-6">
                      <input type="file" name="berkas[]" multiple  />
