@@ -9,7 +9,7 @@ class mf_pendants extends CI_Model
 
 	public function get_products(){
 
-		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendants )";
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendant )";
 
 		$query_res = $this->db->query($query);
 
@@ -31,7 +31,7 @@ class mf_pendants extends CI_Model
 
 	public function get_featured_products(){
 
-		$query = "SELECT * FROM tmtk_pendants";
+		$query = "SELECT * FROM tmtk_pendant";
 
 		$output=$this->db->query($query);
 

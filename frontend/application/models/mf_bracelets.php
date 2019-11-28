@@ -9,7 +9,7 @@ class mf_bracelets extends CI_Model
 
 	public function get_products(){
 
-		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_bracelets )";
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_bracelet )";
 
 		$query_res = $this->db->query($query);
 
@@ -31,7 +31,7 @@ class mf_bracelets extends CI_Model
 
 	public function get_featured_products(){
 
-		$query = "SELECT * FROM tmtk_bracelets";
+		$query = "SELECT * FROM tmtk_bracelet";
 
 		$output=$this->db->query($query);
 
