@@ -68,7 +68,7 @@
                     <div class='work-content'>
                       <div class='row'>
                         <div class='col-sm-12'>
-                          <h2 class='w-title'>". $key['IdUpload'] ."</h2>
+                          <h2 class='w-title'>". $key['BraceletName'] ."</h2>
                         </div>
                       </div>
                     </div>

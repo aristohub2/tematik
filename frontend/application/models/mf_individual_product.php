@@ -7,9 +7,21 @@ class mf_individual_product extends CI_Model
 		$this->load->database();
 	} 
 
-	public function get_product_info(){
+	public function get_product_info($id,$s){
 
-		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_earrings )";
+		if($s==1){
+			$query = "SELECT * FROM tmtk_bracelet WHERE IdBracelet = '".$id."'";
+		}
+		else if($s==2){
+			$query = "SELECT * FROM tmtk_earrings WHERE IdEarrings = '".$id."'";
+		}
+		else if($s==3){
+			$query = "SELECT * FROM tmtk_pendant WHERE Idpendant = '".$id."'";
+		}
+		else if($s==4){
+			$query = "SELECT * FROM tmtk_ring WHERE Idring = '".$id."'";
+		}
+		
 
 		$query_res = $this->db->query($query);
 

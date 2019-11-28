@@ -18,8 +18,15 @@ class Individual_Product extends CI_Controller {
 
 
 		$id=$_GET['p'];
+		$s =$_GET['s'];
 
-		$query = $this->mf_individual_product->get_product_info();
+		var_dump($s);
+
+		$query = $this->mf_individual_product->get_product_info($id,$s);
+
+		foreach ($query as $key) {
+			$data['p_name'] = 
+		}
 
 		$this->load->view('individual_product.php',$data);
 	}
