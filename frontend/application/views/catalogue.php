@@ -36,37 +36,38 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
 
-        <div class="carousel-item active">
-          <img src="<?php echo base_url('assets/'); ?>img/slideshow1.jpg" alt="Chania" width="100%" height="75%">
-          <div class="carousel-caption">
-            <h3 style="color: white;">Chania</h3>
-            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-          </div>
-        </div>
+        <?php 
+          $counter = 0;
 
-        <div class="carousel-item">
-          <img src="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" alt="Chania" width="100%" height="75%">
-          <div class="carousel-caption">
-            <h3 style="color: white;">Florence</h3>
-            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-          </div>
-        </div>
-      
-        <div class="carousel-item">
-          <img src="<?php echo base_url('assets/'); ?>img/slideshow3.jpg" alt="Chania" width="100%" height="75%">
-          <div class="carousel-caption">
-            <h3 style="color: white;">Crete</h3>
-            <p>Beautiful flowers in Kolymbari, Crete.</p>
-          </div>
-        </div>
+          foreach ($banner as $key) {
 
-        <div class="carousel-item">
-          <img src="<?php echo base_url('assets/'); ?>img/slideshow4.jpg" alt="Chania" width="100%" height="75%">
-          <div class="carousel-caption">
-            <h3 style="color: white;">Kolymbari</h3>
-            <p>Beautiful flowers in Kolymbari, Crete.</p>
-          </div>
-        </div>
+            if($counter==0){
+              echo "
+              <div class='carousel-item active'>
+                <img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%' height='75%'>
+                <div class='carousel-caption'>
+                  <h3 style='color: white;'>".$key['BannerTitle']."</h3>
+                  <p>".$key['BannerDescription']."</p>
+                </div>
+              </div>
+            ";
+            }else
+            {
+              echo "
+              <div class='carousel-item'>
+                <img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%' height='75%'>
+                <div class='carousel-caption'>
+                  <h3 style='color: white;'>".$key['BannerTitle']."</h3>
+                  <p>".$key['BannerDescription']."</p>
+                </div>
+              </div>
+            ";
+            }
+            
+            $counter++;
+          }
+
+        ?>
     
       </div>
     </div>
@@ -93,7 +94,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_bracelets')?>">
               <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/img1.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_bracelet); ?>" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -109,7 +110,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_earrings')?>">
               <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/img2.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_earring); ?>img/img2.jpg" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -125,7 +126,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_pendants')?>">
               <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/img3.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_pendant); ?>img/img3.jpg" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -141,7 +142,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_rings')?>">
               <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/img4.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_ring); ?>img/img4.jpg" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">

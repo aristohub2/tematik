@@ -29,7 +29,7 @@
 
 
   <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url('assets/'); ?>img/bg-about.jpg)">
+  <div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url($banner); ?>)">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">

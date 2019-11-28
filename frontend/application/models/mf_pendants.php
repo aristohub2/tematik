@@ -9,7 +9,8 @@ class mf_pendants extends CI_Model
 
 	public function get_products(){
 
-		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendant )";
+		$query = "SELECT * FROM tmtk_product_uploads INNER JOIN tmtk_pendant ON tmtk_product_uploads.IdUpload=tmtk_pendant.UploadFK WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendant ) GROUP BY 1 ";
+		// $query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendant )";
 
 		$query_res = $this->db->query($query);
 
@@ -31,11 +32,15 @@ class mf_pendants extends CI_Model
 
 	public function get_featured_products(){
 
-		$query = "SELECT * FROM tmtk_pendant";
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendant ) GROUP BY 1 LIMIT 1";
 
-		$output=$this->db->query($query);
+		$query_res = $this->db->query($query);
 
-		return $output;
+		foreach ($query_res->result_array() as $key) {
+			return $key['ProductPath'];
+		}
+
+		// return $output;
 	}
 }
 ?>

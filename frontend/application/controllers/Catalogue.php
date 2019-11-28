@@ -5,7 +5,12 @@ class Catalogue extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('mf_index');
+		$this->load->model('mf_catalogue');
+		$this->load->model('mf_bracelets');
+		$this->load->model('mf_earrings');
+		$this->load->model('mf_pendants');
+		$this->load->model('mf_rings');
+			
 	}
 
 	public function index()
@@ -15,15 +20,12 @@ class Catalogue extends CI_Controller {
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 
-		$data['banner1'] = $this->mf_index->get_banner();
-		$data['banner2'] = $this->mf_index->get_banner();
-		$data['banner3'] = $this->mf_index->get_banner();
-		$data['banner4'] = $this->mf_index->get_banner();
-		
-		$data['pic_earring'] = $this->mf_index->get_banner();
-		$data['pic_bracelet'] = $this->mf_index->get_banner();
-		$data['pic_pendant'] = $this->mf_index->get_banner();
-		$data['pic_ring'] = $this->mf_index->get_banner();
+		$data['banner'] = $this->mf_catalogue->get_banners();
+		$data['f_bracelet'] = $this->mf_bracelets->get_featured_products();
+		$data['f_earring'] = $this->mf_earrings->get_featured_products();
+		$data['f_pendant'] = $this->mf_pendants->get_featured_products();
+		$data['f_ring'] = $this->mf_rings->get_featured_products();
+
 		
 		$this->load->view('catalogue.php',$data);
 	}
