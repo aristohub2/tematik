@@ -61,14 +61,14 @@
             echo "
               <div class='col-md-6'>
                 <div class='work-box'>
-                  <a href='". base_url('index.php/Individual_Product') ."?p=".$key['IdBracelet']."&s=1'>
+                  <a href='". base_url('index.php/Individual_Product') ."?p=".$key['IdProduct']."&s=1'>
                     <div class='work-img'>
                       <img src='". base_url($key['ProductPath']) ."' alt='' class='img-fluid'>
                     </div>
                     <div class='work-content'>
                       <div class='row'>
                         <div class='col-sm-12'>
-                          <h2 class='w-title'>". $key['BraceletName'] ."</h2>
+                          <h2 class='w-title'>". $key['Name'] ."</h2>
                         </div>
                       </div>
                     </div>

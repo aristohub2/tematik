@@ -10,16 +10,16 @@ class mf_individual_product extends CI_Model
 	public function get_product_info($id,$s){
 
 		if($s==1){
-			$query = "SELECT * FROM tmtk_bracelet WHERE IdBracelet = '".$id."'";
+			$query = "SELECT * FROM tmtk_bracelet WHERE IdProduct = '".$id."'";
 		}
 		else if($s==2){
-			$query = "SELECT * FROM tmtk_earrings WHERE IdEarrings = '".$id."'";
+			$query = "SELECT * FROM tmtk_earrings WHERE IdProduct = '".$id."'";
 		}
 		else if($s==3){
-			$query = "SELECT * FROM tmtk_pendant WHERE Idpendant = '".$id."'";
+			$query = "SELECT * FROM tmtk_pendant WHERE IdProduct = '".$id."'";
 		}
 		else if($s==4){
-			$query = "SELECT * FROM tmtk_ring WHERE Idring = '".$id."'";
+			$query = "SELECT * FROM tmtk_ring WHERE IdProduct = '".$id."'";
 		}
 		
 

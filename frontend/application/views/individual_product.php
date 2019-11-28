@@ -68,7 +68,7 @@
             </div>
 
             <div class="row">
-              <div class="work-box" style="margin-bottom: 0;">
+              <div class="work-box" style="margin-bottom: 3vh;">
                 <a href="<?php echo base_url('assets/'); ?>img/ring3.jpg" data-lightbox="gallery-mf">
                   <div class="work-img">
                     <img src="<?php echo base_url('assets/'); ?>img/ring3.jpg" alt="" class="img-fluid">

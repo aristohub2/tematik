@@ -9,7 +9,8 @@ class mf_rings extends CI_Model
 
 	public function get_products(){
 
-		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_ring )";
+		$query = "SELECT * FROM tmtk_product_uploads INNER JOIN tmtk_ring ON tmtk_product_uploads.IdUpload=tmtk_ring.UploadFK WHERE IdUpload IN (SELECT UploadFK FROM tmtk_ring ) GROUP BY 1 ";
+		// $query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_ring )";
 
 		$query_res = $this->db->query($query);
 
@@ -31,11 +32,15 @@ class mf_rings extends CI_Model
 
 	public function get_featured_products(){
 
-		$query = "SELECT * FROM tmtk_ring";
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_ring ) GROUP BY 1 LIMIT 1";
 
-		$output=$this->db->query($query);
+		$query_res = $this->db->query($query);
 
-		return $output;
+		foreach ($query_res->result_array() as $key) {
+			return $key['ProductPath'];
+		}
+
+		// return $output;
 	}
 }
 ?>
