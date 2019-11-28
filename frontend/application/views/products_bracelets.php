@@ -61,7 +61,7 @@
             echo "
               <div class='col-md-6'>
                 <div class='work-box'>
-                  <a href='". base_url('index.php/Individual_Product') ."?p=".$key['IdBracelet']."'>
+                  <a href='". base_url('index.php/Individual_Product') ."?p=".$key['IdBracelet']."&s=1'>
                     <div class='work-img'>
                       <img src='". base_url($key['ProductPath']) ."' alt='' class='img-fluid'>
                     </div>

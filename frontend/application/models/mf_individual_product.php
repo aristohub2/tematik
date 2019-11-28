@@ -28,6 +28,16 @@ class mf_individual_product extends CI_Model
 		return $query_res->result_array();
 
 	}
+
+	public function get_images($up_id){
+
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload = '".$up_id."'";		
+
+		$query_res = $this->db->query($query);
+
+		return $query_res->result_array();
+
+	}
 }
 ?>
 

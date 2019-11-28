@@ -83,20 +83,13 @@
       <div id="product_info" class="col-right col-md-4" style="overflow-wrap: break-word;">
         <p class="h2">
           <?php
-            $product_title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-            echo $product_title;
+            echo $p_name;
           ?>
         </p>
         <br />
         <p style="overflow-wrap: break-word; font-size: 13px; margin-bottom: 5vh;">
           <?php
-            $product_desc =
-            "Cras interdum purus vitae diam consequat, vitae feugiat lacus tempor.
-            Integer ac erat vitae erat malesuada placerat. Mauris placerat dolor eget fringilla egestas.
-            Mauris nisi tellus, bibendum at libero ut, pretium placerat nunc.
-            Nam tempor efficitur sollicitudin. Proin cursus gravida erat sit amet auctor.
-            Vivamus egestas lectus congue velit cursus, at rhoncus justo dapibus.";
-            echo $product_desc;
+            echo $p_desc;
           ?>
         </p>
       </div>

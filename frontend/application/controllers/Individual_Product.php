@@ -24,9 +24,34 @@ class Individual_Product extends CI_Controller {
 
 		$query = $this->mf_individual_product->get_product_info($id,$s);
 
-		foreach ($query as $key) {
-			$data['p_name'] = 
+		if($s==1){
+			foreach ($query as $key) {
+				$data['p_name'] = $key['BraceletName'];
+				$data['p_desc'] = $key['BraceletDescription'];
+				$data['p_photo'] = $this->mf_individual_product->get_images($key['UploadFk']);					
+			}
 		}
+		else if($s==2){
+			foreach ($query as $key) {
+				$data['p_name'] = $key['EarringsName'];
+				$data['p_desc'] = $key['EarringsDescription'];
+				$data['p_photo'] = $this->mf_individual_product->get_images($key['UploadFk']);					
+			}
+		}
+		else if($s==3){
+			foreach ($query as $key) {
+				$data['p_name'] = $key['pendantName'];
+				$data['p_desc'] = $key['pendantDescription'];
+				$data['p_photo'] = $this->mf_individual_product->get_images($key['UploadFk']);					
+			}
+		}
+		else if($s==4){
+			foreach ($query as $key) {
+				$data['p_name'] = $key['ringName'];
+				$data['p_desc'] = $key['ringDescription'];
+				$data['p_photo'] = $this->mf_individual_product->get_images($key['UploadFk']);					
+			}
+		}		
 
 		$this->load->view('individual_product.php',$data);
 	}
