@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2019 at 02:46 PM
+-- Generation Time: Nov 28, 2019 at 03:17 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -278,11 +278,12 @@ CREATE TABLE `tmtk_bracelet` (
 
 INSERT INTO `tmtk_bracelet` (`IdProduct`, `Name`, `Description`, `UploadFk`, `dCreateOn`, `sStatusDelete`, `dDeleteOn`) VALUES
 (1, 'Bracelet Title 1', 'Bracelet Description 1', '5ddf99ffef6df', '2019-11-28', NULL, NULL),
-(2, 'Tiffany 1837', 'Cuff', '5ddfdc4eb9304', '2019-11-28', NULL, NULL),
-(3, 'Tiffany 1837 Makers', 'Narrow Cuff 18k Gold', '5ddfdca5d2b84', '2019-11-28', NULL, NULL),
-(4, 'Tiffany Infinity', 'Bracelet', '5ddfdcde8dfe8', '2019-11-28', NULL, NULL),
-(5, 'Tiffany T Square', 'Bracelet', '5ddfdd1e86ff4', '2019-11-28', NULL, NULL),
-(6, 'Tiffany Tiger Eye', 'Wire Bracelet 18k Gold', '5ddfdd4fd7fac', '2019-11-28', NULL, NULL);
+(2, 'bukan gelang', 'hanya sikat', '5ddfe0fdef645', '2019-11-28', NULL, NULL),
+(3, 'Silver Cuff', 'Tiffany 1837', '5ddfe2eb13c62', '2019-11-28', NULL, NULL),
+(4, 'Makers Narrow Cuff', 'Tiffany 1837(R) 18crt', '5ddfe3a67d1b1', '2019-11-28', NULL, NULL),
+(5, 'Silver Bracelet', 'Tiffany Infinity', '5ddfe4085f805', '2019-11-28', NULL, NULL),
+(6, 'T Square Bracelet', 'T-Series', '5ddfe471a1976', '2019-11-28', NULL, NULL),
+(7, 'Tiger Eye Bracelet', 'T-Series', '5ddfe4cdb341c', '2019-11-28', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -353,7 +354,25 @@ INSERT INTO `tmtk_product_uploads` (`IdUpload`, `ProductId`, `ProductPath`, `dCr
 ('5ddf99ffef6df', 1, 'uploads/bracelets/36354e75fc15bda8d4ac7bc1cc186ffa.jpg', '2019-11-28', NULL, NULL),
 ('5ddf9a1acd703', 2, 'uploads/earrings/120db88cf674f5af68f42eb466c32628.jpg', '2019-11-28', NULL, NULL),
 ('5ddf9a1acd703', 3, 'uploads/earrings/1e0ee52ed83f27bb12b599e7103cb9ec.jpg', '2019-11-28', NULL, NULL),
-('5ddfdd6b06f87', 4, 'uploads/pendants/e7cfa35b12c5f29b0790078f80fb5b56.jpg', '2019-11-28', NULL, NULL);
+('5ddfdd6b06f87', 4, 'uploads/pendants/e7cfa35b12c5f29b0790078f80fb5b56.jpg', '2019-11-28', NULL, NULL),
+('5ddfe0fdef645', 5, 'uploads/bracelets/34c81f69a01eb1e0ea6893f11c16522f.jpg', '2019-11-28', NULL, NULL),
+('5ddfe2eb13c62', 6, 'uploads/bracelets/f00e17fdec789771fa32f1f07b1277c3.jpg', '2019-11-28', NULL, NULL),
+('5ddfe2eb13c62', 7, 'uploads/bracelets/9dafe0816a14328c9611b5002e529d5f.jpg', '2019-11-28', NULL, NULL),
+('5ddfe3a67d1b1', 8, 'uploads/bracelets/b10821f191a15a1b6a6c960684463393.jpg', '2019-11-28', NULL, NULL),
+('5ddfe3a67d1b1', 9, 'uploads/bracelets/d421a70f6c2d9ba36bc0c076c2dda333.jpg', '2019-11-28', NULL, NULL),
+('5ddfe3a67d1b1', 10, 'uploads/bracelets/d90b2113fb0cdba806e12b1819d94353.jpg', '2019-11-28', NULL, NULL),
+('5ddfe3a67d1b1', 11, 'uploads/bracelets/625039db9e53624dbbc2b8bc141562ae.jpg', '2019-11-28', NULL, NULL),
+('5ddfe3a67d1b1', 12, 'uploads/bracelets/fa6ed848478b824af5c7c77a3e412541.jpg', '2019-11-28', NULL, NULL),
+('5ddfe4085f805', 13, 'uploads/bracelets/5d9c50b23ed6f89ac48eeae0b9e65a9a.jpg', '2019-11-28', NULL, NULL),
+('5ddfe4085f805', 14, 'uploads/bracelets/897b70f3bfdef83902e731f33f3cf368.jpg', '2019-11-28', NULL, NULL),
+('5ddfe471a1976', 15, 'uploads/bracelets/41a5ff505abd874a9c58cf2b881a7ac4.jpg', '2019-11-28', NULL, NULL),
+('5ddfe471a1976', 16, 'uploads/bracelets/57b5b6e23f9aac5d1e6fa87548802777.jpg', '2019-11-28', NULL, NULL),
+('5ddfe471a1976', 17, 'uploads/bracelets/db5caf2e1ebd547131dd94cbe221fd11.jpg', '2019-11-28', NULL, NULL),
+('5ddfe471a1976', 18, 'uploads/bracelets/91096da307b2f040722d1760e8f969ad.jpg', '2019-11-28', NULL, NULL),
+('5ddfe4cdb341c', 19, 'uploads/bracelets/f8762d6c708549031e3807b89d201a5c.jpg', '2019-11-28', NULL, NULL),
+('5ddfe4cdb341c', 20, 'uploads/bracelets/6119967e043337e2afbdeaa458a5f48e.jpg', '2019-11-28', NULL, NULL),
+('5ddfe4cdb341c', 21, 'uploads/bracelets/5013e10ccd5f4c970e858b6f217da06c.jpg', '2019-11-28', NULL, NULL),
+('5ddfe4cdb341c', 22, 'uploads/bracelets/488a8542a5d91ce306047a0859ceb100.jpg', '2019-11-28', NULL, NULL);
 
 -- --------------------------------------------------------
 
