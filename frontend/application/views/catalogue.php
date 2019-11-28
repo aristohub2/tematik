@@ -83,7 +83,7 @@
               Catalogue
             </h3>
             <p class="subtitle-a">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              November 2019
             </p>
             <div class="line-mf"></div>
           </div>
@@ -110,7 +110,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_earrings')?>">
               <div class="work-img">
-                <img src="<?php echo base_url($f_earring); ?>img/img2.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_earring); ?>" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -126,7 +126,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_pendants')?>">
               <div class="work-img">
-                <img src="<?php echo base_url($f_pendant); ?>img/img3.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_pendant); ?>" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -142,7 +142,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_rings')?>">
               <div class="work-img">
-                <img src="<?php echo base_url($f_ring); ?>img/img4.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_ring); ?>" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">

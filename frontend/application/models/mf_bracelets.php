@@ -31,7 +31,7 @@ class mf_bracelets extends CI_Model
 
 	public function get_featured_products(){
 
-		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_bracelet ) GROUP BY 1 ORDER BY 1 DESC LIMIT 1";
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_bracelet ) GROUP BY 1 LIMIT 1";
 
 		$query_res = $this->db->query($query);
 

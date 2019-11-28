@@ -10,7 +10,6 @@ class mf_earrings extends CI_Model
 	public function get_products(){
 
 		$query = "SELECT * FROM tmtk_product_uploads INNER JOIN tmtk_earrings ON tmtk_product_uploads.IdUpload=tmtk_earrings.UploadFK WHERE IdUpload IN (SELECT UploadFK FROM tmtk_earrings ) GROUP BY 1 ";
-		// $query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_earrings )";
 
 		$query_res = $this->db->query($query);
 

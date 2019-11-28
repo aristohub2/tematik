@@ -10,7 +10,6 @@ class mf_pendants extends CI_Model
 	public function get_products(){
 
 		$query = "SELECT * FROM tmtk_product_uploads INNER JOIN tmtk_pendant ON tmtk_product_uploads.IdUpload=tmtk_pendant.UploadFK WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendant ) GROUP BY 1 ";
-		// $query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload IN (SELECT UploadFK FROM tmtk_pendant )";
 
 		$query_res = $this->db->query($query);
 

@@ -31,7 +31,7 @@ class mf_individual_product extends CI_Model
 
 	public function get_images($up_id){
 
-		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload = '".$up_id."'";		
+		$query = "SELECT * FROM tmtk_product_uploads WHERE IdUpload = '".$up_id."'";
 
 		$query_res = $this->db->query($query);
 

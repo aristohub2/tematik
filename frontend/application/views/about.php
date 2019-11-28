@@ -206,41 +206,90 @@
       </ul>
     </div>
   </section>
-  <hr class="line-separator">
-  <section id="about" class="about-mf sect-pt4 route" style="padding-bottom: 4rem">
+
+  <section id="work" class="portfolio-mf sect-pt4 route">
     <div class="container">
-      <h1 style="color:#B8860B;"><p align="center"><strong>OUR DIAMONDS</strong></p></h1>
-      <hr class="line-mf">
-      <ul class="row">
-        <li class="col-md-4" style="height: 218px;" align="center">
-          <img src="https://www.harrywinston.com/sites/default/files/styles/listing_products/public/winston_gates_by_harry_winston_bracelet_diamond_rose_gold_BRDRRD1MWG_trans_1.png?itok=KZbLXqS1" width="318" height="218" alt>
-          <h5 style="color:#B8860B;">Bracelets</h5>
-        </li>
-        <li class="col-md-4" style="height: 218px;" align="center">
-          <img src="https://www.harrywinston.com/sites/default/files/styles/listing_products/public/jewelry-img/CMDGRD000HWL-272505-trans-1h.png?itok=qHp9XzRf" width="318" height="218" alt>
-          <h5 style="color:#B8860B;">Charms</h5>
-        </li>
-        <li class="col-md-4" style="height: 218px;" align="center">
-          <img src="https://www.harrywinston.com/sites/default/files/styles/listing_products/public/winston_gates_by_harry_winston_earrings_diamond_platinum_EADPRD1MWG_trans-1.png?itok=oJyyKutc" width="318" height="218" alt>
-          <h5 style="color:#B8860B;">Earrings</h5>
-        </li>
-      </ul>
-      <br>
-      <ul class="row">
-        <li class="col-md-4" style="height: 218px;" align="center">
-          <img src="https://www.harrywinston.com/sites/default/files/styles/listing_products/public/diamond_loop_by_harry_winston_pendant_full_motif_multi_color_stone_and_diamond_PEMPRPMEL4C_trans_3.png?itok=ufxqb9aC" width="318" height="218" alt>
-          <h5 style="color:#B8860B;">Pendants</h5>
-        </li>
-        <li class="col-md-4" style="height: 218px;" align="center">
-          <img src="https://www.harrywinston.com/sites/default/files/styles/listing_products/public/jewelry-img/forget_me_not_by_harry_winston_lariat_diamond_necklace_NKDPLTFLRFMN_trans-1h.png?itok=poRAHyGW" width="318" height="218" alt>
-          <h5 style="color:#B8860B;">Necklaces</h5>
-        </li>
-        <li class="col-md-4" style="height: 218px;" align="center">
-          <img src="https://www.harrywinston.com/sites/default/files/styles/listing_products/public/jewelry/RGDPRD010TB_262127_1_Masked.png?itok=qocnzFxe" width="318" height="218" alt>
-          <h5 style="color:#B8860B;">Engagement Rings</h5>
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Our Products
+            </h3>
+            <p class="subtitle-a">
+              Luxury beyond limits.
+            </p>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="work-box">
+            <a href="<?php echo base_url('index.php/Products_bracelets')?>">
+              <div class="work-img">
+                <img src="<?php echo base_url($f_bracelet); ?>" alt="" class="img-fluid">
+              </div>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h2 class="w-title">Bracelets</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="work-box">
+            <a href="<?php echo base_url('index.php/Products_earrings')?>">
+              <div class="work-img">
+                <img src="<?php echo base_url($f_earring); ?>" alt="" class="img-fluid">
+              </div>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h2 class="w-title">Earrings</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="work-box">
+            <a href="<?php echo base_url('index.php/Products_pendants')?>">
+              <div class="work-img">
+                <img src="<?php echo base_url($f_pendant); ?>" alt="" class="img-fluid">
+              </div>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h2 class="w-title">Pendants</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="work-box">
+            <a href="<?php echo base_url('index.php/Products_rings')?>">
+              <div class="work-img">
+                <img src="<?php echo base_url($f_ring); ?>" alt="" class="img-fluid">
+              </div>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h2 class="w-title">Rings</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>        
+      </div>
     </div>
+  
   </section>
 
   <!-- Footer -->

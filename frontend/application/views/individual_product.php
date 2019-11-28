@@ -28,54 +28,51 @@
 <body id="page-top">
 <?php echo $nav; ?>
 <!--/ bekgron /-->
-<div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url('assets/'); ?>img/slideshow4.jpg);">
+<!-- <div id="home" class="intro route bg-image" style="background-image: url(<?php echo base_url('assets/'); ?>img/slideshow4.jpg);"> -->
+<div id="home" class="intro route bg-image" style="background:#555555;">  
   <div class="overlay-itro"></div>
   <div id="main_content" class="container">
     <div class="row">
       <div id="product_imgs" class="col-md-8" style="padding: 2.5vh 2vw 0 2vw;">
         <div class="row">
-          <div class="col-left col-lg-10 text-center" style="padding: 0 2vw 0 0;">
-            <!-- foto produk -->
-            <div class="work-box">
-              <a href="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" data-lightbox="gallery-mf">
-                <div class="work-img">
-                  <img src="<?php echo base_url('assets/'); ?>img/slideshow2.jpg" class="img-fluid" alt="Foto produk">
-                </div>
-              </a>
-            </div>
-          </div>
+            <?php
+              $counter = 0;
 
-          <!-- foto2 tambahan -->
-          <div class="hide-scroll col-2 text-center justify-content-space-evenly" style="max-height: 55vh; overflow-y: scroll;">
-            <div class="row">
-              <div class="work-box" style="margin-bottom: 3vh;">
-                <a href="<?php echo base_url('assets/'); ?>img/ring1.jpg" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="<?php echo base_url('assets/'); ?>img/ring1.jpg" alt="" class="img-fluid">
-                  </div>
-                </a>
-              </div>
-            </div>
+              foreach ($p_photo as $key) {
+                if($counter==0){
+                  echo "
+                    <div class='col-left col-lg-10 text-center' style='padding: 0 2vw 0 0;'>
+                      <!-- foto produk -->
+                      <div class='work-box'>
+                        <a href='". base_url($key['ProductPath']) ."' data-lightbox='gallery-mf'>
+                          <div class='work-img'>
+                            <img src='". base_url($key['ProductPath']) ."' class='img-fluid' alt='Foto produk'>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
 
-            <div class="row">
-              <div class="work-box" style="margin-bottom: 3vh;">
-                <a href="<?php echo base_url('assets/'); ?>img/ring2.jpg" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="<?php echo base_url('assets/'); ?>img/ring2.jpg" alt="" class="img-fluid">
-                  </div>
-                </a>
-              </div>
-            </div>
+                    <!-- foto2 tambahan -->
+                    <div class='hide-scroll col-2 text-center justify-content-space-evenly' style='max-height: 55vh; overflow-y: scroll;'>
+                  ";
+                }
+                else{
+                  echo "
+                    <div class='row'>
+                      <div class='work-box' style='margin-bottom: 3vh;'>
+                        <a href='". base_url($key['ProductPath']) ."' data-lightbox='gallery-mf'>
+                          <div class='work-img'>
+                            <img src='". base_url($key['ProductPath']) ."' alt='' class='img-fluid'>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  ";
+                }
+                $counter++;
+              }
+            ?>
 
-            <div class="row">
-              <div class="work-box" style="margin-bottom: 3vh;">
-                <a href="<?php echo base_url('assets/'); ?>img/ring3.jpg" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="<?php echo base_url('assets/'); ?>img/ring3.jpg" alt="" class="img-fluid">
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

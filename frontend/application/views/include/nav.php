@@ -24,9 +24,9 @@
         <li class="nav-item">
           <a class="nav-link js-scroll" href="<?php echo base_url('index.php/About')?>">Company</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link js-scroll" href="<?php echo base_url('index.php/Location')?>">Our Boutique</a>
-        </li>
+        </li> -->
       </ul>
 
       </div>
