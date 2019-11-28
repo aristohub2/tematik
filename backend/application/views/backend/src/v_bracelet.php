@@ -32,7 +32,7 @@
 
                     <div class="form-group col-md-6">
                         <label>Bracelet Name</label>
-                        <input allow-empty="false" type="text" placeholder="Bracelet Title" name="BraceletName" id="BraceletName" class="form-control" maxlength="50" value="" >
+                        <input allow-empty="false" type="text" placeholder="Bracelet Name" name="BraceletName" id="BraceletName" class="form-control" maxlength="50" value="" >
                     </div>
 
                      <div class="form-group col-md-6">

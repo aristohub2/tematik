@@ -61,19 +61,24 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href=" <?php echo base_url('index.php/c_welcome') ?>">Home Page
+                                        <a href=" <?php echo base_url('index.php/c_welcome') ?>">Home Banner
                                             <span class="badge badge-pill badge-success"></span>
                                         </a>
                                     </li>
 
                                      <li>
-                                        <a href=" <?php echo base_url('index.php/c_about') ?>">About Page
+                                        <a href=" <?php echo base_url('index.php/c_about') ?>">About Banner
                                             <span class="badge badge-pill badge-success"></span>
                                         </a>
                                     </li>
 
                                      <li>
-                                        <a href=" <?php echo base_url('index.php/c_catalogue') ?>">Catalogue Page
+                                        <a href=" <?php echo base_url('index.php/c_catalogue') ?>">Catalogue Banner
+                                            <span class="badge badge-pill badge-success"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=" <?php echo base_url('index.php/c_catalogue_product') ?>">Catalogue Product Banner
                                             <span class="badge badge-pill badge-success"></span>
                                         </a>
                                     </li>
@@ -104,13 +109,22 @@
                         <li>
                             <a href=" <?php echo base_url('index.php/c_pendant') ?>">
                                 <i class="fa fa-calendar"></i>
-                                <span class="menu-text">Pendant</span>
+                                <span class="menu-text">Pendants</span>
                             </a>
                         </li>
                         <li>
                             <a href=" <?php echo base_url('index.php/c_ring') ?>">
                                 <i class="fa fa-calendar"></i>
-                                <span class="menu-text">Ring</span>
+                                <span class="menu-text">Rings</span>
+                            </a>
+                        </li>
+                        <li class="header-menu">
+                            <span>Extra</span>
+                        </li>
+                         <li>
+                            <a href=" <?php echo base_url('index.php/c_ring') ?>">
+                                <i class="fa fa-calendar"></i>
+                                <span class="menu-text">Attributes</span>
                             </a>
                         </li>
                     </ul>

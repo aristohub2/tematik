@@ -32,12 +32,12 @@
 
                     <div class="form-group col-md-6">
                         <label>Pendant Name</label>
-                        <input allow-empty="false" type="text" placeholder="pendant Title" name="pendantName" id="pendantName" class="form-control" maxlength="50" value="" >
+                        <input allow-empty="false" type="text" placeholder="Pendant Name" name="pendantName" id="pendantName" class="form-control" maxlength="50" value="" >
                     </div>
 
                      <div class="form-group col-md-6">
                         <label>Pendant Description</label>
-                        <input allow-empty="false" type="text" placeholder="pendant Description" name="pendantDescription" id="pendantDescription" class="form-control" maxlength="50" value="" >
+                        <input allow-empty="false" type="text" placeholder="Pendant Description" name="pendantDescription" id="pendantDescription" class="form-control" maxlength="50" value="" >
                     </div>
 
                     <div class="form-group col-md-6">

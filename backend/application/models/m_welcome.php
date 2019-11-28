@@ -11,8 +11,14 @@ class m_welcome extends CI_Model
 		// return $id;
 		$sql= "select * from tmtk_banner where IdBanner = ".$id."";
 		$sReturn=$this->db->query($sql);
-		// var_dump($sReturn);
-		return $sReturn->result_array();
+		// var_dump($sReturn->result_array());
+		if ($sReturn->result_array()<=0){
+			return null;
+		}
+		else{
+			return $sReturn->result_array();
+		}
+		
 	}
 
 	function gf_transact($data) 

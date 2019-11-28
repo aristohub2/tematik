@@ -32,7 +32,7 @@
 
                     <div class="form-group col-md-6">
                         <label>Ring Name</label>
-                        <input allow-empty="false" type="text" placeholder="Ring Title" name="ringName" id="ringName" class="form-control" maxlength="50" value="" >
+                        <input allow-empty="false" type="text" placeholder="Ring Name" name="ringName" id="ringName" class="form-control" maxlength="50" value="" >
                     </div>
 
                      <div class="form-group col-md-6">
