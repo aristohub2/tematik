@@ -122,7 +122,7 @@
                             <span>Extra</span>
                         </li>
                          <li>
-                            <a href=" <?php echo base_url('index.php/c_ring') ?>">
+                            <a href=" <?php echo base_url('index.php/c_attribute') ?>">
                                 <i class="fa fa-calendar"></i>
                                 <span class="menu-text">Attributes</span>
                             </a>
