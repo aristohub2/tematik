@@ -20,7 +20,7 @@ class m_attribute extends CI_Model
                     </tr>';
 			}
 		}
-		var_dump($sReturn);
+		// var_dump($sReturn);
 		return $sReturn;
 		
 	}

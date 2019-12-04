@@ -23,7 +23,7 @@
 
                 <div class="tab">
                   <button class="tablinks" onclick="openCity(event, 'London')">List</button>
-                  <button class="tablinks" onclick="openCity(event, 'Paris')">Add</button>
+                  <button class="tablinks" onclick="openCity(event, 'Paris')">Changes/Add</button>
                 </div>
 
                 <div id="London" class="tabcontent">
@@ -31,6 +31,7 @@
                         <thead>
                             <tr>
                                 <th class="mid">No.</th>
+                                <th class="mid">ID.</th>
                                 <th class="mid">Name</th>
                                 <th class="mid">Description</th>
                                 <th class="mid">Created On</th>
@@ -41,27 +42,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- foreach -->
-                            <tr>
-                                <td class="mid">echo</td>
-                                <td class="mid">echo</td>
-                                <td class="mid">echo</td>
-                                <td class="mid">echo</td>
-                                <td class="mid">kosongin dulu</td>
-                                <td class="mid"><button class="btn btn-primary" type="button"><span><i class="fa fa-pen" aria-hidden="true"></i> Edit</span></button></td>
-                                <td class="mid"><button class="btn btn-danger" type="button"><span><i class="fa fa-trash" aria-hidden="true"></i> Delete</span></button></td>                             
-                                
-                            </tr>
-                            <tr>
-                                <td class="mid">echo</td>
-                                <td class="mid">echo</td>
-                                <td class="mid">echo</td>
-                                <td class="mid">echo</td>
-                                <td class="mid">kosongin dulu</td>
-                                <td class="mid"><button class="btn btn-primary" type="button"><span><i class="fa fa-pen" aria-hidden="true"></i> Edit</span></button></td>
-                                <td class="mid"><button class="btn btn-danger" type="button"><span><i class="fa fa-trash" aria-hidden="true"></i> Delete</span></button></td>                             
-                                
-                            </tr>
+                           <?php echo $list ?>
                         </tbody>
                     </table>
 
@@ -87,7 +68,7 @@
 
                          <div class="form-group col-md-6">
                             <label>Bracelet Description</label>
-                            <textarea name="BraceletDescription" rows="10" cols="30" class="form-control">Banner Description</textarea>
+                            <textarea name="BraceletDescription" rows="10" cols="30" class="form-control" placeholder="Banner Description"></textarea>
                             <!-- <input allow-empty="false" type="text" placeholder="Bracelet Description" name="BraceletDescription" id="BraceletDescription" class="form-control" maxlength="50" value="" > -->
                         </div>
                           <!-- <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea> -->
@@ -106,9 +87,6 @@
                     </form>
 
                 </div>
-
-                
-
                 
 
                 <!-- ini close div row -->
@@ -126,7 +104,33 @@
     <?php echo $js?>
 
 
+    <!-- Modal Buat Edit -->
+    <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete This Data?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="showid">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="target" value="null" onclick="delete_data()">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
 </body>
+
+
+
 <style type="text/css">
     ::-webkit-file-upload-button {
   background: blue;
@@ -201,10 +205,32 @@
 
       
     }
-
-    $(document).ready(function(){
-        openCity(event, 'London');
-
+    $(function() 
+    { 
+      openCity(event, 'London');
     });
+    function show_modal(id){
+      $("#showid").html("You are going to delete data with ID "+id);
+      $("#target").val(id);
+    }
+    function delete_data(){
+      id=$("#target").val();
+      $.post("<?php echo base_url('index.php/c_bracelet/gf_delete'); ?>",
+      {
+        id_data:id
+      },
+      function(data,status){
+        location.reload();
+      });
+    }
+    function edit(id){
+      openCity(event, 'Paris');
+      $("#BraceletId").val(id);
+      $("#hideMode").val("U");
+    }
+    // $(document).ready(function(){
+    //     openCity(event, 'London');
+
+    // });
 </script>
 </html>

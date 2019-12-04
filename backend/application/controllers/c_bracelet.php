@@ -15,8 +15,8 @@ class c_bracelet extends CI_Controller {
 	{
 		$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
-
-		$this->load->view('backend/src/v_bracelet',$data);
+		$data['list'] = $this->m_bracelet->load_list();
+ 		$this->load->view('backend/src/v_bracelet',$data);
 	}
 	public function gf_transact() 
 	{ 
@@ -67,5 +67,8 @@ class c_bracelet extends CI_Controller {
 		// $this->load->view('backend/src/index',$data);
 		header('Location: '.base_url('index.php/c_bracelet').'');
 
+	}
+	function gf_delete(){
+		 $this->m_bracelet->delete();
 	}
 }
