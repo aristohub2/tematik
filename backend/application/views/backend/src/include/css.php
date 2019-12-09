@@ -16,7 +16,11 @@
     <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
 
-    <link rel="stylesheet" href="<?php echo base_url('asset/css/select2.min.css') ?>">
+    
     <link rel="stylesheet" href="<?php echo base_url('asset/css/main.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/sidebar-themes.css') ?>">
+
+    <link rel="stylesheet" href="<?php echo base_url('asset/css/select2.min.css') ?>">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 

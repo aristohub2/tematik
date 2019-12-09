@@ -20,4 +20,8 @@
     <script src="<?php echo base_url('asset/js/main.js') ?>"></script>
 
     <script src="<?php echo base_url('plugins/jquery/jquery-2.1.4.min.js'); ?>"></script>
+
     <script src="<?php echo base_url('asset/js/select2.min.js') ?>"></script>
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+

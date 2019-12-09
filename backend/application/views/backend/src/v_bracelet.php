@@ -1,8 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Backend</title>
+
+    <?php echo $css; ?>
+    <?php echo $js; ?>
+
+    <style type="text/css">
+
+      ::-webkit-file-upload-button {
+        background: blue;
+        color: white;
+        border-radius: 25px;
+      }
+
+
+      /* Style the tab */
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+
+      /* Style the buttons that are used to open the tab content */
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+
+      .mid{
+        text-align: center;
+      }
+
+    </style>    
+</head>
+
+<body>
 
 <?php $this->load->view("backend/src/include/Sidebar.php") ?>
-<?php echo $css; ?>
-<?php echo $js; ?>
-
     
         <!-- tiap page berbeda mainnya disini aja -->
         <!-- page-content  -->
@@ -12,21 +75,16 @@
                 <div class="row">
                     <div class="form-group col-md-12">
                         <h2>Bracelet setting</h2>
-                    </div>
-
-                  
+                    </div>                  
                 </div>
-
-
                 <hr>
                 <!-- ini open div row -->
-
                 <div class="tab">
-                  <button class="tablinks" onclick="openCity(event, 'London')">List</button>
-                  <button class="tablinks" onclick="openCity(event, 'Paris')">Changes/Add</button>
+                  <button class="tablinks" onclick="NavTab(event, 'product_list')">List</button>
+                  <button class="tablinks" onclick="NavTab(event, 'change')">Changes/Add</button>
                 </div>
 
-                <div id="London" class="tabcontent">
+                <div id="product_list" class="tabcontent">
                     <table id="table_id" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
@@ -37,57 +95,48 @@
                                 <th class="mid">Created On</th>
                                 <th class="mid">Photos</th>
                                 <th class="mid">Edit</th>
-                                <th class="mid">Delete</th>
-                                
+                                <th class="mid">Delete</th>                                
                             </tr>
                         </thead>
                         <tbody>
                            <?php echo $list ?>
                         </tbody>
-                    </table>
-
-           
+                    </table>           
                 </div>
 
-
-                <div id="Paris" class="tabcontent">
+                <div id="change" class="tabcontent">
                     
-                    <?php echo form_open_multipart('c_bracelet/gf_transact');?>
-                    
+                    <?php echo form_open_multipart('c_bracelet/gf_transact');?>                    
 
                         <div class="form-group col-md-6">
                              <label>Bracelet Id</label>
-                             <input allow-empty="false" type="text" placeholder="Id Bracelet" name="BraceletId" id="BraceletId" class="form-control" maxlength="50" value="Auto" readonly>
+                             <input allow-empty="false" type="text" placeholder="Id Bracelet" name="BraceletId" id="BraceletId" class="form-control" maxlength="50" value="Auto" readonly required>
                         </div>
-
 
                         <div class="form-group col-md-6">
                             <label>Bracelet Name</label>
-                            <input allow-empty="false" type="text" placeholder="Bracelet Name" name="BraceletName" id="BraceletName" class="form-control" maxlength="50" value="" >
+                            <input allow-empty="false" type="text" placeholder="Bracelet Name" name="BraceletName" id="BraceletName" class="form-control" maxlength="50" value="" required>
                         </div>
 
                          <div class="form-group col-md-6">
                             <label>Bracelet Description</label>
-                            <textarea name="BraceletDescription" rows="10" cols="30" class="form-control" placeholder="Banner Description"></textarea>
-                            <!-- <input allow-empty="false" type="text" placeholder="Bracelet Description" name="BraceletDescription" id="BraceletDescription" class="form-control" maxlength="50" value="" > -->
+                            <textarea name="BraceletDescription" rows="10" cols="30" class="form-control" placeholder="Banner Description" required></textarea>
                         </div>
-                          <!-- <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea> -->
 
                         <div class="form-group col-md-6">
-                            <label>Tag</label>
-                            <select name="tag[]" id="tag" class="form-control select2" multiple="multiple">
+                            <label>Tag</label><br>                          
+                            <select name="tag[]" id="tag" class="form-control select2" multiple="multiple" required>
                               <?php 
                                 foreach($tag as $row)
-                                        { 
-                                          echo '<option>'.$row["AttributeName"].'</option>';
-                                        }
+                                  { 
+                                    echo '<option>'.$row["AttributeName"].'</option>';
+                                  }
                                ?>
                             </select>
-                            <!-- <input allow-empty="false" type="text" placeholder="Bracelet Description" name="BraceletDescription" id="BraceletDescription" class="form-control" maxlength="50" value="" > -->
                         </div>
 
                         <div class="form-group col-md-6">
-                         <input type="file" name="berkas[]" multiple  />
+                         <input type="file" name="berkas[]" multiple required/>
                         </div>
 
                         <input type="hidden" name="hideMode" id="hideMode" value="I" />
@@ -143,60 +192,9 @@
 </body>
 
 
-
-<style type="text/css">
-    ::-webkit-file-upload-button {
-  background: blue;
-  color: white;
-  border-radius: 25px;
-}
-
-
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-.mid{
-    text-align: center;
-}
-
-</style>
-
 <script>
     
-    function openCity(evt, cityName) {
+  function NavTab(evt, cityName) {
       // Declare all variables
       var i, tabcontent, tablinks;
 
@@ -214,21 +212,22 @@
 
       // Show the current tab, and add an "active" class to the button that opened the tab
       document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
+      evt.currentTarget.className += " active";      
+  }
 
-      
-    }
-    $(function() 
-    { 
-      openCity(event, 'London');
+  $(function(){ 
+      NavTab(event, 'product_list');
       $("#tag").select2();
       $('#table_id').DataTable();
-    });
-    function show_modal(id){
+  });
+
+    
+  function show_modal(id){
       $("#showid").html("You are going to delete data with ID "+id);
       $("#target").val(id);
-    }
-    function delete_data(){
+  }
+
+  function delete_data(){
       id=$("#target").val();
       $.post("<?php echo base_url('index.php/c_bracelet/gf_delete'); ?>",
       {
@@ -237,17 +236,14 @@
       function(data,status){
         location.reload();
       });
-    }
-    function edit(id){
-      openCity(event, 'Paris');
+  }
+
+  function edit(id){
+      NavTab(event, 'change');
       $("#BraceletId").val(id);
       $("#hideMode").val("U");
-    }
+  }
 
-    // $(document).ready(function() {
-    //     $("#tag").select2();
-    //     $('#table_id').DataTable();
-    // });
 
 </script>
 </html>
