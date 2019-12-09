@@ -221,6 +221,8 @@
     $(function() 
     { 
       openCity(event, 'London');
+      $("#tag").select2();
+      $('#table_id').DataTable();
     });
     function show_modal(id){
       $("#showid").html("You are going to delete data with ID "+id);
@@ -242,10 +244,10 @@
       $("#hideMode").val("U");
     }
 
-    $(document).ready(function() {
-        $("#tag").select2();
-        $('#table_id').DataTable();
-    });
+    // $(document).ready(function() {
+    //     $("#tag").select2();
+    //     $('#table_id').DataTable();
+    // });
 
 </script>
 </html>
