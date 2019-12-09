@@ -8,7 +8,9 @@ class c_ring extends CI_Controller {
 		parent::__construct(); 
 		$this->load->model(array('m_ring'));
 		//ini buat upload
-		$this->load->helper(array('form', 'url'));
+		if($_SESSION['status'] != 1 ){
+			header('Location: '.base_url("index.php/c_login").'');
+		}
 	} 
 	 
 	public function index()

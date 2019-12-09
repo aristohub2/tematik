@@ -10,7 +10,10 @@ class c_bracelet extends CI_Controller {
 		$this->load->model(array('m_attribute'));
 		
 		//ini buat upload
-		$this->load->helper(array('form', 'url'));
+
+		if($_SESSION['status'] != 1 ){
+			header('Location: '.base_url("index.php/c_login").'');
+		}
 	} 
 	 
 	public function index()
@@ -20,6 +23,7 @@ class c_bracelet extends CI_Controller {
 		$data['list'] = $this->m_bracelet->load_list();
 		$data['tag'] = $this->m_attribute->get_tag_list();
  		$this->load->view('backend/src/v_bracelet',$data);
+
 	}
 	public function gf_transact() 
 	{ 

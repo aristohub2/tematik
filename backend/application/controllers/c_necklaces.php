@@ -8,7 +8,9 @@ class c_necklaces extends CI_Controller {
 		parent::__construct(); 
 		$this->load->model(array('m_necklaces'));
 		//ini buat upload
-		$this->load->helper(array('form', 'url'));
+		if($_SESSION['status'] != 1 ){
+			header('Location: '.base_url("index.php/c_login").'');
+		}
 	} 
 	 
 	public function index()

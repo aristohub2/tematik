@@ -8,8 +8,7 @@ class c_login extends CI_Controller {
 		parent::__construct(); 
 		$this->load->model(array('m_login'));
 		//ini buat upload
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('session');
+
 	} 
 	 
 	public function index()
@@ -17,26 +16,25 @@ class c_login extends CI_Controller {
 		$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
 		$data['error'] = null;
-		$data['error'] = $this->m_login->gf_check_login();
-		// $_SESSION['login_status']=1;
-		// var_dump($_SESSION['login_status']);
-		// var_dump($this->session->userdata('login_status'));
 		
+		if(isset($_POST['username']) && isset($_POST['password'])){
+			$query = $this->m_login->gf_check_login();
+			$login = $query->num_rows();
+
+			$data['error'] = $login;
+
+			if($login != 0){
+				//session timeout bisa di cek di 'application/config/config.php' line 382
+
+				$_SESSION['status']=1;
+				foreach ($query->result_array() as $key) {
+					$_SESSION['id']=$key['id_user'];
+					$_SESSION['user']=$key['user'];		
+				}
+				header('Location: '.base_url("index.php").'');
+			}
+		}
+
 		$this->load->view('backend/src/v_login',$data);
 	}
-
-	// function check(){
-	// 	$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
-	// 	$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
-	// 	$data['error'] = $this->m_login->gf_check_login();
-	// 	// if(){
-	// 	// 	$this->load->view('backend/src/v_login',$data);
-	// 	// }
-	// 	// else{
-
-	// 	// }
-	// 	$this->load->view('backend/src/v_login',$data);
-	// }
-
-
 }

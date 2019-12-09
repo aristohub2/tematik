@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-    <title>Backend</title>
-
-    
-</head>
-
-<body>
     <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
@@ -22,19 +8,19 @@
                 </div>
                 <!-- sidebar-header  -->
                 <div class="sidebar-item sidebar-header d-flex flex-nowrap">
-                    <div class="user-pic">
+                    <!-- <div class="user-pic">
                         <img class="img-responsive img-rounded" src="<?php echo base_url('asset/img/user.jpg') ?>" alt="User picture">
-                    </div>
+                    </div> -->
                     <div class="user-info">
-                        <span class="user-name">Admin
-                        </span>
-                        <span class="user-status">
+                        <span class="user-name">ID       : <?php echo $_SESSION['id']; ?></span>                        
+                        <span class="user-name">Username : <?php echo $_SESSION['user']; ?></span>
+                        <!-- <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
-                        </span>
+                        </span> -->
                     </div>
                 </div>
-                
+
                 <!-- sidebar-menu  -->
                 <div class=" sidebar-item sidebar-menu">
                     <ul>
@@ -116,6 +102,14 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+            </div>
+            <!-- sidebar-footer  -->
+            <div class="sidebar-footer">                
+                <div>
+                    <a href="<?php echo base_url("index.php/c_backend/logout") ?>">
+                        Logout <i class="fa fa-sign-out-alt"></i>
+                    </a>
                 </div>
             </div>
         </nav>
