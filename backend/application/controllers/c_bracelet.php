@@ -7,6 +7,8 @@ class c_bracelet extends CI_Controller {
 	{ 
 		parent::__construct(); 
 		$this->load->model(array('m_bracelet'));
+		$this->load->model(array('m_attribute'));
+		
 		//ini buat upload
 		$this->load->helper(array('form', 'url'));
 	} 
@@ -16,6 +18,7 @@ class c_bracelet extends CI_Controller {
 		$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
 		$data['list'] = $this->m_bracelet->load_list();
+		$data['tag'] = $this->m_attribute->get_tag_list();
  		$this->load->view('backend/src/v_bracelet',$data);
 	}
 	public function gf_transact() 

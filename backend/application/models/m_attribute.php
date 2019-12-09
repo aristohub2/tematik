@@ -55,6 +55,11 @@ class m_attribute extends CI_Model
 		return $sReturn; 
 	}
 
+	function get_tag_list(){
+		$query = $this->db->query("SELECT * FROM `tmtk_attribute`");
+		return $query->result_array();
+	}
+
 	// function gf_transact_uploads($data,$upload_id){
 	// 	$sReturn = null;
 	// 	$hideMode = $this->input->post('hideMode', TRUE);

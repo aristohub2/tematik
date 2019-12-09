@@ -9,7 +9,6 @@
     <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
 
-     
 
     <!-- using local scripts -->
     <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
@@ -17,7 +16,7 @@
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
-
+    <script src="<?php echo base_url('asset/js/select2.min.js') ?>"></script>
     <script src="<?php echo base_url('asset/js/main.js') ?>"></script>
 
     <script src="<?php echo base_url('plugins/jquery/jquery-2.1.4.min.js'); ?>"></script>

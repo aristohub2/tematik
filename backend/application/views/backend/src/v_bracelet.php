@@ -27,7 +27,7 @@
                 </div>
 
                 <div id="London" class="tabcontent">
-                    <table id="table" class="table table-striped table-bordered" style="width:100%">
+                    <table id="table_id" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th class="mid">No.</th>
@@ -72,6 +72,19 @@
                             <!-- <input allow-empty="false" type="text" placeholder="Bracelet Description" name="BraceletDescription" id="BraceletDescription" class="form-control" maxlength="50" value="" > -->
                         </div>
                           <!-- <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea> -->
+
+                        <div class="form-group col-md-6">
+                            <label>Tag</label>
+                            <select name="tag[]" id="tag" class="form-control select2" multiple="multiple">
+                              <?php 
+                                foreach($tag as $row)
+                                        { 
+                                          echo '<option>'.$row["AttributeName"].'</option>';
+                                        }
+                               ?>
+                            </select>
+                            <!-- <input allow-empty="false" type="text" placeholder="Bracelet Description" name="BraceletDescription" id="BraceletDescription" class="form-control" maxlength="50" value="" > -->
+                        </div>
 
                         <div class="form-group col-md-6">
                          <input type="file" name="berkas[]" multiple  />
@@ -181,7 +194,7 @@
 
 </style>
 
-<script type="text/javascript">
+<script>
     
     function openCity(evt, cityName) {
       // Declare all variables
@@ -228,9 +241,11 @@
       $("#BraceletId").val(id);
       $("#hideMode").val("U");
     }
-    // $(document).ready(function(){
-    //     openCity(event, 'London');
 
-    // });
+    $(document).ready(function() {
+        $("#tag").select2();
+        $('#table_id').DataTable();
+    });
+
 </script>
 </html>
