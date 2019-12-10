@@ -16,7 +16,9 @@ class Welcome extends CI_Controller {
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 
 		//data dari database
-		$data['banner'] = $this->mf_welcome->get_banner();
+		$data['img'] = $this->mf_welcome->get_banner();
+		$data['vid'] = $this->mf_welcome->get_banner_vid();
+
 
 
 		$this->load->view('welcome.php',$data);
