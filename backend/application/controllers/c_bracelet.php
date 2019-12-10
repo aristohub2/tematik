@@ -44,7 +44,7 @@ class c_bracelet extends CI_Controller {
             // var_dump( $_FILES);
             // File upload configuration
             $config['upload_path']          = '../frontend/uploads/bracelets/';
-			$config['allowed_types']        = 'gif|jpg|png';
+			$config['allowed_types']        = 'png|pjp|jpg|pjpeg|jpeg|jfif|gif';
 			$config['max_size']             = 10000;
 			$config['max_width']            = 100000;
 			$config['max_height']           = 100000;
