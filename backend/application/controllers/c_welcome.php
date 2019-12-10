@@ -61,9 +61,8 @@ class c_welcome extends CI_Controller {
 		$config['upload_path']          = '../frontend/uploads/banner/';
 		$config['allowed_types']        = 'mp4';
 		$config['max_size']             = 100000;
-		$config['max_width']            = 100000;
-		$config['max_height']           = 100000;
  		$config['encrypt_name'] 		= TRUE;
+ 		$config['remove_spaces']        = true;
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload('berkas')){
 			$error = array('error' => $this->upload->display_errors());
@@ -77,6 +76,7 @@ class c_welcome extends CI_Controller {
 		$this->m_welcome->gf_transact($data);
 		// $this->load->view('backend/src/index',$data);
 		header('Location: '.base_url().'index.php/c_welcome/');
+		// header('Location: '.base_url().'index.php/c_welcome/');
 	}
 
 	// public function aksi_upload(){

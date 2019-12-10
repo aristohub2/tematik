@@ -13,7 +13,7 @@
 
     <style type="text/css">
 
-      ::-webkit-file-upload-button {
+      {
         background: #007bff;
         color: white;
         border: 1px solid #007bff;
@@ -159,10 +159,13 @@
                               <?php 
                                 foreach($tag as $row)
                                   { 
-                                    echo '<option>'.$row["AttributeName"].'</option>';
+                                    echo '<option value="'.$row["IdAttribute"].'">'.$row["AttributeName"].'</option>';
                                   }
                                ?>
+                               <li class="select2-selection__choice" title="qwe" data-select2-id="9"><span class="select2-selection__choice__remove" role="presentation">×</span>qwe</li>
+
                             </select>
+
                         </div>
 
                         <div class="form-group col-md-6">

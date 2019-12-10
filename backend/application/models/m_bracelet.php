@@ -50,10 +50,12 @@ class m_bracelet extends CI_Model
 		$bracelet_id = $this->input->post('BraceletId', TRUE); 
 		$bracelet_name = $this->input->post('BraceletName', TRUE); 
 		$bracelet_description = $this->input->post('BraceletDescription', TRUE);
+
+		$tags = $this->input->post('tag', TRUE); 
 		$upload_id = uniqid();
 		// $upload_id = $data['upload_data']['raw_name'];
-		// var_dump($data);
-
+		// var_dump($tags);
+		$sql = null;
 
 		$sReturn = $upload_id; 
 		$UUID = null;
@@ -66,8 +68,19 @@ class m_bracelet extends CI_Model
 			$this->db->query($sql2);
 		}
 
+
+		$idmax= "SELECT CASE WHEN COUNT(1) = 0 THEN 1 ELSE MAX(IdProduct) + 1 END as max FROM tmtk_bracelet";
+		$idmax=$this->db->query($idmax)->result_array();
+		// var_dump($idmax[0]['max']);
+
+		foreach ($tags as $key) {
+			$sql = "call sp_tmtk_tag('".$hideMode."','null','".$idmax[0]['max']."','".$key."','1');";
+			var_dump($key);
+			$this->db->query($sql);
+		}
+
 		//query product
-		$sql = "call sp_tmtk_bracelet('".$hideMode."','".$bracelet_id."','".$bracelet_name."','".$bracelet_description."','".$upload_id."');";
+		$sql = "call sp_tmtk_bracelet('".$hideMode."','".$idmax[0]['max']."','".$bracelet_name."','".$bracelet_description."','".$upload_id."');";
 
 		$this->db->query($sql);		
 
