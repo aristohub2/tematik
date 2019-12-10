@@ -80,6 +80,17 @@ class m_welcome extends CI_Model
 		// 	$sReturn = json_encode(array("status" => 1, "message" => "Data has been Submitted.")); 
 		// } 
 		return $sReturn; 
-	} 
+	}
+
+	function remove_vid() 
+	{ 
+
+		$sql = "call sp_tmtk_banner('U','0','','','')";
+		$hasil=$this->db->query($sql);
+		
+		return $sReturn; 
+	}
+
+
 }
 ?>

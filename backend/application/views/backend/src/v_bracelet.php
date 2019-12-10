@@ -12,7 +12,7 @@
     <?php echo $js; ?>
 
     <style type="text/css">
-
+      ::-webkit-file-upload-button
       {
         background: #007bff;
         color: white;

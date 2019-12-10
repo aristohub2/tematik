@@ -68,8 +68,13 @@ class c_welcome extends CI_Controller {
 		}
 
 		$this->m_welcome->gf_transact($data);
-		// $this->load->view('backend/src/index',$data);
-		// header('Location: '.base_url().'index.php/c_welcome/');
+		header('Location: '.base_url().'index.php/c_welcome/');
+	}
+
+	public function remove_vid(){
+		$this->m_welcome->remove_vid($data);
+
+		header('Location: '.base_url("index.php/c_welcome").'');
 	}
 
 }

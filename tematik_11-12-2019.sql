@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2019 at 09:58 AM
+-- Generation Time: Dec 10, 2019 at 09:09 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -295,8 +295,8 @@ CREATE TABLE `tmtk_banner` (
 --
 
 INSERT INTO `tmtk_banner` (`IdBanner`, `BannerTitle`, `BannerDescription`, `BannerPath`, `dCreateOn`, `sStatusDelete`, `dDeleteOn`) VALUES
-(0, 'video', 'video', 'uploads/banner/test1.mp4', NULL, NULL, NULL),
-(1, 'asda', 'Banner Descriptionasd', 'uploads/banner/954c09170a07400ea069879b6776dba9.jpg', NULL, NULL, NULL),
+(0, 'vid', 'vid', 'uploads/banner/76f241101fe87abea9843e365bea1e4e.mp4', NULL, NULL, NULL),
+(1, 'we', 'we', 'uploads/banner/751b7d59b5db3c94348c51e145ed4c50.jpg', NULL, NULL, NULL),
 (2, 'about', 'about banner', 'uploads/banner/8124e2882affbe1395d56a38e4e24978.jpg', NULL, NULL, NULL),
 (3, 'Pendant', 'Jade diamond', 'uploads/banner/fb9752c6e58de9c56048095ffd457fbb.jpg', NULL, NULL, NULL),
 (4, 'Earrings', 'Saphire and Jade Stone', 'uploads/banner/ee8623650f09695ff3f3b29bf932d8f8.jpg', NULL, NULL, NULL),
@@ -333,7 +333,9 @@ INSERT INTO `tmtk_bracelet` (`IdProduct`, `Name`, `Description`, `UploadFk`, `dC
 (5, 'Silver Bracelet', 'Tiffany Infinity', '5ddfe4085f805', '2019-11-28', NULL, NULL),
 (6, 'T Square Bracelet', 'T-Series', '5ddfe471a1976', '2019-11-28', NULL, NULL),
 (7, 'Tiger Eye Bracelet', 'T-Series', '5ddfe4cdb341c', '2019-11-28', NULL, NULL),
-(8, 'Bracelet Baru coba', 'qweqweqwe', '5de76e556f1a4', '2019-12-04', 'V', '2019-12-10');
+(8, 'Bracelet Baru coba', 'qweqweqwe', '5de76e556f1a4', '2019-12-04', 'V', '2019-12-10'),
+(9, 'asd', 'asd', '5defaef0cc653', '2019-12-10', NULL, NULL),
+(10, 'zxc', 'zxc', '5defaf69b8a14', '2019-12-10', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -371,8 +373,8 @@ INSERT INTO `tmtk_earrings` (`IdProduct`, `Name`, `Description`, `UploadFk`, `dC
 --
 
 CREATE TABLE `tmtk_login` (
-  `id_user` varchar(5) DEFAULT NULL,
-  `user` varchar(100) DEFAULT NULL,
+  `id_user` int(5) NOT NULL,
+  `user` varchar(100) NOT NULL,
   `password` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -381,7 +383,12 @@ CREATE TABLE `tmtk_login` (
 --
 
 INSERT INTO `tmtk_login` (`id_user`, `user`, `password`) VALUES
-('00000', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+(0, 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(1, 'zxc', '5fa72358f0b4fb4f2c5d7de8c9a41846'),
+(2, 'zxc', '5fa72358f0b4fb4f2c5d7de8c9a41846'),
+(3, 'iop', '9fbfb220e03aa76d424088e43314b0d0'),
+(4, 'ghj', 'ea7d201d1cdd240f3798b2dc51d6adcb'),
+(5, 'p;', '9bb18198f021a1842dd2a52c0f0860e9');
 
 -- --------------------------------------------------------
 
@@ -482,7 +489,8 @@ INSERT INTO `tmtk_product_uploads` (`IdUpload`, `ProductId`, `ProductPath`, `dCr
 ('5ddffa20f22d3', 57, 'uploads/rings/86c7caa5b982255510500b97c0bf3958.jpg', '2019-11-28', NULL, NULL),
 ('5ddffa20f22d3', 58, 'uploads/rings/57f75576e3a07837e2b08b2ff12b1e35.jpg', '2019-11-28', NULL, NULL),
 ('5de76e2d3c087', 59, 'uploads/bracelets/bd6ff2fe6b9a36acf7ad122f9a956b82.PNG', '2019-12-04', NULL, NULL),
-('5de76e556f1a4', 60, 'uploads/bracelets/4c7aac9f0c6f863372a2fafd5f9b5a99.PNG', '2019-12-04', NULL, NULL);
+('5de76e556f1a4', 60, 'uploads/bracelets/4c7aac9f0c6f863372a2fafd5f9b5a99.PNG', '2019-12-04', NULL, NULL),
+('5defaf69b8a14', 61, 'uploads/bracelets/01ac4691465b5cfb917cdbf84da07f7f.jpeg', '2019-12-10', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -507,6 +515,30 @@ CREATE TABLE `tmtk_ring` (
 INSERT INTO `tmtk_ring` (`IdProduct`, `Name`, `Description`, `UploadFk`, `dCreateOn`, `sStatusDelete`, `dDeletedOn`) VALUES
 (1, 'Classic Round Cut St', 'Classic, elegant and symbolic of your everlasting love, this ring will win her heart. It showcases a', '5ddff9c9d7d54', '2019-11-28', '', '0000-00-00'),
 (2, 'Halo Heart Cut Sterl', 'Make the moment you ask for her hand that much more magical with this exquisite bridal set. Expertly', '5ddffa20f22d3', '2019-11-28', '', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tmtk_tag`
+--
+
+CREATE TABLE `tmtk_tag` (
+  `IdTag` int(11) NOT NULL,
+  `IdProduct_fk` int(11) DEFAULT NULL,
+  `IdAttribute_fk` int(11) DEFAULT NULL,
+  `ProductCategory` int(11) DEFAULT NULL,
+  `dCreateOn` date DEFAULT NULL,
+  `sStatusDelete` varchar(50) DEFAULT NULL,
+  `dDeleteOn` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tmtk_tag`
+--
+
+INSERT INTO `tmtk_tag` (`IdTag`, `IdProduct_fk`, `IdAttribute_fk`, `ProductCategory`, `dCreateOn`, `sStatusDelete`, `dDeleteOn`) VALUES
+(1, 10, 1, 1, '2019-12-10', NULL, NULL),
+(2, 10, 2, 1, '2019-12-10', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -537,6 +569,12 @@ ALTER TABLE `tmtk_earrings`
   ADD PRIMARY KEY (`IdProduct`);
 
 --
+-- Indexes for table `tmtk_login`
+--
+ALTER TABLE `tmtk_login`
+  ADD PRIMARY KEY (`id_user`,`user`);
+
+--
 -- Indexes for table `tmtk_pendant`
 --
 ALTER TABLE `tmtk_pendant`
@@ -553,6 +591,12 @@ ALTER TABLE `tmtk_product_uploads`
 --
 ALTER TABLE `tmtk_ring`
   ADD PRIMARY KEY (`IdProduct`,`UploadFk`);
+
+--
+-- Indexes for table `tmtk_tag`
+--
+ALTER TABLE `tmtk_tag`
+  ADD PRIMARY KEY (`IdTag`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
