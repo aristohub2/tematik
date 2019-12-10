@@ -28,15 +28,23 @@
 
                 <!-- Tab content -->
                 <div id="preview" class="tabcontent">
-                  <h3>Current Image</h3>
-                  <img src="<?php echo base_url('./../frontend/'.$img[0]['BannerPath']); ?>" style="max-width: 800px">
-                  
-                  <video autoplay loop muted style="width: 100%: height:100%;">
-                    <source src="<?php echo base_url('./../frontend/'.$vid[0]['BannerPath']); ?>" type="video/mp4">
-                  </video>
-                  
-                  <p> Banner Title : <?php echo $img[0]['BannerTitle'] ?> </p>
-                  <p> Banner Description : <?php echo $img[0]['BannerDescription'] ?> </p>
+                  <div class="row">
+                    <div class="col-md-5">
+                        <h3>Current Image</h3>
+                        <img src="<?php echo base_url('./../frontend/'.$img[0]['BannerPath']); ?>" style="max-width: 100%">
+                        <p> Image Title : <?php echo $img[0]['BannerTitle'] ?> </p>
+                        <p> Image Description : <?php echo $img[0]['BannerDescription'] ?> </p>
+                    </div>
+
+                    <div class="offset-md-1 col-md-5">
+                        <h3>Current Video</h3>
+                        <video autoplay loop muted style="max-width: 100%;">
+                          <source src="<?php echo base_url('./../frontend/'.$vid[0]['BannerPath']); ?>" type="video/mp4">
+                        </video>
+                        <p> Video Title : <?php echo $vid[0]['BannerTitle'] ?> </p>
+                        <p> Video Description : <?php echo $vid[0]['BannerDescription'] ?> </p>
+                    </div>
+                  </div>                            
                 </div>
 
                 <div id="change_img" class="tabcontent">
@@ -57,11 +65,11 @@
                                  <div class="form-group col-md-6">
                                     <label>Banner Description</label>
                                     <!-- <input allow-empty="false" type="text" placeholder="Banner Description" name="BannerDescription" id="BannerDescription" class="form-control" maxlength="50" value="" > -->
-                                    <textarea name="BannerDescription" rows="10" cols="30" class="form-control">Banner Description</textarea>
+                                    <textarea name="BannerDescription" placeholder="Banner Description" rows="10" cols="30" class="form-control"></textarea>
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                 <input type="file" name="berkas"  />
+                                 <input type="file" name="berkas" accept="image/png,image/jpeg,image/gif" />
                                 </div>
 
                                 <input type="hidden" name="hideMode" id="hideMode" value="U" />
@@ -94,11 +102,11 @@
                                  <div class="form-group col-md-6">
                                     <label>Banner Description</label>
                                     <!-- <input allow-empty="false" type="text" placeholder="Banner Description" name="BannerDescription" id="BannerDescription" class="form-control" maxlength="50" value="" > -->
-                                    <textarea name="BannerDescription" rows="10" cols="30" class="form-control">Banner Description</textarea>
+                                    <textarea name="BannerDescription" placeholder="Banner Description" rows="10" cols="30" class="form-control"></textarea>
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                 <input type="file" name="berkas"  />
+                                 <input type="file" name="berkas" accept="video/mp4" />
                                 </div>
 
                                 <input type="hidden" name="hideMode" id="hideMode" value="U" />

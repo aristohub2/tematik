@@ -9,7 +9,16 @@ class mf_welcome extends CI_Model
 
 	public function get_banner(){
 
-		$query = $this->db->query("SELECT * FROM tmtk_banner LIMIT 1");
+		$query = $this->db->query("SELECT * FROM tmtk_banner WHERE IdBanner = 1 LIMIT 1");
+
+		foreach ($query->result_array() as $key) {
+			return $key["BannerPath"];
+		}
+	}
+
+	public function get_banner_vid(){
+
+		$query = $this->db->query("SELECT * FROM tmtk_banner WHERE IdBanner = 0 LIMIT 1");
 
 		foreach ($query->result_array() as $key) {
 			return $key["BannerPath"];

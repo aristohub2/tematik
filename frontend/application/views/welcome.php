@@ -37,9 +37,9 @@
   <!--/ Nav End /-->
 
   <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image video-container" style="background-image: url(<?php echo base_url($banner); ?>)">
+  <div id="home" class="intro route bg-image video-container" style="background-image: url(<?php echo base_url($img); ?>)">
     <video autoplay loop muted style="width: 100%: height:100%;">
-      <source src="<?php echo base_url('assets/'); ?>video/test1.mp4" type="video/mp4">
+      <source src="<?php echo base_url($vid); ?>" type="video/mp4">
     </video>
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">

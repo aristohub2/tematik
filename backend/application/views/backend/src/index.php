@@ -79,7 +79,6 @@
     </div>
     <!-- page-wrapper -->
 
-    <?php echo $js?>
 
 </body>
 
