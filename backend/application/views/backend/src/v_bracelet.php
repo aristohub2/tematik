@@ -150,7 +150,7 @@
 
                          <div class="form-group col-md-6">
                             <label>Bracelet Description</label>
-                            <textarea name="BraceletDescription" rows="10" cols="30" class="form-control" placeholder="Banner Description" required></textarea>
+                            <textarea id="BraceletDesc" name="BraceletDescription" rows="10" cols="30" class="form-control" placeholder="Banner Description" required></textarea>
                         </div>
 
                         <div class="form-group col-md-6">
@@ -246,9 +246,12 @@
       });
   }
 
-  function edit(id){
+  function edit(id,name,desc){
       NavTab(event, 'change');
       $("#BraceletId").val(id);
+      $("#BraceletName").val(name);
+      $("#BraceletDesc").val(desc);
+      
       $("#hideMode").val("U");
   }
 

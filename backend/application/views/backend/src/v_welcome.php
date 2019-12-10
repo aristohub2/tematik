@@ -32,7 +32,7 @@
                   <img src="<?php echo base_url('./../frontend/'.$img[0]['BannerPath']); ?>" style="max-width: 800px">
                   
                   <video autoplay loop muted style="width: 100%: height:100%;">
-                    <source src="<?php echo base_url('./../frontend/'.$img[0]['BannerPath']); ?>" type="video/mp4">
+                    <source src="<?php echo base_url('./../frontend/'.$vid[0]['BannerPath']); ?>" type="video/mp4">
                   </video>
                   
                   <p> Banner Title : <?php echo $img[0]['BannerTitle'] ?> </p>

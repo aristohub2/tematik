@@ -26,7 +26,7 @@ class m_welcome extends CI_Model
 		// var_dump($data);
 		// var_dump($_POST);
 		$hideMode = $this->input->post('hideMode', TRUE);
-		$banner_id = 1; 
+		$banner_id = $_POST['BannerId']; 
 		$banner_title = $this->input->post('BannerTitle', TRUE); 
 		$banner_description = $this->input->post('BannerDescription', TRUE);
 		$banner_path = "uploads/banner/".$data['upload_data']['file_name'];
