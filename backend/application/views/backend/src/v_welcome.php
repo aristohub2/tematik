@@ -20,12 +20,14 @@
                 <hr>
                 <!-- ini open div row -->
                 <div class="tab">
-                  <button class="tablinks" onclick="openCity(event, 'London')">View</button>
-                  <button class="tablinks" onclick="openCity(event, 'Paris')">Change</button>
+                  <button class="tablinks" onclick="openCity(event, 'preview')">View</button>
+                  <button class="tablinks" onclick="openCity(event, 'change_img')">Change Image</button>
+                  <button class="tablinks" onclick="openCity(event, 'change_vid')">Change Video</button>
+                  
                 </div>
 
                 <!-- Tab content -->
-                <div id="London" class="tabcontent">
+                <div id="preview" class="tabcontent">
                   <h3>Current Image</h3>
                   <img src="<?php echo base_url('./../frontend/'.$img[0]['BannerPath']); ?>" style="max-width: 800px">
                   
@@ -37,7 +39,7 @@
                   <p> Banner Description : <?php echo $img[0]['BannerDescription'] ?> </p>
                 </div>
 
-                <div id="Paris" class="tabcontent">
+                <div id="change_img" class="tabcontent">
 
                             <?php echo form_open_multipart('c_welcome/gf_transact');?>
                                 
@@ -74,12 +76,42 @@
            
                 </div>
 
-                <div id="Tokyo" class="tabcontent">
-                  <h3>Tokyo</h3>
-                  <p>Tokyo is the capital of Japan.</p>
+                <div id="change_vid" class="tabcontent">
+
+                            <?php echo form_open_multipart('c_welcome/gf_transact_vid');?>
+                                
+
+                                <div class="form-group col-md-6">
+                                     <label>Banner Id</label>
+                                     <input allow-empty="false" type="text" placeholder="Id Attribute" name="BannerId" id="BannerId" class="form-control" maxlength="50" value="0" readonly>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Banner Title</label>
+                                    <input allow-empty="false" type="text" placeholder="Banner Title" name="BannerTitle" id="BannerTitle" class="form-control" maxlength="50" value="" >
+                                </div>
+
+                                 <div class="form-group col-md-6">
+                                    <label>Banner Description</label>
+                                    <!-- <input allow-empty="false" type="text" placeholder="Banner Description" name="BannerDescription" id="BannerDescription" class="form-control" maxlength="50" value="" > -->
+                                    <textarea name="BannerDescription" rows="10" cols="30" class="form-control">Banner Description</textarea>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                 <input type="file" name="berkas"  />
+                                </div>
+
+                                <input type="hidden" name="hideMode" id="hideMode" value="U" />
+
+                                <div class="form-group col-md-6 text-right">
+                                 <input type="submit" class="btn btn-primary" value="upload" />
+                                </div>
+                                
+                             
+                            </form>
+
+           
                 </div>
-
-
 
                 <!-- ini close div row -->
                 <!-- sampe sini -->

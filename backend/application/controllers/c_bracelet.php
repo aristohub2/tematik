@@ -62,13 +62,9 @@ class c_bracelet extends CI_Controller {
 				$data = array('upload_data' => $this->upload->data());
 				// var_dump($data);
 				$this->m_bracelet->gf_transact_uploads($data,$upload_id);
-			}
-
-
-			
+			}			
 			// // $this->load->view('backend/src/index',$data);
-			// // header('Location: '.base_url('index.php/c_bracelet').'');
-         
+			// // header('Location: '.base_url('index.php/c_bracelet').'');         
         }
 
 		// $this->load->view('backend/src/index',$data);

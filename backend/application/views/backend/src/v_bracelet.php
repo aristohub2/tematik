@@ -14,9 +14,16 @@
     <style type="text/css">
 
       ::-webkit-file-upload-button {
-        background: blue;
+        background: #007bff;
         color: white;
-        border-radius: 25px;
+        border: 1px solid #007bff;
+        padding: 8px;
+        border-radius: 5px;
+      }
+
+      ::-webkit-file-upload-button:hover {
+        cursor: pointer;
+        background: #005bdf;
       }
 
 
@@ -66,6 +73,28 @@
 <body>
 
 <?php $this->load->view("backend/src/include/Sidebar.php") ?>
+
+
+<!-- Modal Buat Edit -->
+        <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete This Data?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="showid">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="target" value="null" onclick="delete_data()">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
     
         <!-- tiap page berbeda mainnya disini aja -->
         <!-- page-content  -->
@@ -94,6 +123,7 @@
                                 <th class="mid">Description</th>
                                 <th class="mid">Created On</th>
                                 <th class="mid">Photos</th>
+                                <th class="mid">Tag</th>                                
                                 <th class="mid">Edit</th>
                                 <th class="mid">Delete</th>                                
                             </tr>
@@ -125,7 +155,7 @@
 
                         <div class="form-group col-md-6">
                             <label>Tag</label><br>                          
-                            <select name="tag[]" id="tag" class="form-control select2" multiple="multiple" required>
+                            <select name="tag[]" id="tag" class="form-control select2" style="width: 100%" multiple="multiple" required>
                               <?php 
                                 foreach($tag as $row)
                                   { 
@@ -136,7 +166,7 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                         <input type="file" name="berkas[]" multiple required/>
+                         <input type="file" name="berkas[]" accept="image/png,image/jpeg,image/gif" multiple required/>
                         </div>
 
                         <input type="hidden" name="hideMode" id="hideMode" value="I" />
@@ -161,31 +191,7 @@
 
 
     </div>
-    <!-- page-wrapper -->
-
-    <?php echo $js?>
-
-
-    <!-- Modal Buat Edit -->
-    <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Delete This Data?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="showid">
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-danger" id="target" value="null" onclick="delete_data()">Delete</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- page-wrapper -->  
 
 
 
@@ -194,7 +200,7 @@
 
 <script>
     
-  function NavTab(evt, cityName) {
+  function NavTab(evt, action) {
       // Declare all variables
       var i, tabcontent, tablinks;
 
@@ -211,14 +217,16 @@
       }
 
       // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(cityName).style.display = "block";
+      document.getElementById(action).style.display = "block";
       evt.currentTarget.className += " active";      
   }
 
   $(function(){ 
       NavTab(event, 'product_list');
       $("#tag").select2();
-      $('#table_id').DataTable();
+      $('#table_id').DataTable( {
+        responsive: true
+      } );
   });
 
     
