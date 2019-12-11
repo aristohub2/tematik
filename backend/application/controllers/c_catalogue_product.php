@@ -7,7 +7,7 @@ class c_catalogue_product extends CI_Controller {
 	{ 
 		parent::__construct(); 
 		$this->load->model(array('m_catalogue_product'));
-		//ini buat upload
+
 		if($_SESSION['status'] != 1 ){
 			header('Location: '.base_url("index.php/c_login").'');
 		}
@@ -21,17 +21,17 @@ class c_catalogue_product extends CI_Controller {
 		$data['img2'] = $this->m_catalogue_product->gf_load_data(8);
 		$data['img3'] = $this->m_catalogue_product->gf_load_data(9);
 		$data['img4'] = $this->m_catalogue_product->gf_load_data(10);
-		// var_dump($data['img']);
+
 		$this->load->view('backend/src/v_catalogue_product',$data);
 	}
 	public function gf_transact() 
 	{ 
 
 		$config['upload_path']          = '../frontend/uploads/banner/';
-		$config['allowed_types']        = 'gif|jpg|png|mp4';
-		$config['max_size']             = 10000;
-		$config['max_width']            = 100000;
-		$config['max_height']           = 100000;
+		$config['allowed_types']        = 'png|pjp|jpg|pjpeg|jpeg|jfif|gif';
+		$config['max_size']             = 1000000;
+		$config['max_width']            = 1000000;
+		$config['max_height']           = 1000000;
  		$config['encrypt_name'] 		= TRUE;
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload('berkas')){
@@ -44,24 +44,7 @@ class c_catalogue_product extends CI_Controller {
 
 
 		$this->m_catalogue_product->gf_transact($data);
-		// $this->load->view('backend/src/index',$data);
+
 		header('Location: '.base_url().'index.php/c_catalogue_product/');
 	}
-	// public function aksi_upload(){
-	// 	$config['upload_path']          = './uploads/';
-	// 	$config['allowed_types']        = 'gif|jpg|png';
-	// 	$config['max_size']             = 10000;
-	// 	$config['max_width']            = 100000;
-	// 	$config['max_height']           = 100000;
- 
-	// 	$this->load->library('upload', $config);
- 
-	// 	if ( ! $this->upload->do_upload('berkas')){
-	// 		$error = array('error' => $this->upload->display_errors());
-	// 		var_dump($error);
-	// 	}else{
-	// 		$data = array('upload_data' => $this->upload->data());
-	// 		var_dump($error);
-	// 	}
-	// }
 }
