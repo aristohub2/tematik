@@ -45,7 +45,7 @@
             <div class="container-fluid p-5">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <h2>attribute setting</h2>
+                        <h2>Company setting</h2>
                     </div>
 
                   
@@ -76,10 +76,11 @@
                     <table class="table border-bottom">
                       <thead>
                         <tr>
-                          <th scope="col">No.</th>
-                          <th scope="col">Year</th>
-                          <th scope="col">Description</th>
-                          <th scope="col">Action</th>                          
+                          <th >No.</th>
+                          <th >Year</th>
+                          <th >Description</th>
+                          <th class="mid">Edit</th>
+                          <th class="mid">Delete</th>                           
                         </tr>
                       </thead>
                       <tbody>
@@ -124,9 +125,7 @@
 
                       <div class="form-group col-md-6 text-right">
                        <button id="canceledit" type="button" class="btn btn-primary" onclick="flush()"> Cancel Edit </button>
-                      </div>
-
-                      
+                      </div>                      
 
                       <div class="form-group col-md-6">
                           <label>Year</label>
