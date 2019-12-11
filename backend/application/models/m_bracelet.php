@@ -11,6 +11,7 @@ class m_bracelet extends CI_Model
 	$result= $this->db->query($sql);
 	$counter=1;
 	$sReturn=null;
+	// var_dump($sql);
 	if($result->num_rows()>0){
 		foreach ($result->result_array() as $row)
 		{
@@ -65,6 +66,7 @@ class m_bracelet extends CI_Model
 			$result= $this->db->query($sql);
 			$id_fk=$result->result_array();
 			$sql2 = "call sp_tmtk_product_uploads('D','".$id_fk['0']['UploadFk']."','null','null');";
+			var_dump($sql2);
 			$this->db->query($sql2);
 		}
 
@@ -73,16 +75,37 @@ class m_bracelet extends CI_Model
 		$idmax=$this->db->query($idmax)->result_array();
 		// var_dump($idmax[0]['max']);
 
-		foreach ($tags as $key) {
-			$sql = "call sp_tmtk_tag('".$hideMode."','null','".$idmax[0]['max']."','".$key."','1');";
-			var_dump($key);
-			$this->db->query($sql);
-		}
+
+
+		$sql ="call sp_tmtk_tag('D','null','".$bracelet_id."','null','1');";
+		$this->db->query($sql);
+
 
 		//query product
-		$sql = "call sp_tmtk_bracelet('".$hideMode."','".$idmax[0]['max']."','".$bracelet_name."','".$bracelet_description."','".$upload_id."');";
+		if($hideMode=="U"){
+			$sql = "call sp_tmtk_bracelet('".$hideMode."','".$bracelet_id."','".$bracelet_name."','".$bracelet_description."','".$upload_id."');";
+			$this->db->query($sql);
+			foreach ($tags as $key) {
+				$sql = "call sp_tmtk_tag('I','null','".$bracelet_id."','".$key."','1');";
+				// var_dump($key);
+				$this->db->query($sql);
+				var_dump($sql);
+			}
 
-		$this->db->query($sql);		
+		}
+		else{
+			$sql = "call sp_tmtk_bracelet('".$hideMode."','".$idmax[0]['max']."','".$bracelet_name."','".$bracelet_description."','".$upload_id."');";
+			$this->db->query($sql);
+				foreach ($tags as $key) {
+					$sql = "call sp_tmtk_tag('I','null','".$idmax[0]['max']."','".$key."','1');";
+					// var_dump($key);
+					$this->db->query($sql);
+					var_dump($sql);
+				}
+		}
+		
+	    // var_dump($sql);	
+				
 
 		return $sReturn; 
 	}
@@ -96,6 +119,55 @@ class m_bracelet extends CI_Model
 		$this->db->query($sql);
 
 		return $sReturn; 
+	}
+	function get_tag_list($load){
+		// kalo load = 0 dia cuma load list, kalo 1 dia load sesuai database
+		$id_data = $this->input->post('id_data', TRUE);;
+		$sReturn=null;
+		$load_tag = null;
+		$hit=0;// biar dia kgk duplikat
+		$query = $this->db->query("SELECT * FROM `tmtk_attribute`");
+		$tag= $query->result_array();
+
+
+
+		if($load){
+			$load_tag= $this->db->query("SELECT IdAttribute_fk FROM `tmtk_tag` where IdProduct_fk = ".$id_data." and ProductCategory=1 and sStatusDelete is null");
+			$load_tag = $load_tag->result_array();
+			// var_dump("SELECT IdAttribute_fk FROM `tmtk_tag` where IdProduct_fk = ".$id_data."");
+			// foreach($load_tag as $row)
+			// { 
+			// 	var_dump($row["IdAttribute_fk"]);
+	  //       }
+
+
+			foreach($tag as $row)
+			{ 
+				$selected = "";
+				foreach($load_tag as $key)
+				{ 
+					if($row["IdAttribute"]==$key["IdAttribute_fk"]){
+						$selected='selected';
+						break;
+					}
+		        }
+		        $sReturn.='<option value="'.$row["IdAttribute"].'" '.$selected.'>'.$row["AttributeName"].'</option>';
+		        
+	        }
+	        echo $sReturn;
+		}
+		else{
+			foreach($tag as $row)
+			{ 
+				$sReturn.='<option value="'.$row["IdAttribute"].'">'.$row["AttributeName"].'</option>';
+	        }
+	        return $sReturn;
+		}
+
+		
+		// var_dump($sReturn);
+		
+        
 	}
 }
 ?>

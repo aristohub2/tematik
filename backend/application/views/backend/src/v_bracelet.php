@@ -12,7 +12,7 @@
     <?php echo $js; ?>
 
     <style type="text/css">
-      ::-webkit-file-upload-button
+
       {
         background: #007bff;
         color: white;
@@ -156,13 +156,7 @@
                         <div class="form-group col-md-6">
                             <label>Tag</label><br>                          
                             <select name="tag[]" id="tag" class="form-control select2" style="width: 100%" multiple="multiple" required>
-                              <?php 
-                                foreach($tag as $row)
-                                  { 
-                                    echo '<option value="'.$row["IdAttribute"].'">'.$row["AttributeName"].'</option>';
-                                  }
-                               ?>
-                               <li class="select2-selection__choice" title="qwe" data-select2-id="9"><span class="select2-selection__choice__remove" role="presentation">×</span>qwe</li>
+                               
 
                             </select>
 
@@ -230,6 +224,9 @@
       $('#table_id').DataTable( {
         responsive: true
       } );
+      console.log('<?php echo $tag ?>');
+      $("#tag").append('<?php echo $tag ?>');
+       
   });
 
     
@@ -254,7 +251,20 @@
       $("#BraceletId").val(id);
       $("#BraceletName").val(name);
       $("#BraceletDesc").val(desc);
+// .attr('selected','selected')
+
       
+      $.post("<?php echo base_url('index.php/c_bracelet/gf_tag_database'); ?>",
+      {
+        id_data:id
+      },
+      function(data,status){
+         $("#tag").empty();
+         console.log(data);
+         $("#tag").append(data);
+      });
+
+
       $("#hideMode").val("U");
   }
 

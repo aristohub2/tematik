@@ -1,4 +1,5 @@
 
+
 <?php $this->load->view("backend/src/include/Sidebar.php") ?>
 <?php echo $css; ?>
 
@@ -10,7 +11,7 @@
             <div class="container-fluid p-5">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <h2>Home Page Banner setting</h2>
+                        <h2>Offer Page Setting</h2>
                     </div>
 
 
@@ -20,33 +21,78 @@
                 <hr>
                 <!-- ini open div row -->
                 <div class="tab">
-                  <button class="tablinks" onclick="openCity(event, 'preview')">View</button>
-                  <button class="tablinks" onclick="openCity(event, 'change_img')">Change Image</button>
-                  <button class="tablinks" onclick="openCity(event, 'change_vid')">Change Video</button>
-                  
+                  <button class="tablinks" onclick="openCity(event, 'London')">View</button>
+                  <button class="tablinks" onclick="openCity(event, 'Paris')">Change</button>
                 </div>
 
                 <!-- Tab content -->
-                <div id="preview" class="tabcontent">
-                  <h3>Current Image</h3>
-                  <img src="<?php echo base_url('./../frontend/'.$img[0]['BannerPath']); ?>" style="max-width: 800px">
-                  
-                  <video autoplay loop muted style="width: 100%: height:100%;">
-                    <source src="<?php echo base_url('./../frontend/'.$vid[0]['BannerPath']); ?>" type="video/mp4">
-                  </video>
-                  
-                  <p> Banner Title : <?php echo $img[0]['BannerTitle'] ?> </p>
-                  <p> Banner Description : <?php echo $img[0]['BannerDescription'] ?> </p>
+                <div id="London" class="tabcontent">
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <img src="<?php echo base_url('./../frontend/'.$img1[0]['BannerPath']); ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Banner Title : <?php echo $img1[0]['BannerTitle'] ?></h5>
+                          <p class="card-text">Banner Banner Description : <?php echo $img1[0]['BannerDescription'] ?></p>
+                          <a href="#" class="btn btn-primary" onclick="change(11)">Edit This Banner</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <img src="<?php echo base_url('./../frontend/'.$img2[0]['BannerPath']); ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Banner Title : <?php echo $img2[0]['BannerTitle'] ?></h5>
+                          <p class="card-text">Banner Banner Description : <?php echo $img2[0]['BannerDescription'] ?></p>
+                          <a href="#" class="btn btn-primary" onclick="change(12)">Edit This Banner</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <img src="<?php echo base_url('./../frontend/'.$img3[0]['BannerPath']); ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Banner Title : <?php echo $img3[0]['BannerTitle'] ?></h5>
+                          <p class="card-text">Banner Banner Description : <?php echo $img3[0]['BannerDescription'] ?></p>
+                          <a href="#" class="btn btn-primary" onclick="change(13)">Edit This Banner</a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <img src="<?php echo base_url('./../frontend/'.$img4[0]['BannerPath']); ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Banner Title : <?php echo $img4[0]['BannerTitle'] ?></h5>
+                          <p class="card-text">Banner Banner Description : <?php echo $img4[0]['BannerDescription'] ?></p>
+                          <a href="#" class="btn btn-primary" onclick="change(14)">Edit This Banner</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
                 </div>
 
-                <div id="change_img" class="tabcontent">
+                <div id="Paris" class="tabcontent">
 
-                            <?php echo form_open_multipart('c_welcome/gf_transact');?>
+                            <?php echo form_open_multipart('c_offer/gf_transact');?>
                                 
 
                                 <div class="form-group col-md-6">
                                      <label>Banner Id</label>
-                                     <input allow-empty="false" type="text" placeholder="Id Attribute" name="BannerId" id="BannerId" class="form-control" maxlength="50" value="1" readonly>
+                                     <input allow-empty="false" type="text" placeholder="Id Attribute" name="BannerId" id="BannerId" class="form-control" maxlength="50" value="Auto" readonly>
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -76,42 +122,12 @@
            
                 </div>
 
-                <div id="change_vid" class="tabcontent">
-
-                            <?php echo form_open_multipart('c_welcome/gf_transact_vid');?>
-                                
-
-                                <div class="form-group col-md-6">
-                                     <label>Banner Id</label>
-                                     <input allow-empty="false" type="text" placeholder="Id Attribute" name="BannerId" id="BannerId" class="form-control" maxlength="50" value="0" readonly>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <label>Banner Title</label>
-                                    <input allow-empty="false" type="text" placeholder="Banner Title" name="BannerTitle" id="BannerTitle" class="form-control" maxlength="50" value="" >
-                                </div>
-
-                                 <div class="form-group col-md-6">
-                                    <label>Banner Description</label>
-                                    <!-- <input allow-empty="false" type="text" placeholder="Banner Description" name="BannerDescription" id="BannerDescription" class="form-control" maxlength="50" value="" > -->
-                                    <textarea name="BannerDescription" rows="10" cols="30" class="form-control">Banner Description</textarea>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                 <input type="file" name="berkas"  />
-                                </div>
-
-                                <input type="hidden" name="hideMode" id="hideMode" value="U" />
-
-                                <div class="form-group col-md-6 text-right">
-                                 <input type="submit" class="btn btn-primary" value="upload" />
-                                </div>
-                                
-                             
-                            </form>
-
-           
+                <div id="Tokyo" class="tabcontent">
+                  <h3>Tokyo</h3>
+                  <p>Tokyo is the capital of Japan.</p>
                 </div>
+
+
 
                 <!-- ini close div row -->
                 <!-- sampe sini -->
@@ -176,6 +192,11 @@
 </style>
 
 <script type="text/javascript">
+
+  function change(id){
+    $("#BannerId").val(id);
+  }
+
     function openCity(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
