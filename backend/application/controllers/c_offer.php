@@ -36,7 +36,7 @@ class c_offer extends CI_Controller {
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload('berkas')){
 			$error = array('error' => $this->upload->display_errors());
-			var_dump($error);
+			// var_dump($error);
 		}else{
 			$data = array('upload_data' => $this->upload->data());
 			var_dump($data);
@@ -45,6 +45,6 @@ class c_offer extends CI_Controller {
 
 		$this->m_offer->gf_transact($data);
 
-		header('Location: '.base_url().'index.php/c_offer/');
+		// header('Location: '.base_url().'index.php/c_offer/');
 	}
 }

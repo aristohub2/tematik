@@ -67,7 +67,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Banner Title : <?php echo $img1[0]['BannerTitle'] ?></h5>
                           <p class="card-text">Banner Banner Description : <?php echo $img1[0]['BannerDescription'] ?></p>
-                          <a href="#" class="btn btn-primary" onclick="change(3)">Edit This Banner</a>
+                          <a href="#" class="btn btn-primary" onclick="change(11)">Edit This Banner</a>
                         </div>
                       </div>
                     </div>
@@ -82,7 +82,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Banner Title : <?php echo $img2[0]['BannerTitle'] ?></h5>
                           <p class="card-text">Banner Banner Description : <?php echo $img2[0]['BannerDescription'] ?></p>
-                          <a href="#" class="btn btn-primary" onclick="change(4)">Edit This Banner</a>
+                          <a href="#" class="btn btn-primary" onclick="change(12)">Edit This Banner</a>
                         </div>
                       </div>
                     </div>
@@ -99,7 +99,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Banner Title : <?php echo $img3[0]['BannerTitle'] ?></h5>
                           <p class="card-text">Banner Banner Description : <?php echo $img3[0]['BannerDescription'] ?></p>
-                          <a href="#" class="btn btn-primary" onclick="change(5)">Edit This Banner</a>
+                          <a href="#" class="btn btn-primary" onclick="change(13)">Edit This Banner</a>
                         </div>
                       </div>
                     </div>
@@ -115,7 +115,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Banner Title : <?php echo $img4[0]['BannerTitle'] ?></h5>
                           <p class="card-text">Banner Banner Description : <?php echo $img4[0]['BannerDescription'] ?></p>
-                          <a href="#" class="btn btn-primary" onclick="change(6)">Edit This Banner</a>
+                          <a href="#" class="btn btn-primary" onclick="change(14)">Edit This Banner</a>
                         </div>
                       </div>
                     </div>
