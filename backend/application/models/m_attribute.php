@@ -18,7 +18,7 @@ class m_attribute extends CI_Model
 		        $sReturn.='
 		        <tr>
                   	<th scope="row">'.$row['IdAttribute'].'</th>
-                  	<td>'.$row['AttributeName'].'</td>
+                  	<td><div class="pills">'.$row['AttributeName'].'</div></td>
                   	<td class="mid"><button class="btn btn-primary" type="button" onclick="edit('.$row['IdAttribute'].',\''.$row['AttributeName'].'\')"><span><i class="fa fa-pen" aria-hidden="true"></i> Edit</span></button></td>
               		<td class="mid"><button class="btn btn-danger" type="button" data-toggle="modal" data-target="#editmodal" id=target value="" onclick="show_modal('.$row['IdAttribute'].')"><span><i class="fa fa-trash" aria-hidden="true"></i> Delete</span></button></td>
                 </tr>';
