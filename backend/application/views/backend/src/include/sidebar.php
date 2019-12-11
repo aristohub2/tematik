@@ -1,3 +1,26 @@
+ 
+
+
+
+    
+        
+
+
+
+
+
+    <div><nav class="navbar navbar-expand-md navbar-light bg-dark ">
+            <div class="container-fluid">
+            <button id="toggle-sidebar"  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto " >
+
+                        
+                </ul>
+            </div>
+        </div></div>
 
     <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
         <nav id="sidebar" class="sidebar-wrapper">
@@ -124,3 +147,6 @@
                 </div>
             </div>
         </nav>
+
+
+       

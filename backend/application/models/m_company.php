@@ -60,7 +60,7 @@ class m_company extends CI_Model
 
 	function gf_transact_about() 
 	{ 
-		$hideMode = $this->input->post('hideMode', TRUE);
+		$hideMode = "U";
 
 		$id_abt = 0;
 		$desc_abt =  $this->input->post('desc_abt', TRUE);

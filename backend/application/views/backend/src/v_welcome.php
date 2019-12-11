@@ -85,6 +85,30 @@
 
                 </div>
 
+                <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete This Data?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body" id="showid">
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a href="<?php echo base_url('index.php/c_welcome/remove_vid') ?>"><button type="button" class="btn btn-danger">Remove</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
 
                 <hr>
                 <div class="tab">
@@ -115,7 +139,7 @@
                         <hr>
                         <p> Video Title : <?php echo $vid[0]['BannerTitle'] ?> </p>
                         <p> Video Description : <?php echo $vid[0]['BannerDescription'] ?> </p>
-                        <a href="<?php echo base_url('index.php/c_welcome/remove_vid') ?>"><button type="button" class="btn btn-danger">Remove</button></a>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#editmodal" onclick="show_modal()">Remove</button>
                     </div>
                   </div>                            
                 </div>
@@ -229,6 +253,9 @@
         }
         counter++;
       });
+  }
+  function show_modal(){
+   $("#showid").html("Are you sure ?");
   }
 
   $(function(){ 
