@@ -6,6 +6,7 @@ class m_bracelet extends CI_Model
 	{ 
 		$this->load->database();
 	}
+
 	function load_list(){
 	$sql = "SELECT DISTINCT * FROM tmtk_bracelet a INNER JOIN tmtk_product_uploads b WHERE b.IdUpload=a.UploadFk AND a.sStatusDelete IS NULL AND b.sStatusDelete IS NULL GROUP BY 1";
 	$result= $this->db->query($sql);
@@ -48,12 +49,14 @@ class m_bracelet extends CI_Model
 	return $sReturn;
 
 	}
+
 	function delete(){
 		$id = $this->input->post('id_data', TRUE);
 		$sql = "call sp_tmtk_bracelet('D','".$id."','null','null','null');";
 		$this->db->query($sql);
 		return null;
 	}
+
 	function gf_transact() 
 	{ 
 		// var_dump($_POST);
@@ -88,11 +91,8 @@ class m_bracelet extends CI_Model
 		$idmax=$this->db->query($idmax)->result_array();
 		// var_dump($idmax[0]['max']);
 
-
-
 		$sql ="call sp_tmtk_tag('D','null','".$bracelet_id."','null','1');";
 		$this->db->query($sql);
-
 
 		//query product
 		if($hideMode=="U"){

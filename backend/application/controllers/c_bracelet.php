@@ -69,7 +69,7 @@ class c_bracelet extends CI_Controller {
         }
 
 		// $this->load->view('backend/src/index',$data);
-		// header('Location: '.base_url('index.php/c_bracelet').'');
+		header('Location: '.base_url('index.php/c_bracelet').'');
 
 	}
 	function gf_tag_database(){

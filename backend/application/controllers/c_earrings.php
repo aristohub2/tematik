@@ -7,18 +7,24 @@ class c_earrings extends CI_Controller {
 	{ 
 		parent::__construct(); 
 		$this->load->model(array('m_earrings'));
+		$this->load->model(array('m_attribute'));
+		
 		//ini buat upload
+
 		if($_SESSION['status'] != 1 ){
 			header('Location: '.base_url("index.php/c_login").'');
 		}
-	} 
+	}  
 	 
 	public function index()
 	{
 		$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
+		$data['list'] = $this->m_earrings->load_list();
+		$data['tag'] = $this->m_earrings->get_tag_list(0);
+		// var_dump($data['tag']." ini isi tag");
+ 		$this->load->view('backend/src/v_earrings',$data);
 
-		$this->load->view('backend/src/v_earrings',$data);
 	}
 	public function gf_transact() 
 	{ 
@@ -39,8 +45,8 @@ class c_earrings extends CI_Controller {
             // var_dump( $_FILES);
             // File upload configuration
             $config['upload_path']          = '../frontend/uploads/earrings/';
-			$config['allowed_types']        = 'gif|jpg|png';
-			$config['max_size']             = 10000;
+			$config['allowed_types']        = 'png|pjp|jpg|pjpeg|jpeg|jfif|gif';
+			$config['max_size']             = 100000;
 			$config['max_width']            = 100000;
 			$config['max_height']           = 100000;
 	 		$config['encrypt_name'] 		= TRUE;
@@ -57,17 +63,20 @@ class c_earrings extends CI_Controller {
 				$data = array('upload_data' => $this->upload->data());
 				// var_dump($data);
 				$this->m_earrings->gf_transact_uploads($data,$upload_id);
-			}
-
-
-			
+			}			
 			// // $this->load->view('backend/src/index',$data);
-			// // header('Location: '.base_url('index.php/c_bracelet').'');
-         
-        }
+			// header('Location: '.base_url('index.php/c_bracelet').'');
+         }
 
 		// $this->load->view('backend/src/index',$data);
 		header('Location: '.base_url('index.php/c_earrings').'');
 
+	}
+	function gf_tag_database(){
+		return $this->m_earrings->get_tag_list(1);
+
+	}
+	function gf_delete(){
+		 $this->m_earrings->delete();
 	}
 }
