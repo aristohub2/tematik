@@ -11,10 +11,23 @@ class m_bracelet extends CI_Model
 	$result= $this->db->query($sql);
 	$counter=1;
 	$sReturn=null;
+
+
 	// var_dump($sql);
 	if($result->num_rows()>0){
 		foreach ($result->result_array() as $row)
 		{
+			$query_tag = $this->db->query("SELECT DISTINCT AttributeName FROM tmtk_attribute a INNER JOIN tmtk_tag b ON IdAttribute_fk = IdAttribute WHERE b.IdProduct_fk = '".$row['IdProduct']."' AND b.ProductCategory = 1");
+
+			$tag_arr = '';
+			if($query_tag->num_rows()>0){
+				foreach ($query_tag->result_array() as $key) {
+					$tag_arr .= $key['AttributeName'];
+					$tag_arr .= ',';
+				}
+			}
+
+
 			// $tag_query = $this->db->query("SELECT ");
 
 	        $sReturn.=' <tr>
@@ -24,7 +37,7 @@ class m_bracelet extends CI_Model
                             <td class="mid">'.$row['Description'].'</td>
                             <td class="mid">'.$row['dCreateOn'].'</td>
                             <td class="mid"><img src="'.base_url('../frontend/'.$row['ProductPath'].'').'"  class=" height="20%" width="20%" ;"></td>
-                            <td class="mid">'.$row['dCreateOn'].'</td>
+                            <td class="mid">'.substr($tag_arr, 0,-1).'</td>
                             <td class="mid"><button class="btn btn-primary" type="button" onclick="edit('.$row['IdProduct'].',\''.$row['Name'].'\',\''.$row['Description'].'\')"><span><i class="fa fa-pen" aria-hidden="true"></i> Edit</span></button></td>
                             <td class="mid"><button class="btn btn-danger" type="button" data-toggle="modal" data-target="#editmodal" onclick="show_modal('.$row['IdProduct'].')"><span><i class="fa fa-trash" aria-hidden="true"></i> Delete</span></button></td>                             
                         </tr>';
