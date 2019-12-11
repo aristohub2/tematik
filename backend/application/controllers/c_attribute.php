@@ -71,4 +71,7 @@ class c_attribute extends CI_Controller {
 		header('Location: '.base_url('index.php/c_attribute').'');
 
 	}
+	function gf_delete(){
+		 $this->m_attribute->delete();
+	}
 }

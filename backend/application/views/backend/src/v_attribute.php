@@ -65,7 +65,6 @@
 
                     <div>
                       <h1>Attribute List :</h1>
-                      <hr>
                     </div>
 
                     <table class="table border-bottom">
@@ -170,20 +169,20 @@
       
   });
 
-  function edit(id,year,desc){
+  function edit(id,name){
     NavTab(event, 'edit');
     activate(1);
     $('#canceledit').show();
 
-    $("#id_tl").val(id);
-    $("#year_tl").val(year);
-    $("#desc_tl").val(desc);
+    $("#attributeId").val(id);
+    $("#attributeName").val(name);
     
     $("#hideMode").val("U");
   }
 
   function flush(){
-    $("#id_tl").val("Auto");
+    $("#attributeId").val("Auto");
+    $("#attributeName").val("");
     $("#hideMode").val("I");
     $('#canceledit').hide();
   }
@@ -195,11 +194,12 @@
 
   function delete_data(){
       id=$("#target").val();
-      $.post("<?php echo base_url('index.php/c_company/gf_delete'); ?>",
+      $.post("<?php echo base_url('index.php/c_attribute/gf_delete'); ?>",
       {
         id_data:id
       },
       function(data,status){
+        console.log(data);
         location.reload();
       });
   }

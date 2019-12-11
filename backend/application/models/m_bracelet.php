@@ -79,7 +79,7 @@ class m_bracelet extends CI_Model
 			$result= $this->db->query($sql);
 			$id_fk=$result->result_array();
 			$sql2 = "call sp_tmtk_product_uploads('D','".$id_fk['0']['UploadFk']."','null','null');";
-			var_dump($sql2);
+			// var_dump($sql2);
 			$this->db->query($sql2);
 		}
 
@@ -102,7 +102,7 @@ class m_bracelet extends CI_Model
 				$sql = "call sp_tmtk_tag('I','null','".$bracelet_id."','".$key."','1');";
 				// var_dump($key);
 				$this->db->query($sql);
-				var_dump($sql);
+				// var_dump($sql);
 			}
 
 		}
@@ -113,7 +113,7 @@ class m_bracelet extends CI_Model
 					$sql = "call sp_tmtk_tag('I','null','".$idmax[0]['max']."','".$key."','1');";
 					// var_dump($key);
 					$this->db->query($sql);
-					var_dump($sql);
+					// var_dump($sql);
 				}
 		}
 		

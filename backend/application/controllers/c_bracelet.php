@@ -22,7 +22,7 @@ class c_bracelet extends CI_Controller {
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
 		$data['list'] = $this->m_bracelet->load_list();
 		$data['tag'] = $this->m_bracelet->get_tag_list(0);
-		var_dump($data['tag']." ini isi tag");
+		// var_dump($data['tag']." ini isi tag");
  		$this->load->view('backend/src/v_bracelet',$data);
 
 	}
