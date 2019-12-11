@@ -545,3 +545,24 @@ body {
   .mid{
     text-align: center;
   }
+
+  .img-top {
+    transition: .5s ease;
+  }
+
+  .img-top:hover {
+    opacity: 0.4;
+  }
+
+  .pills {
+    background-color: #5bc0de;
+    font-weight: bold;
+    border: #5bc0de;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: all;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 4px;
+  }

@@ -45,6 +45,6 @@ class c_offer extends CI_Controller {
 
 		$this->m_offer->gf_transact($data);
 
-		// header('Location: '.base_url().'index.php/c_offer/');
+		header('Location: '.base_url().'index.php/c_offer/');
 	}
 }

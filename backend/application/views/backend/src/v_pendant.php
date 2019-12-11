@@ -10,6 +10,23 @@
 
     <?php echo $css; ?>
     <?php echo $js; ?>   
+
+    <style type="text/css">
+
+      table.dataTable tbody td {
+        word-break: break-word;
+        vertical-align: top;
+      }
+
+      .img-top {
+        transition: .5s ease;
+      }
+
+      .img-top:hover {
+        opacity: 0.4;
+      }
+
+    </style>    
 </head>
 
 <body>
@@ -101,7 +118,7 @@
 
                         <div class="form-group col-md-6">
                             <label>Tag</label><br>                          
-                            <select name="tag[]" id="tag" class="form-control select2" style="width: 100%" multiple="multiple" required>                               
+                            <select name="tag[]" id="tag" class="form-control select2" style="width: 100%" multiple="multiple">                               
 
                             </select>
                         </div>
@@ -163,10 +180,22 @@
       NavTab(event, 'product_list');
       $("#tag").select2();
       $('#table_id').DataTable( {
-        responsive: true
+        responsive: true,
+        autoWidth: false,
+          columns : [
+              { width : '5%' },
+              { width : '5%' },
+              { width : '10%' },
+              { width : '10%' },        
+              { width : '10%' },
+              { width : '30%' },
+              { width : '10%' },        
+              { width : '10%' },
+              { width : '10%' }        
+          ]
       } );
+
       $('#canceledit').hide();
-      activate(0);
       $("#tag").append('<?php echo $tag ?>');
        
   });

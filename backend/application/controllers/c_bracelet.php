@@ -55,7 +55,6 @@ class c_bracelet extends CI_Controller {
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
 
-
             if ( ! $this->upload->do_upload('berkas')){
 				$error = array('error' => $this->upload->display_errors());
 			// var_dump($error);
@@ -69,7 +68,7 @@ class c_bracelet extends CI_Controller {
         }
 
 		// $this->load->view('backend/src/index',$data);
-		// header('Location: '.base_url('index.php/c_bracelet').'');
+		header('Location: '.base_url('index.php/c_bracelet').'');
 
 	}
 	function gf_tag_database(){
