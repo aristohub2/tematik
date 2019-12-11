@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Register Account</title>
 </head>
 <?php echo $css; ?>
 <?php echo $js; ?>

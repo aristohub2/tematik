@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-    <title>Offers - Backend </title>
+    <title>Offers Banner - Backend </title>
 
     <?php echo $css; ?>
     <?php echo $js; ?>
