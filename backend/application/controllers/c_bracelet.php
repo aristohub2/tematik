@@ -21,7 +21,8 @@ class c_bracelet extends CI_Controller {
 		$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
 		$data['list'] = $this->m_bracelet->load_list();
-		$data['tag'] = $this->m_attribute->get_tag_list();
+		$data['tag'] = $this->m_bracelet->get_tag_list(0);
+		var_dump($data['tag']." ini isi tag");
  		$this->load->view('backend/src/v_bracelet',$data);
 
 	}
@@ -68,7 +69,11 @@ class c_bracelet extends CI_Controller {
         }
 
 		// $this->load->view('backend/src/index',$data);
-		header('Location: '.base_url('index.php/c_bracelet').'');
+		// header('Location: '.base_url('index.php/c_bracelet').'');
+
+	}
+	function gf_tag_database(){
+		return $this->m_bracelet->get_tag_list(1);
 
 	}
 	function gf_delete(){

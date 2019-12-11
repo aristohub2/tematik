@@ -1,6 +1,6 @@
 <?php 
 
-class m_welcome extends CI_Model 
+class m_offer extends CI_Model 
 { 
 	public function __construct() 
 	{ 
@@ -11,14 +11,8 @@ class m_welcome extends CI_Model
 		// return $id;
 		$sql= "select * from tmtk_banner where IdBanner = ".$id."";
 		$sReturn=$this->db->query($sql);
-		// var_dump($sReturn->result_array());
-		if ($sReturn->result_array()<=0){
-			return null;
-		}
-		else{
-			return $sReturn->result_array();
-		}
-		
+		// var_dump($sReturn);
+		return $sReturn->result_array();
 	}
 
 	function gf_transact($data) 
@@ -26,7 +20,7 @@ class m_welcome extends CI_Model
 		// var_dump($data);
 		// var_dump($_POST);
 		$hideMode = $this->input->post('hideMode', TRUE);
-		$banner_id = $_POST['BannerId']; 
+		$banner_id =  $this->input->post('BannerId', TRUE); 
 		$banner_title = $this->input->post('BannerTitle', TRUE); 
 		$banner_description = $this->input->post('BannerDescription', TRUE);
 		$banner_path = "uploads/banner/".$data['upload_data']['file_name'];
@@ -66,7 +60,7 @@ class m_welcome extends CI_Model
 
 		$sql = "call sp_tmtk_banner('".$hideMode."','".$banner_id."','".$banner_title."','".$banner_description."','".$banner_path."')";
 		$hasil=$this->db->query($sql);
-		// var_dump($sql);
+		var_dump($sql);
 		// $this->db->trans_begin(); 
 		// $this->db->query($sql); 
 		// if ($this->db->trans_status() === FALSE) 

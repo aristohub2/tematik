@@ -56,6 +56,11 @@
                                             <span class="badge badge-pill badge-success"></span>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href=" <?php echo base_url('index.php/c_offer') ?>">Offer Banner
+                                            <span class="badge badge-pill badge-success"></span>
+                                        </a>
+                                    </li>
                                     <!-- <li>
                                         <a href="#">Dashboard 2</a>
                                     </li>
