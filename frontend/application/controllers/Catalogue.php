@@ -25,7 +25,26 @@ class Catalogue extends CI_Controller {
 		$data['f_earring'] = $this->mf_earrings->get_featured_products();
 		$data['f_pendant'] = $this->mf_pendants->get_featured_products();
 		$data['f_ring'] = $this->mf_rings->get_featured_products();
+		
+		$this->load->view('catalogue.php',$data);
+	}
 
+	public function carousel()
+	{
+		$id = $_GET['p'];
+
+		if($id==1){
+			header('Location: '.base_url("index.php/Products_bracelets").'');
+		}
+		else if($id==2){
+			header('Location: '.base_url("index.php/Products_earrings").'');
+		}
+		else if($id==3){
+			header('Location: '.base_url("index.php/Products_pendants").'');
+		}
+		else {
+			header('Location: '.base_url("index.php/Products_rings").'');
+		}
 		
 		$this->load->view('catalogue.php',$data);
 	}

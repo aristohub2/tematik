@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Catalogue</title>
+  <title>Offers</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -16,6 +16,33 @@
             -webkit-transform: scale(1.3);
             transform: scale(1.0);
         }
+
+        .carousel img {
+          object-fit: cover;
+          width:100% !important;
+        }
+
+        .blur_images {          
+          /* Add the blur effect */
+          filter: blur(8px);
+          -webkit-filter: blur(8px);
+          
+          /* Full height */
+          height: 100%; 
+          
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        h1{
+          font-weight: bold;
+          font-size: 60px;
+          -webkit-text-stroke: 2px black;
+        }
+
+
   </style>
 </head>
 
@@ -35,7 +62,6 @@
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-
         <?php 
           $counter = 0;
 
@@ -44,9 +70,9 @@
             if($counter==0){
               echo "
               <div class='carousel-item active'>
-                <img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%' height='75%'>
+                <a href='". base_url('index.php/Promo') ."?p=".($counter+1)."'><img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%'></a>
                 <div class='carousel-caption'>
-                  <h3 style='color: white;'>".$key['BannerTitle']."</h3>
+                  <h1 style='color: white;'>".$key['BannerTitle']."</h1>
                   <p>".$key['BannerDescription']."</p>
                 </div>
               </div>
@@ -55,21 +81,19 @@
             {
               echo "
               <div class='carousel-item'>
-                <img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%' height='75%'>
+                <a href='". base_url('index.php/Promo') ."?p=".($counter+1)."'><img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%'></a>
                 <div class='carousel-caption'>
-                  <h3 style='color: white;'>".$key['BannerTitle']."</h3>
+                  <h1 style='color: white;'>".$key['BannerTitle']."</h1>
                   <p>".$key['BannerDescription']."</p>
                 </div>
               </div>
             ";
-            }
-            
+            }            
             $counter++;
           }
-
-        ?>
-    
+        ?>    
       </div>
+
     </div>
   </div>
 
@@ -90,64 +114,64 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Products_bracelets')?>">
+            <a href="<?php echo base_url('index.php/Promo')?>?p=1">
               <div class="work-img">
-                <img src="<?php echo base_url($f_bracelet); ?>" alt="" class="img-fluid">
+                <img src="<?php echo base_url($banner[0]['BannerPath']); ?>" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-12">
-                    <h2 class="w-title">Bracelets</h2>
+                    <h2 class="w-title">Offers #1</h2>
                   </div>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Products_earrings')?>">
+            <a href="<?php echo base_url('index.php/Promo')?>?p=2">
               <div class="work-img">
-                <img src="<?php echo base_url($f_earring); ?>" alt="" class="img-fluid">
+                <img src="<?php echo base_url($banner[1]['BannerPath']); ?>" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-12">
-                    <h2 class="w-title">Earrings</h2>
+                    <h2 class="w-title">Offers #2</h2>
                   </div>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Products_pendants')?>">
+            <a href="<?php echo base_url('index.php/Promo')?>?p=3">
               <div class="work-img">
-                <img src="<?php echo base_url($f_pendant); ?>" alt="" class="img-fluid">
+                <img src="<?php echo base_url($banner[2]['BannerPath']); ?>" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-12">
-                    <h2 class="w-title">Pendants</h2>
+                    <h2 class="w-title">Offers #3</h2>
                   </div>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="work-box">
-            <a href="<?php echo base_url('index.php/Products_rings')?>">
+            <a href="<?php echo base_url('index.php/Promo')?>?p=4">
               <div class="work-img">
-                <img src="<?php echo base_url($f_ring); ?>" alt="" class="img-fluid">
+                <img src="<?php echo base_url($banner[3]['BannerPath']); ?>" alt="" class="img-fluid">
               </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-12">
-                    <h2 class="w-title">Rings</h2>
+                    <h2 class="w-title">Offers #4</h2>
                   </div>
                 </div>
               </div>

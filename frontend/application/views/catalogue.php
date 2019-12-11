@@ -15,7 +15,33 @@
         .work-box:hover img {
             -webkit-transform: scale(1.3);
             transform: scale(1.0);
+        }        
+
+        .carousel img {
+          object-fit: cover;
+          width:100% !important;
         }
+
+        .blur_images {          
+          /* Add the blur effect */
+          filter: blur(8px);
+          -webkit-filter: blur(8px);
+          
+          /* Full height */
+          height: 100%; 
+          
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        h1{
+          font-weight: bold;
+          font-size: 60px;
+          -webkit-text-stroke: 2px black;
+        }
+
   </style>
 </head>
 
@@ -44,9 +70,9 @@
             if($counter==0){
               echo "
               <div class='carousel-item active'>
-                <img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%' height='75%'>
+                <a href='". base_url('index.php/Catalogue/carousel') ."?p=".($counter+1)."'><img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%'></a>
                 <div class='carousel-caption'>
-                  <h3 style='color: white;'>".$key['BannerTitle']."</h3>
+                  <h1 style='color: white;'>".$key['BannerTitle']."</h1>
                   <p>".$key['BannerDescription']."</p>
                 </div>
               </div>
@@ -55,15 +81,14 @@
             {
               echo "
               <div class='carousel-item'>
-                <img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%' height='75%'>
+                <a href='". base_url('index.php/Catalogue/carousel') ."?p=".($counter+1)."'><img src='". base_url($key['BannerPath']) ."' alt='Chania' width='100%'></a>
                 <div class='carousel-caption'>
-                  <h3 style='color: white;'>".$key['BannerTitle']."</h3>
+                  <h1 style='color: white;'>".$key['BannerTitle']."</h1>
                   <p>".$key['BannerDescription']."</p>
                 </div>
               </div>
             ";
-            }
-            
+            }            
             $counter++;
           }
 

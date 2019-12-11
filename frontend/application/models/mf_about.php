@@ -17,6 +17,42 @@ class mf_about extends CI_Model
 			return $key['BannerPath'];
 		}
 	}
+
+	public function get_company_about(){
+
+		$query = "SELECT * FROM tmtk_company WHERE id_number LIKE '0'";
+
+		$query_res = $this->db->query($query);
+
+		foreach ($query_res->result_array() as $key) {
+			return $key['description'];
+		}
+	}
+
+	public function get_company_timeline(){
+
+		$query = "SELECT *, YEAR(`year`) as year FROM tmtk_company WHERE id_number NOT LIKE '0'";
+
+		$query_res = $this->db->query($query);
+
+		$sReturn=null;
+
+		if($query_res->num_rows()>0){
+			foreach ($query_res->result_array() as $row)
+			{
+		        $sReturn.='
+		        <li class="timeline-event">
+		          <label class="timeline-event-icon"></label>
+		          <div class="timeline-event-copy">
+		            <p class="timeline-event-thumbnail">'.$row['year'].'</p>
+		            <p class="content" align="justify">'.$row['description'].'</p>
+		          </div>
+		        </li>';
+			}
+		}
+
+		return $sReturn;
+	}
 }
 ?>
 

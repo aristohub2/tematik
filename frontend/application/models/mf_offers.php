@@ -9,8 +9,7 @@ class mf_offers extends CI_Model
 
 	public function get_banners(){
 
-		$query = $this->db->query("SELECT * FROM tmtk_banner WHERE IdBanner IN ('3','4','5','6') ORDER BY IdBanner");
-
+		$query = $this->db->query("SELECT * FROM tmtk_banner WHERE IdBanner IN ('11','12','13','14') ORDER BY IdBanner");
 		
 		return $query->result_array();
 	}
