@@ -101,6 +101,12 @@
                                 <span class="menu-text">Attributes</span>
                             </a>
                         </li>
+                        <li>
+                            <a href=" <?php echo base_url('index.php/c_company') ?>">
+                                <i class="fa fa-calendar"></i>
+                                <span class="menu-text">Company History</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
