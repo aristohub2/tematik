@@ -91,7 +91,7 @@ class m_earrings extends CI_Model
 		$idmax=$this->db->query($idmax)->result_array();
 		// var_dump($idmax[0]['max']);
 
-		$sql ="call sp_tmtk_tag('D','null','".$bracelet_id."','null','1');";
+		$sql ="call sp_tmtk_tag('D','null','".$earrings_id."','null','1');";
 		$this->db->query($sql);
 
 		//query product
