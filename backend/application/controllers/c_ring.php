@@ -7,7 +7,10 @@ class c_ring extends CI_Controller {
 	{ 
 		parent::__construct(); 
 		$this->load->model(array('m_ring'));
+		$this->load->model(array('m_attribute'));
+		
 		//ini buat upload
+
 		if($_SESSION['status'] != 1 ){
 			header('Location: '.base_url("index.php/c_login").'');
 		}
@@ -17,8 +20,11 @@ class c_ring extends CI_Controller {
 	{
 		$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
+		$data['list'] = $this->m_ring->load_list();
+		$data['tag'] = $this->m_ring->get_tag_list(0);
+		// var_dump($data['tag']." ini isi tag");
+ 		$this->load->view('backend/src/v_ring',$data);
 
-		$this->load->view('backend/src/v_ring',$data);
 	}
 	public function gf_transact() 
 	{ 
@@ -39,8 +45,8 @@ class c_ring extends CI_Controller {
             // var_dump( $_FILES);
             // File upload configuration
             $config['upload_path']          = '../frontend/uploads/rings/';
-			$config['allowed_types']        = 'gif|jpg|png';
-			$config['max_size']             = 10000;
+			$config['allowed_types']        = 'png|pjp|jpg|pjpeg|jpeg|jfif|gif';
+			$config['max_size']             = 100000;
 			$config['max_width']            = 100000;
 			$config['max_height']           = 100000;
 	 		$config['encrypt_name'] 		= TRUE;
@@ -52,22 +58,25 @@ class c_ring extends CI_Controller {
 
             if ( ! $this->upload->do_upload('berkas')){
 				$error = array('error' => $this->upload->display_errors());
-			var_dump($error);
+			// var_dump($error);
 			}else{
 				$data = array('upload_data' => $this->upload->data());
-				var_dump($data);
+				// var_dump($data);
 				$this->m_ring->gf_transact_uploads($data,$upload_id);
-			}
-
-
-			
+			}			
 			// // $this->load->view('backend/src/index',$data);
-			// // header('Location: '.base_url('index.php/c_bracelet').'');
-         
+			// // header('Location: '.base_url('index.php/c_ring').'');         
         }
 
 		// $this->load->view('backend/src/index',$data);
 		header('Location: '.base_url('index.php/c_ring').'');
 
+	}
+	function gf_tag_database(){
+		return $this->m_ring->get_tag_list(1);
+
+	}
+	function gf_delete(){
+		 $this->m_ring->delete();
 	}
 }
