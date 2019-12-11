@@ -17,7 +17,27 @@
 
 <?php $this->load->view("backend/src/include/Sidebar.php") ?>
 
-    
+    <!-- Modal Buat Edit -->
+         <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete This Data?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="showid">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="target" value="null" onclick="delete_data()">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <!-- tiap page berbeda mainnya disini aja -->
         <!-- page-content  -->
         <main class="page-content pt-2">
@@ -88,14 +108,14 @@
                        <input type="submit" class="btn btn-primary" />
                       </div>
 
-                      <input type="hidden" name="hideMode" id="hideMode" value="I" />
+                      
 
                     </form>
                 </div>
 
                 <div id="timeline" class="tabcontent">
                   
-                    <?php echo form_open_multipart('c_company/about');?>                    
+                    <?php echo form_open_multipart('c_company/timeline');?>                    
 
                       <div class="form-group col-md-6">
                            <label>Id</label>
@@ -110,7 +130,7 @@
 
                       <div class="form-group col-md-6">
                           <label>Year</label>
-                          <input allow-empty="false" type="text" placeholder="Year" name="year_tl" id="year_tl" class="form-control" maxlength="50" value="" >
+                          <input allow-empty="false" type="date"  placeholder="Year" name="year_tl" id="year_tl" class="form-control" maxlength="50" value="" >
                       </div>
 
                       <div class="form-group col-md-6">
@@ -197,6 +217,22 @@
     $("#id_tl").val("Auto");
     $("#hideMode").val("I");
     $('#canceledit').hide();
+  }
+
+  function show_modal(id){
+      $("#showid").html("You are going to delete data with ID "+id);
+      $("#target").val(id);
+  }
+
+  function delete_data(){
+      id=$("#target").val();
+      $.post("<?php echo base_url('index.php/c_company/gf_delete'); ?>",
+      {
+        id_data:id
+      },
+      function(data,status){
+        location.reload();
+      });
   }
 
 

@@ -24,12 +24,26 @@ class c_company extends CI_Controller {
 		$this->load->view('backend/src/v_company',$data);
 	}
 
-	public function gf_transact() 
+
+
+
+	public function about() 
 	{ 
-		
- 		$this->m_company->gf_transact();
+ 		$this->m_company->gf_transact_about();
 
 		header('Location: '.base_url('index.php/c_company').'');
 
+	}
+
+	public function timeline() 
+	{ 
+		
+ 		$this->m_company->gf_transact_timeline();
+
+		header('Location: '.base_url('index.php/c_company').'');
+
+	}
+	function gf_delete(){
+		 $this->m_company->delete();
 	}
 }
