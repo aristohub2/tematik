@@ -18,7 +18,7 @@ class m_earrings extends CI_Model
 	if($result->num_rows()>0){
 		foreach ($result->result_array() as $row)
 		{
-			$query_tag = $this->db->query("SELECT DISTINCT AttributeName FROM tmtk_attribute a INNER JOIN tmtk_tag b ON IdAttribute_fk = IdAttribute WHERE b.IdProduct_fk = '".$row['IdProduct']."' AND b.ProductCategory = 2");
+			$query_tag = $this->db->query("SELECT DISTINCT AttributeName FROM tmtk_attribute a INNER JOIN tmtk_tag b ON IdAttribute_fk = IdAttribute WHERE b.IdProduct_fk = '".$row['IdProduct']."' AND b.ProductCategory = 2  AND a.sStatusDelete IS NULL AND b.sStatusDelete IS NULL");
 
 			$tag_arr = '';
 			if($query_tag->num_rows()>0){
@@ -91,7 +91,7 @@ class m_earrings extends CI_Model
 		$idmax=$this->db->query($idmax)->result_array();
 		// var_dump($idmax[0]['max']);
 
-		$sql ="call sp_tmtk_tag('D','null','".$earrings_id."','null','1');";
+		$sql ="call sp_tmtk_tag('D','null','".$earrings_id."','null','2');";
 		$this->db->query($sql);
 
 		//query product
@@ -99,7 +99,7 @@ class m_earrings extends CI_Model
 			$sql = "call sp_tmtk_earrings('".$hideMode."','".$earrings_id."','".$earrings_name."','".$earrings_description."','".$upload_id."');";
 			$this->db->query($sql);
 			foreach ($tags as $key) {
-				$sql = "call sp_tmtk_tag('I','null','".$earrings_id."','".$key."','1');";
+				$sql = "call sp_tmtk_tag('I','null','".$earrings_id."','".$key."','2');";
 				// var_dump($key);
 				$this->db->query($sql);
 				// var_dump($sql);
@@ -110,7 +110,7 @@ class m_earrings extends CI_Model
 			$sql = "call sp_tmtk_earrings('".$hideMode."','".$idmax[0]['max']."','".$earrings_name."','".$earrings_description."','".$upload_id."');";
 			$this->db->query($sql);
 				foreach ($tags as $key) {
-					$sql = "call sp_tmtk_tag('I','null','".$idmax[0]['max']."','".$key."','1');";
+					$sql = "call sp_tmtk_tag('I','null','".$idmax[0]['max']."','".$key."','2');";
 					// var_dump($key);
 					$this->db->query($sql);
 					// var_dump($sql);

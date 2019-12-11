@@ -34,7 +34,7 @@ class c_bracelet extends CI_Controller {
 		$file_uploaded =$_FILES["berkas"];
  		$filesCount = count($_FILES['berkas']['name']);
 
- 		// var_dump($file_uploaded);
+ 		var_dump($filesCount);
  		$upload_id=$this->m_bracelet->gf_transact();
 		for($i = 0; $i < $filesCount; $i++){
             $_FILES['berkas']['name']     = $file_uploaded["name"][$i];
@@ -69,7 +69,7 @@ class c_bracelet extends CI_Controller {
         }
 
 		// $this->load->view('backend/src/index',$data);
-		header('Location: '.base_url('index.php/c_bracelet').'');
+		// header('Location: '.base_url('index.php/c_bracelet').'');
 
 	}
 	function gf_tag_database(){

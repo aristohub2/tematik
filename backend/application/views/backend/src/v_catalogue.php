@@ -67,7 +67,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Banner Title : <?php echo $img1[0]['BannerTitle'] ?></h5>
                           <p class="card-text">Banner Banner Description : <?php echo $img1[0]['BannerDescription'] ?></p>
-                          <a href="#" class="btn btn-primary" onclick="change(3)">Edit This Banner</a>
+                          <a href="#" class="btn btn-primary" onclick="change(3,'<?php echo $img1[0]['BannerTitle'] ?>','<?php echo $img1[0]['BannerDescription'] ?>')">Edit This Banner</a>
                         </div>
                       </div>
                     </div>
@@ -82,7 +82,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Banner Title : <?php echo $img2[0]['BannerTitle'] ?></h5>
                           <p class="card-text">Banner Banner Description : <?php echo $img2[0]['BannerDescription'] ?></p>
-                          <a href="#" class="btn btn-primary" onclick="change(4)">Edit This Banner</a>
+                          <a href="#" class="btn btn-primary" onclick="change(4,'<?php echo $img2[0]['BannerTitle'] ?>','<?php echo $img2[0]['BannerDescription'] ?>')">Edit This Banner</a>
                         </div>
                       </div>
                     </div>
@@ -99,7 +99,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Banner Title : <?php echo $img3[0]['BannerTitle'] ?></h5>
                           <p class="card-text">Banner Banner Description : <?php echo $img3[0]['BannerDescription'] ?></p>
-                          <a href="#" class="btn btn-primary" onclick="change(5)">Edit This Banner</a>
+                          <a href="#" class="btn btn-primary" onclick="change(5,'<?php echo $img3[0]['BannerTitle'] ?>','<?php echo $img3[0]['BannerDescription'] ?>')">Edit This Banner</a>
                         </div>
                       </div>
                     </div>
@@ -115,7 +115,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Banner Title : <?php echo $img4[0]['BannerTitle'] ?></h5>
                           <p class="card-text">Banner Banner Description : <?php echo $img4[0]['BannerDescription'] ?></p>
-                          <a href="#" class="btn btn-primary" onclick="change(6)">Edit This Banner</a>
+                          <a href="#" class="btn btn-primary" onclick="change(6,'<?php echo $img4[0]['BannerTitle'] ?>','<?php echo $img4[0]['BannerDescription'] ?>')">Edit This Banner</a>
                         </div>
                       </div>
                     </div>
@@ -138,7 +138,7 @@
 
                      <div class="form-group col-md-6">
                         <label>Banner Description</label>
-                        <textarea name="BannerDescription" rows="10" cols="30" class="form-control" placeholder="Banner Description"></textarea>
+                        <textarea id="BannerDescription" name="BannerDescription" rows="10" cols="30" class="form-control" placeholder="Banner Description"></textarea>
                     </div>
 
                     <div class="form-group col-md-6">
@@ -192,12 +192,16 @@
       });
   }
 
-  function change(id){
+  function change(id,title,desc){
     $("#BannerId").val(id);
     NavTab(event,'edit');
     activate(1);
     prevent_submit();
+
+    $("#BannerTitle").val(title);
+    $("#BannerDescription").val(desc);
   }
+
 
   $(function(){ 
       NavTab(event,'preview');

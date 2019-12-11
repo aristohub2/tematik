@@ -6,10 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-    <title>Bracelet Backend</title>
+    <title>Backend</title>
 
     <?php echo $css; ?>
-    <?php echo $js; ?>   
+    <?php echo $js; ?>
+
+    <style type="text/css">
+
+      {
+        background: #007bff;
+        color: white;
+        border: 1px solid #007bff;
+        padding: 8px;
+        border-radius: 5px;
+      }
+
+      ::-webkit-file-upload-button:hover {
+        cursor: pointer;
+        background: #005bdf;
+      }
+
+
+      /* Style the tab */
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+
+      /* Style the buttons that are used to open the tab content */
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+
+      .mid{
+        text-align: center;
+      }
+
+    </style>    
 </head>
 
 <body>
@@ -17,7 +75,7 @@
 <?php $this->load->view("backend/src/include/Sidebar.php") ?>
 
 
-      <!-- Modal Buat Edit -->
+<!-- Modal Buat Edit -->
         <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -85,10 +143,6 @@
                              <input allow-empty="false" type="text" placeholder="Id Bracelet" name="BraceletId" id="BraceletId" class="form-control" maxlength="50" value="Auto" readonly required>
                         </div>
 
-                        <div class="form-group col-md-6 text-right">
-                         <button id="canceledit" type="button" class="btn btn-primary" onclick="flush()"> Cancel Edit </button>
-                        </div>
-
                         <div class="form-group col-md-6">
                             <label>Bracelet Name</label>
                             <input allow-empty="false" type="text" placeholder="Bracelet Name" name="BraceletName" id="BraceletName" class="form-control" maxlength="50" value="" required>
@@ -101,13 +155,15 @@
 
                         <div class="form-group col-md-6">
                             <label>Tag</label><br>                          
-                            <select name="tag[]" id="tag" class="form-control select2" style="width: 100%" multiple="multiple" required>                               
+                            <select name="tag[]" id="tag" class="form-control select2" style="width: 100%" multiple="multiple" required>
+                               
 
                             </select>
+
                         </div>
 
                         <div class="form-group col-md-6">
-                         <input type="file" name="berkas[]" accept="image/png,image/jpeg,image/gif" multiple required/>
+                         <input id="files" type="file" name="berkas[]" accept="image/png,image/jpeg,image/gif" multiple required/>
                         </div>
 
                         <input type="hidden" name="hideMode" id="hideMode" value="I" />
@@ -115,14 +171,27 @@
                         <div class="form-group col-md-6 text-right">
                          <input type="submit" class="btn btn-primary" value="upload" />
                         </div>
+                        
+                     
                     </form>
+
                 </div>
+                
+
                 <!-- ini close div row -->
+                <!-- sampe sini -->
+
             </div>
         </main>
         <!-- page-content" -->
+
+
+
     </div>
-    <!-- page-wrapper -->
+    <!-- page-wrapper -->  
+
+
+
 </body>
 
 
@@ -149,33 +218,17 @@
       evt.currentTarget.className += " active";      
   }
 
-  function activate(tab){
-    var counter = 0;
-    $('.tablinks').each(function(){
-        if(counter == tab){
-          $(this).addClass('active');
-        }
-        counter++;
-      });
-  }
-
   $(function(){ 
       NavTab(event, 'product_list');
       $("#tag").select2();
       $('#table_id').DataTable( {
         responsive: true
       } );
-      $('#canceledit').hide();
-      activate(0);
+      console.log('<?php echo $tag ?>');
       $("#tag").append('<?php echo $tag ?>');
        
   });
 
-  function flush(){
-    $("#BraceletId").val("Auto");
-    $("#hideMode").val("I");
-    $('#canceledit').hide();
-  }
     
   function show_modal(id){
       $("#showid").html("You are going to delete data with ID "+id);
@@ -195,17 +248,18 @@
 
   function edit(id,name,desc){
       NavTab(event, 'change');
-      activate(1);
-      $('#canceledit').show();
       $("#BraceletId").val(id);
       $("#BraceletName").val(name);
       $("#BraceletDesc").val(desc);
+      // $("#files").removeAttr('required')
+      console.log($("#files"));
+// .attr('selected','selected')
+
       
       $.post("<?php echo base_url('index.php/c_bracelet/gf_tag_database'); ?>",
       {
         id_data:id
       },
-
       function(data,status){
          $("#tag").empty();
          console.log(data);
