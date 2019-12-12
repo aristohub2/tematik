@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.16 : Database - tematik
+MySQL - 5.5.5-10.4.6-MariaDB : Database - tematik
 *********************************************************************
 */
 
@@ -31,7 +31,7 @@ CREATE TABLE `tmtk_attribute` (
 
 /*Data for the table `tmtk_attribute` */
 
-insert  into `tmtk_attribute`(`IdAttribute`,`AttributeName`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'12345678','2019-12-03',NULL,NULL),(2,'asdasdads','2019-12-03',NULL,NULL),(3,'xczxczxczxc','2019-12-11',NULL,NULL),(4,'123123123','2019-12-11',NULL,NULL),(5,'vxcvxvxcvx','2019-12-11',NULL,NULL),(6,'12312312312356756756','2019-12-11',NULL,NULL);
+insert  into `tmtk_attribute`(`IdAttribute`,`AttributeName`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'Gold','2019-12-12',NULL,NULL),(2,'Platinum','2019-12-12',NULL,NULL),(3,'Diamonds','2019-12-12',NULL,NULL),(4,'Small','2019-12-12',NULL,NULL),(5,'Big','2019-12-12',NULL,NULL),(6,'Silver','2019-12-12',NULL,NULL),(7,'Elegant','2019-12-12',NULL,NULL),(8,'Youth','2019-12-12',NULL,NULL);
 
 /*Table structure for table `tmtk_banner` */
 
@@ -39,8 +39,8 @@ DROP TABLE IF EXISTS `tmtk_banner`;
 
 CREATE TABLE `tmtk_banner` (
   `IdBanner` int(11) NOT NULL,
-  `BannerTitle` varchar(20) DEFAULT NULL,
-  `BannerDescription` varchar(50) DEFAULT NULL,
+  `BannerTitle` varchar(200) DEFAULT NULL,
+  `BannerDescription` varchar(200) DEFAULT NULL,
   `BannerPath` varchar(200) DEFAULT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE `tmtk_banner` (
 
 /*Data for the table `tmtk_banner` */
 
-insert  into `tmtk_banner`(`IdBanner`,`BannerTitle`,`BannerDescription`,`BannerPath`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (0,'','','',NULL,NULL,NULL),(1,'Ganti foto','qweqwe','uploads/banner/dfa6fba6b925aedfeea22c13cd5bf093.jpg',NULL,NULL,NULL),(2,'about','about banner','uploads/banner/8124e2882affbe1395d56a38e4e24978.jpg',NULL,NULL,NULL),(3,'Pendant','Jade diamond','uploads/banner/fb9752c6e58de9c56048095ffd457fbb.jpg',NULL,NULL,NULL),(4,'Earrings','Saphire and Jade Stone','uploads/banner/ee8623650f09695ff3f3b29bf932d8f8.jpg',NULL,NULL,NULL),(5,'Ring','Gold ring with luxury design','uploads/banner/349214a7d990893f8f861270c17ccec9.jpg',NULL,NULL,NULL),(6,'Platinum ring','Platinum ring design for elegant','uploads/banner/5c01e3517d465a1c62fb218c556f7ee4.jpg',NULL,NULL,NULL),(7,'Bracelets','Bracelets Banner','uploads/banner/386e902dd13d3e4332eaef8425e042bf.jpg',NULL,NULL,NULL),(8,'Earrings','Earrings Banner','uploads/banner/720d7fdcf0934406426da23d3c79de2d.jpg',NULL,NULL,NULL),(9,'Pendant','Pendant Banner','uploads/banner/ec3923120fc261f51ba522ae2161c51f.jpg',NULL,NULL,NULL),(10,'RIng','Ring Banner','uploads/banner/752c9924185c06fd300572568610cb63.jpg',NULL,NULL,NULL),(11,'Banner Offer 1','Banner Description 1','uploads/banner/7d8d1134faee2cfa2aff8201a7dbbbde.jpg',NULL,NULL,NULL),(12,'Offer 2','Banner Description Offer 2','uploads/banner/e9a4d8cfe2ececa4046cbe2d53288999.jpg',NULL,NULL,NULL),(13,'Offer 3','Banner Descriptionqaw','uploads/banner/446697cb93ca7817fc05a247020e88ea.jpg',NULL,NULL,NULL),(14,'sdqwdqwd','Banner Descrizxczxcq2312ption','uploads/banner/f6d483ed66678cae68d3d1ed521349dc.jpg',NULL,NULL,NULL);
+insert  into `tmtk_banner`(`IdBanner`,`BannerTitle`,`BannerDescription`,`BannerPath`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (0,'Video','Ads for video','uploads/banner/c804ecb46e0503642a13db63eea48489.mp4',NULL,NULL,NULL),(1,'Home','Home banner','uploads/banner/ebe3ccd7c1a56bbc5d8b949ee03ce3cc.jpg',NULL,NULL,NULL),(2,'About','About Image','uploads/banner/a189e466c2ec5c930bfc031e75a441cc.jpg',NULL,NULL,NULL),(3,'Bracelets','Bracelets Product','uploads/banner/006eec0526d04450225ca58748d704fc.jpg',NULL,NULL,NULL),(4,'Earrings','Earrings Products','uploads/banner/5af5bb593b2b06aa5675130117a8fc3b.png',NULL,NULL,NULL),(5,'Pendant','Pendant Products','uploads/banner/f52cd6bf6c532bef9acb53ef218a0f9c.jpg',NULL,NULL,NULL),(6,'Ring','Ring Products','uploads/banner/aca86455309c39415448a6eb8c41c455.jpg',NULL,NULL,NULL),(7,'Bracelets','Bracelets','uploads/banner/6d8fda0bde6812c3d379dc0b731e12f8.jpg',NULL,NULL,NULL),(8,'Earrings','Earrings Banner','uploads/banner/720d7fdcf0934406426da23d3c79de2d.jpg',NULL,NULL,NULL),(9,'Pendant','Pendant Banner','uploads/banner/ec3923120fc261f51ba522ae2161c51f.jpg',NULL,NULL,NULL),(10,'RIng','Ring Banner','uploads/banner/752c9924185c06fd300572568610cb63.jpg',NULL,NULL,NULL),(11,'Golden Experience','Because Gold is Brilliant','uploads/banner/a4a0bfa80351863c8e00919cc963033d.jpg',NULL,NULL,NULL),(12,'Diamond is Unbreakable','Strong and Shine Like Diamond','uploads/banner/b426e2a64596a98b4a53a71dde93119f.jpg',NULL,NULL,NULL),(13,'Saphhire and Ruby','Our latest Collaboration products Just for you','uploads/banner/aa35f9dbcf405414761e8a9f5183561e.png',NULL,NULL,NULL),(14,'50% off','Christmas Sale is here !','uploads/banner/2661d509736004e7eb523bd823945f08.jpg',NULL,NULL,NULL);
 
 /*Table structure for table `tmtk_bracelet` */
 
@@ -69,8 +69,6 @@ CREATE TABLE `tmtk_bracelet` (
 
 /*Data for the table `tmtk_bracelet` */
 
-insert  into `tmtk_bracelet`(`IdProduct`,`Name`,`Description`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'asd','zxc','5df0b8f61cb6c','2019-12-11',NULL,NULL),(2,'asd','zxczxc','5df103ce0e82c','2019-12-11',NULL,NULL),(3,'asd','zxczxc','5df103dacd16e','2019-12-11',NULL,NULL),(4,'qwe','asd','5df1040191e56','2019-12-11',NULL,NULL),(5,'qwe','asd','5df1041f176ca','2019-12-11',NULL,NULL),(6,'qwe','asd','5df1042d5c854','2019-12-11',NULL,NULL),(7,'qwe','asd','5df10437d176b','2019-12-11',NULL,NULL),(8,'qwe','asd','5df1046f1e04c','2019-12-11',NULL,NULL),(9,'qwe','asd','5df104c3bfd89','2019-12-11',NULL,NULL),(10,'qwe','asd','5df104cc5d9d3','2019-12-11',NULL,NULL),(11,'qwe','asd','5df104d27d970','2019-12-11',NULL,NULL),(12,'qwe','asd','5df104dd6f345','2019-12-11',NULL,NULL),(13,'qwe','asd','5df104e248714','2019-12-11',NULL,NULL),(14,'qwe','asd','5df104e8c29a3','2019-12-11',NULL,NULL),(15,'qwe','asd','5df104ffd916b','2019-12-11',NULL,NULL),(16,'qwe','asd','5df1050544b8b','2019-12-11',NULL,NULL),(17,'qwdqwd','qwd','5df10519d2a67','2019-12-11',NULL,NULL),(18,'qwdqwd','qwd','5df1053055688','2019-12-11',NULL,NULL),(19,'qwdqwd','qwd','5df1053d5bc19','2019-12-11',NULL,NULL),(20,'qwe','qwe','5df1055a2e453','2019-12-11',NULL,NULL);
-
 /*Table structure for table `tmtk_company` */
 
 DROP TABLE IF EXISTS `tmtk_company`;
@@ -85,7 +83,7 @@ CREATE TABLE `tmtk_company` (
 
 /*Data for the table `tmtk_company` */
 
-insert  into `tmtk_company`(`id_number`,`year`,`description`,`sStatusDelete`) values (0,NULL,'zxczxczxc',NULL),(1,'2019-12-23','yuyuyuyuyuyu','V'),(2,'2019-12-02','zxczxczxc',NULL),(3,'2019-12-04','asdasdasdasd',NULL),(4,'2019-12-18','zxczxczxczxc',NULL),(5,'2019-12-04','4567567567567','V'),(6,'2019-12-28','zxczxc',NULL);
+insert  into `tmtk_company`(`id_number`,`year`,`description`,`sStatusDelete`) values (0,NULL,'okimjasd',NULL),(1,'2019-12-23','yuyuyuyuyuyu','V'),(2,'2019-12-02','tyttyty','V'),(3,'2019-12-04','makan ',NULL),(4,'2019-12-18','zxczxczxczxc',NULL),(5,'2019-12-04','4567567567567','V'),(6,'2019-12-28','zxczxc',NULL),(7,'2019-12-28','asdasdasdzxc',NULL),(8,'2019-12-18','po',NULL);
 
 /*Table structure for table `tmtk_earrings` */
 
@@ -103,8 +101,6 @@ CREATE TABLE `tmtk_earrings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tmtk_earrings` */
-
-insert  into `tmtk_earrings`(`IdProduct`,`Name`,`Description`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (2,'Large Snowman Earrin','A symbol of all that we treasure, this earring is','5ddff6bfdb93c','2019-11-28',NULL,NULL),(3,'Small Folded Pavé Ho','Sterling Silver, Diamond 0.09 carat weight','5ddff7089673b','2019-11-28',NULL,NULL),(4,'Teardrop Earrings in','Playful enough for day, fancy enough for night, th','5ddff7181b982','2019-11-28',NULL,NULL),(5,'Small Earrings in 18','An expression of all that we treasure, the Cherish','5ddff72655c00','2019-11-28',NULL,NULL),(6,'Pavé Twisted Ribbon','18k Gold, Diamond 0.48 carat weight','5ddff75f40875','2019-11-28',NULL,NULL),(7,'Yellow Gold \"Shared-','Eternally brilliant, these “Shared-Prong” Diamond','5ddff785522ff','2019-11-28',NULL,NULL),(8,'White Gold \"Shared-P','Eternally brilliant, these “Shared-Prong” Diamond','5ddff90988edb','2019-11-28',NULL,NULL),(9,'asdasdzxczxc','zxczxcz','5df108c53a31a','2019-12-11','V','2019-12-11'),(10,'qwd','qwdqwd','5df10a602e42a','2019-12-11',NULL,NULL);
 
 /*Table structure for table `tmtk_login` */
 
@@ -137,8 +133,6 @@ CREATE TABLE `tmtk_pendant` (
 
 /*Data for the table `tmtk_pendant` */
 
-insert  into `tmtk_pendant`(`IdProduct`,`Name`,`Description`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'Medium O Pendant','Add a splash of sophisticated style and discover a','5ddff62ddd70a','2019-11-28',NULL,NULL),(2,'Timeless Elegance','Captivate with this exquisite sterling silver halo','5ddff651ac1d0','2019-11-28',NULL,NULL),(3,'Vintage Circle Colli','Enhance any neckline in a spectacular fashion with','5ddff6666c961','2019-11-28',NULL,NULL),(4,'Sparkling Cross Pend','The classic emblem of faith is beautifully reimagi','5ddff681c10d4','2019-11-28',NULL,NULL),(5,'qweqwe','asdasd','5df10ce01229e','2019-12-11','V','2019-12-11');
-
 /*Table structure for table `tmtk_product_uploads` */
 
 DROP TABLE IF EXISTS `tmtk_product_uploads`;
@@ -154,8 +148,6 @@ CREATE TABLE `tmtk_product_uploads` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tmtk_product_uploads` */
-
-insert  into `tmtk_product_uploads`(`IdUpload`,`ProductId`,`ProductPath`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values ('5df0b8f61cb6c',8,'uploads/bracelets/ee43520e7ec999cc05b8aac8f60b6778.jpg','2019-12-11',NULL,NULL),('5df1035f379ec',9,'uploads/bracelets/c2837c25a9a7068ed61c72b916df19e8.jpg','2019-12-11',NULL,NULL),('5df1036edd91a',10,'uploads/bracelets/87436f7037c2e62d60be16cd0c654f47.jpg','2019-12-11',NULL,NULL),('5df103ce0e82c',11,'uploads/bracelets/cafea5ea798d97325761a6e9c4dff297.jpg','2019-12-11',NULL,NULL),('5df103dacd16e',12,'uploads/bracelets/ffc18f9997dd0a100e1a0a82cf51c414.jpg','2019-12-11',NULL,NULL),('5df10519d2a67',13,'uploads/bracelets/610981edaa35dff8541c7577c6530535.jpg','2019-12-11',NULL,NULL),('5df1053055688',14,'uploads/bracelets/b68029e8812c76d1db00fb1bbfbb1651.jpg','2019-12-11',NULL,NULL),('5df1053055688',15,'uploads/bracelets/ba66283d78fcb15766c4397a9d84502d.PNG','2019-12-11',NULL,NULL),('5df1053055688',16,'uploads/bracelets/0a1be9ac77f550d294d96762dc1ed6e2.jpg','2019-12-11',NULL,NULL),('5df1053d5bc19',17,'uploads/bracelets/e4379265391ad1000463fe081d1b2ea3.jpg','2019-12-11',NULL,NULL),('5df1053d5bc19',18,'uploads/bracelets/6ba806e1f90b5edb7698f7dffc1ad654.PNG','2019-12-11',NULL,NULL),('5df1053d5bc19',19,'uploads/bracelets/16184f7b6317bfc6b9fbd747f9a6ae3d.jpg','2019-12-11',NULL,NULL),('5df108c53a31a',20,'uploads/earrings/f1f47a934dddae7415346c3ce247bbbd.jpg','2019-12-11',NULL,NULL),('5df109de304fe',21,'uploads/earrings/8f1eb461547a312eead4630665b9198c.jpg','2019-12-11','V','2019-12-11'),('5df109ece4e99',22,'uploads/earrings/7a6d42e38ccde95d40f218ed9d7c0af1.jpg','2019-12-11','V','2019-12-11'),('5df10a30d96f3',23,'uploads/earrings/18de26e0d12943f62325e4fc80375333.jpg','2019-12-11','V','2019-12-11'),('5df10a57e33ad',24,'uploads/earrings/335e3886f61454f3af24d0c55e96ace2.jpg','2019-12-11','V','2019-12-11'),('5df10a602e42a',25,'uploads/earrings/ae0710bc8fd86712e96b45f9fcb0d745.jpg','2019-12-11',NULL,NULL),('5df10cd46e72e',26,'uploads/pendants/1a2d4757c015793fb4a289139e14ee7e.jpg','2019-12-11','V','2019-12-11'),('5df10ce01229e',27,'uploads/pendants/ff228621896bf5a149401188a4dbb6e5.jpg','2019-12-11',NULL,NULL),('5df10e0d15f8b',28,'uploads/rings/5672b5f1e1db732288d34989109cb942.jpg','2019-12-11',NULL,NULL),('5df10ebf6ca5e',29,'uploads/rings/dc60e237f1be0f6a1d354dad323b39da.jpg','2019-12-11',NULL,NULL),('5df10f1da9014',30,'uploads/rings/c4e02d1a00142b3b66f8aea24953c676.jpg','2019-12-11',NULL,NULL),('5df1104ad42de',31,'uploads/rings/2826d669cb080afd0c487ebc52336923.jpg','2019-12-11',NULL,NULL),('5df110b4b49e3',32,'uploads/rings/81cedbb06ac4677e68db4913a48bb73d.jpg','2019-12-11','V','2019-12-11'),('5df110ce67f8a',33,'uploads/rings/bdc4a5cac8856ab5b12fee399424c627.jpg','2019-12-11',NULL,NULL),('5df1115d688bd',34,'uploads/rings/963ba462c64bbf122ef8cad103e78167.jpg','2019-12-11','V','2019-12-11'),('5df111675fd9f',35,'uploads/rings/e93f69b1b35aa9ee56b7db6741698e42.jpg','2019-12-11','V','2019-12-11'),('5df111787279d',36,'uploads/rings/d9b64b3cdfdbb6e5fa89ad3cfddf9352.jpg','2019-12-11',NULL,NULL);
 
 /*Table structure for table `tmtk_ring` */
 
@@ -174,8 +166,6 @@ CREATE TABLE `tmtk_ring` (
 
 /*Data for the table `tmtk_ring` */
 
-insert  into `tmtk_ring`(`IdProduct`,`Name`,`Description`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeletedOn`) values (1,'Classic Round Cut St','Classic, elegant and symbolic of your everlasting love, this ring will win her heart. It showcases a','5ddff9c9d7d54','2019-11-28','V','2019-12-11'),(2,'Halo Heart Cut Sterl','Make the moment you ask for her hand that much more magical with this exquisite bridal set. Expertly','5ddffa20f22d3','2019-11-28','','0000-00-00'),(5,'qwe','asd','5df1104ad42de','2019-12-11','','0000-00-00'),(4,'qwe','asd','5df10f1da9014','2019-12-11','','0000-00-00'),(6,'qwe','asdasd','5df110ce67f8a','2019-12-11','V','2019-12-11'),(7,'dasd','asdas','5df111787279d','2019-12-11',NULL,NULL);
-
 /*Table structure for table `tmtk_tag` */
 
 DROP TABLE IF EXISTS `tmtk_tag`;
@@ -193,7 +183,7 @@ CREATE TABLE `tmtk_tag` (
 
 /*Data for the table `tmtk_tag` */
 
-insert  into `tmtk_tag`(`IdTag`,`IdProduct_fk`,`IdAttribute_fk`,`ProductCategory`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,1,1,1,'2019-12-11','V','2019-12-11'),(2,1,2,1,'2019-12-11','V','2019-12-11'),(3,1,1,1,'2019-12-11','V','2019-12-11'),(4,1,1,1,'2019-12-11','V','2019-12-11'),(5,1,2,1,'2019-12-11','V','2019-12-11'),(6,1,1,1,'2019-12-11','V','2019-12-11'),(7,1,1,1,'2019-12-11','V','2019-12-11'),(8,1,2,1,'2019-12-11','V','2019-12-11'),(9,1,2,1,'2019-12-11','V','2019-12-11'),(10,1,2,1,'2019-12-11','V','2019-12-11'),(11,1,1,1,'2019-12-11',NULL,NULL),(12,1,2,1,'2019-12-11',NULL,NULL),(13,2,5,1,'2019-12-11',NULL,NULL),(14,2,6,1,'2019-12-11',NULL,NULL),(15,2,4,1,'2019-12-11',NULL,NULL),(16,2,5,1,'2019-12-11',NULL,NULL),(17,3,4,1,'2019-12-11',NULL,NULL),(18,3,5,1,'2019-12-11',NULL,NULL),(19,2,5,1,'2019-12-11',NULL,NULL),(20,2,6,1,'2019-12-11',NULL,NULL),(21,2,5,1,'2019-12-11',NULL,NULL),(22,2,6,1,'2019-12-11',NULL,NULL),(23,3,5,1,'2019-12-11',NULL,NULL),(24,3,6,1,'2019-12-11',NULL,NULL),(25,4,6,1,'2019-12-11',NULL,NULL),(26,5,6,1,'2019-12-11','V','2019-12-11'),(27,6,6,1,'2019-12-11','V','2019-12-11'),(28,7,6,1,'2019-12-11','V','2019-12-11'),(29,8,6,1,'2019-12-11',NULL,NULL),(30,9,6,1,'2019-12-11',NULL,NULL),(31,10,6,1,'2019-12-11','V','2019-12-11'),(32,11,6,1,'2019-12-11',NULL,NULL),(33,12,6,1,'2019-12-11',NULL,NULL),(34,13,6,1,'2019-12-11',NULL,NULL),(35,14,6,1,'2019-12-11',NULL,NULL),(36,15,6,1,'2019-12-11',NULL,NULL),(37,16,6,1,'2019-12-11',NULL,NULL),(38,17,6,1,'2019-12-11',NULL,NULL),(39,18,5,1,'2019-12-11',NULL,NULL),(40,18,6,1,'2019-12-11',NULL,NULL),(41,19,5,1,'2019-12-11',NULL,NULL),(42,19,6,1,'2019-12-11',NULL,NULL),(43,20,6,1,'2019-12-11',NULL,NULL),(52,10,4,2,'2019-12-11',NULL,NULL),(53,10,4,2,'2019-12-11',NULL,NULL),(54,5,5,3,'2019-12-11','V','2019-12-11'),(55,5,6,3,'2019-12-11','V','2019-12-11'),(56,5,5,3,'2019-12-11',NULL,NULL),(57,3,5,4,'2019-12-11',NULL,NULL),(58,3,6,4,'2019-12-11',NULL,NULL),(59,3,5,4,'2019-12-11',NULL,NULL),(60,3,6,4,'2019-12-11',NULL,NULL),(61,4,6,4,'2019-12-11',NULL,NULL),(62,5,4,4,'2019-12-11',NULL,NULL),(63,5,6,4,'2019-12-11',NULL,NULL),(64,6,5,4,'2019-12-11','V','2019-12-11'),(65,6,6,4,'2019-12-11','V','2019-12-11'),(66,6,5,4,'2019-12-11',NULL,NULL),(67,7,5,4,'2019-12-11','V','2019-12-11'),(68,7,6,4,'2019-12-11','V','2019-12-11'),(69,7,6,4,'2019-12-11','V','2019-12-11'),(70,7,5,4,'2019-12-11',NULL,NULL),(71,7,6,4,'2019-12-11',NULL,NULL);
+insert  into `tmtk_tag`(`IdTag`,`IdProduct_fk`,`IdAttribute_fk`,`ProductCategory`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,1,1,1,'2019-12-11','V','2019-12-11'),(2,1,2,1,'2019-12-11','V','2019-12-11'),(3,1,1,1,'2019-12-11','V','2019-12-11'),(4,1,1,1,'2019-12-11','V','2019-12-11'),(5,1,2,1,'2019-12-11','V','2019-12-11'),(6,1,1,1,'2019-12-11','V','2019-12-11'),(7,1,1,1,'2019-12-11','V','2019-12-11'),(8,1,2,1,'2019-12-11','V','2019-12-11'),(9,1,2,1,'2019-12-11','V','2019-12-11'),(10,1,2,1,'2019-12-11','V','2019-12-11'),(11,1,1,1,'2019-12-11','V','2019-12-11'),(12,1,2,1,'2019-12-11','V','2019-12-11'),(13,2,5,1,'2019-12-11',NULL,NULL),(14,2,6,1,'2019-12-11',NULL,NULL),(15,2,4,1,'2019-12-11',NULL,NULL),(16,2,5,1,'2019-12-11',NULL,NULL),(17,3,4,1,'2019-12-11',NULL,NULL),(18,3,5,1,'2019-12-11',NULL,NULL),(19,2,5,1,'2019-12-11',NULL,NULL),(20,2,6,1,'2019-12-11',NULL,NULL),(21,2,5,1,'2019-12-11',NULL,NULL),(22,2,6,1,'2019-12-11',NULL,NULL),(23,3,5,1,'2019-12-11',NULL,NULL),(24,3,6,1,'2019-12-11',NULL,NULL),(25,4,6,1,'2019-12-11',NULL,NULL),(26,5,6,1,'2019-12-11','V','2019-12-11'),(27,6,6,1,'2019-12-11','V','2019-12-11'),(28,7,6,1,'2019-12-11','V','2019-12-11'),(29,8,6,1,'2019-12-11',NULL,NULL),(30,9,6,1,'2019-12-11',NULL,NULL),(31,10,6,1,'2019-12-11','V','2019-12-12'),(32,11,6,1,'2019-12-11',NULL,NULL),(33,12,6,1,'2019-12-11',NULL,NULL),(34,13,6,1,'2019-12-11',NULL,NULL),(35,14,6,1,'2019-12-11',NULL,NULL),(36,15,6,1,'2019-12-11',NULL,NULL),(37,16,6,1,'2019-12-11',NULL,NULL),(38,17,6,1,'2019-12-11',NULL,NULL),(39,18,5,1,'2019-12-11',NULL,NULL),(40,18,6,1,'2019-12-11',NULL,NULL),(41,19,5,1,'2019-12-11',NULL,NULL),(42,19,6,1,'2019-12-11',NULL,NULL),(43,20,6,1,'2019-12-11',NULL,NULL),(52,10,4,2,'2019-12-11','V','2019-12-12'),(53,10,4,2,'2019-12-11','V','2019-12-12'),(54,5,5,3,'2019-12-11','V','2019-12-11'),(55,5,6,3,'2019-12-11','V','2019-12-11'),(56,5,5,3,'2019-12-11',NULL,NULL),(57,3,5,4,'2019-12-11',NULL,NULL),(58,3,6,4,'2019-12-11',NULL,NULL),(59,3,5,4,'2019-12-11',NULL,NULL),(60,3,6,4,'2019-12-11',NULL,NULL),(61,4,6,4,'2019-12-11',NULL,NULL),(62,5,4,4,'2019-12-11',NULL,NULL),(63,5,6,4,'2019-12-11',NULL,NULL),(64,6,5,4,'2019-12-11','V','2019-12-11'),(65,6,6,4,'2019-12-11','V','2019-12-11'),(66,6,5,4,'2019-12-11','V','2019-12-11'),(67,7,5,4,'2019-12-11','V','2019-12-11'),(68,7,6,4,'2019-12-11','V','2019-12-11'),(69,7,6,4,'2019-12-11','V','2019-12-11'),(70,7,5,4,'2019-12-11',NULL,NULL),(71,7,6,4,'2019-12-11',NULL,NULL),(72,1,1,1,'2019-12-11','V','2019-12-11'),(73,1,1,1,'2019-12-11',NULL,NULL),(74,21,4,1,'2019-12-11',NULL,NULL),(75,10,4,2,'2019-12-11','V','2019-12-12'),(76,10,6,2,'2019-12-11','V','2019-12-12'),(77,11,5,2,'2019-12-11',NULL,NULL),(78,6,4,3,'2019-12-11','V','2019-12-11'),(79,8,5,4,'2019-12-11',NULL,NULL),(80,8,6,4,'2019-12-11',NULL,NULL),(81,8,7,4,'2019-12-11',NULL,NULL),(82,10,3,2,'2019-12-12',NULL,NULL);
 
 /* Procedure structure for procedure `sp_tmtk_about` */
 
@@ -201,7 +191,7 @@ insert  into `tmtk_tag`(`IdTag`,`IdProduct_fk`,`IdAttribute_fk`,`ProductCategory
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_about`(`p_sMode` CHAR(1), `p_id_number` INT, `p_year` date, `p_description` text(500))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_about`(`p_sMode` CHAR(1), `p_id_number` INT, `p_year` DATE, `p_description` TEXT(500))
 BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
@@ -271,7 +261,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_banner`(p_sMode CHAR(1), p_IdBanner INT, p_BannerTitle CHAR(20), p_BannerDescription CHAR(50), p_BannerPath CHAR(200))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_banner`(`p_sMode` CHAR(1), `p_IdBanner` INT, `p_BannerTitle` CHAR(200), `p_BannerDescription` CHAR(200), `p_BannerPath` CHAR(200))
 BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
