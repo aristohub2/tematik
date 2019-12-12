@@ -110,38 +110,18 @@
 
         <?php
 
-            $id = [];
-            array_push($id,$rcm_id_0);
-            array_push($id,$rcm_id_1);
-            array_push($id,$rcm_id_2);
-
-            $ctg = [];
-            array_push($ctg,$rcm_ctg_0);
-            array_push($ctg,$rcm_ctg_1);
-            array_push($ctg,$rcm_ctg_2);
-
-            $path = [];
-            array_push($path,$rcm_path_0);
-            array_push($path,$rcm_path_1);
-            array_push($path,$rcm_path_2);
-
-            $name = [];
-            array_push($name,$rcm_name_0);
-            array_push($name,$rcm_name_1);
-            array_push($name,$rcm_name_2);
-
           for($counter = 0 ; $counter < 3 ; $counter++) {  
             echo "
               <div class='col-md-4'>
                 <div class='work-box'>
-                  <a href='". base_url('index.php/Individual_Product') ."?p=".$id[$counter]."&s=".$ctg[$counter]."'>
+                  <a href='". base_url('index.php/Individual_Product') ."?p=".$rcm_id[$counter]."&s=".$rcm_ctg[$counter]."'>
                     <div class='work-img'>
-                      <img src='". base_url($path[$counter]) ."' alt='' class='img-fluid'>
+                      <img src='". base_url($rcm_path[$counter]) ."' alt='' class='img-fluid'>
                     </div>
                     <div class='work-content'>
                       <div class='row'>
                         <div class='col-sm-12'>
-                          <h2 class='w-title'>".$name[$co] ."</h2>
+                          <h2 class='w-title'>".$rcm_name[$counter] ."</h2>
                         </div>
                       </div>
                     </div>

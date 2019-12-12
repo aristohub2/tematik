@@ -18,24 +18,40 @@ class Individual_Product extends CI_Controller {
 		$id=$_GET['p'];
 		$s =$_GET['s'];
 
-		// var_dump($s);
 		$recommendation = $this->mf_individual_product->get_recommendation($id,$s);
 		$query = $this->mf_individual_product->get_product_info($id,$s);
 
-		// echo "<pre>";
-		// var_dump($recommendation);die();
 		$counter = 0;
 
-		// echo "<pre>";
+		// $data['rcm_id'][0] = nul;
+		// $data['rcm_path'][0] = null;
+		// $data['rcm_ctg'][0] = null;
+		// $data['rcm_name'][0] = null;
+
 		foreach ($recommendation as $key => $value) {
 
 			if($counter<3){
 				// var_dump($value);
 				if(count($value) == 1){
-					$data['rcm_id_'.$counter] = $value[0]['IdUpload'];
-					$data['rcm_path_'.$counter] = $value[0]['ProductPath'];
-					$data['rcm_ctg_'.$counter] = $value[0]['category'];
-					$data['rcm_name_'.$counter] = $value[0]['Name'];
+					if($counter == 1){
+						//fornow
+						$data['rcm_id'][0] = $value[0]['IdProduct'];
+						$data['rcm_path'][0] = $value[0]['ProductPath'];
+						$data['rcm_ctg'][0] = $value[0]['category'];
+						$data['rcm_name'][0] = $value[0]['Name'];
+						$data['rcm_id'][1] = $value[0]['IdProduct'];
+						$data['rcm_path'][1] = $value[0]['ProductPath'];
+						$data['rcm_ctg'][1] = $value[0]['category'];
+						$data['rcm_name'][1] = $value[0]['Name'];
+						$data['rcm_id'][2] = $value[0]['IdProduct'];
+						$data['rcm_path'][2] = $value[0]['ProductPath'];
+						$data['rcm_ctg'][2] = $value[0]['category'];
+						$data['rcm_name'][2] = $value[0]['Name'];
+					}
+					$data['rcm_id'][$counter] = $value[0]['IdProduct'];
+					$data['rcm_path'][$counter] = $value[0]['ProductPath'];
+					$data['rcm_ctg'][$counter] = $value[0]['category'];
+					$data['rcm_name'][$counter] = $value[0]['Name'];
 					
 					$counter++;
 				}				
@@ -46,7 +62,6 @@ class Individual_Product extends CI_Controller {
 		}
 		// echo "<pre>";
 		// var_dump($data);
-
 		// die();
 
 		foreach ($query as $key) {
