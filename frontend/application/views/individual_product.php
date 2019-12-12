@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Single Products</title>
+  <title><?php echo $p_name; ?></title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <?php echo $css; ?>
@@ -107,54 +107,51 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="<?php echo base_url('assets/'); ?>img/img1.jpg" data-lightbox="gallery-mf-o1">
-              <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/img1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">Lorem impsum dolor</h2>
-                  </div>
+
+        <?php
+
+            $id = [];
+            array_push($id,$rcm_id_0);
+            array_push($id,$rcm_id_1);
+            array_push($id,$rcm_id_2);
+
+            $ctg = [];
+            array_push($ctg,$rcm_ctg_0);
+            array_push($ctg,$rcm_ctg_1);
+            array_push($ctg,$rcm_ctg_2);
+
+            $path = [];
+            array_push($path,$rcm_path_0);
+            array_push($path,$rcm_path_1);
+            array_push($path,$rcm_path_2);
+
+            $name = [];
+            array_push($name,$rcm_name_0);
+            array_push($name,$rcm_name_1);
+            array_push($name,$rcm_name_2);
+
+          for($counter = 0 ; $counter < 3 ; $counter++) {  
+            echo "
+              <div class='col-md-4'>
+                <div class='work-box'>
+                  <a href='". base_url('index.php/Individual_Product') ."?p=".$id[$counter]."&s=".$ctg[$counter]."'>
+                    <div class='work-img'>
+                      <img src='". base_url($path[$counter]) ."' alt='' class='img-fluid'>
+                    </div>
+                    <div class='work-content'>
+                      <div class='row'>
+                        <div class='col-sm-12'>
+                          <h2 class='w-title'>".$name[$co] ."</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
                 </div>
               </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="<?php echo base_url('assets/'); ?>img/img2.jpg" data-lightbox="gallery-mf-o2">
-              <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/img2.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">Lorem impsum dolor</h2>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="<?php echo base_url('assets/'); ?>img/img3.jpg" data-lightbox="gallery-mf-o3">
-              <div class="work-img">
-                <img src="<?php echo base_url('assets/'); ?>img/img3.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">Lorem impsum dolor</h2>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>       
+            ";
+          }
+        ?>
+
       </div>
     </div>
   </div>

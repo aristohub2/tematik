@@ -139,7 +139,7 @@ class m_earrings extends CI_Model
 		$sReturn=null;
 		$load_tag = null;
 		$hit=0;// biar dia kgk duplikat
-		$query = $this->db->query("SELECT * FROM `tmtk_attribute`");
+		$query = $this->db->query("SELECT * FROM tmtk_attribute where sStatusDelete is null");
 		$tag= $query->result_array();
 
 

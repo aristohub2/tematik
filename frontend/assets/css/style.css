@@ -1088,8 +1088,43 @@ footer .credits a {
   }
 }
 
-/* tes custom */
+/*======================================
+//--//-->   CUSTOM STYLING
+======================================*/
+
 .hide-scroll::-webkit-scrollbar
 {
   display: none;
+}
+
+.work-box img {
+    object-fit: cover;
+    width:100% !important;
+    max-height: 50vh;
+
+}
+
+.work-box:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.0);
+}
+
+.carousel img {
+  object-fit: cover;
+  width:100% !important;
+  max-height: 100vh;
+}
+
+.blur_images {          
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 100% !important; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

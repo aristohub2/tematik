@@ -12,7 +12,7 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Sign In</h5>
+            <h2 class="card-title text-center">Sign In</h2>
             <?php echo form_open_multipart('c_login/');?>
               <div class="form-label-group">
                 <label for="inputEmail">Username</label>
@@ -30,7 +30,7 @@
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
             </form>
             <div>
-              <a href="#">Create Account</a>  
+              <a href=" <?php echo base_url('index.php/c_register') ?>">Create Account</a>  
             </div>
             
           </div>
@@ -42,8 +42,12 @@
 <script type="text/javascript">
   $(function(){ 
       var error = '<?php echo $error; ?>';
+      console.log(error);
+      
       if(error == "0"){
         alert("Username and Password not exist or does not match, please try again.");
       }
+    });
+
 </script>
 </html>

@@ -15,7 +15,7 @@ class c_register extends CI_Controller {
 	{
 		$data['js'] = $this->load->view('backend/src/include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('backend/src/include/css.php',NULL,TRUE);
-		$data['error'] = 1;
+		$data['error'] = 3;
 		
 		if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['c_password']) ){
 

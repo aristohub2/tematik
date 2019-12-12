@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register Account</title>
+  <title>Login</title>
 </head>
 <?php echo $css; ?>
 <?php echo $js; ?>
@@ -52,11 +52,11 @@
       console.log(error);
 
       if(error == "1"){
-        alert("Username and Password already exist, please try again.");
+        alert("Username already exist, please try again.");
       }else if(error == "2")
       {
         alert("Confirm Password doesn't match, please try again.");
-      }else
+      }else if(error == "0")
       {
         alert("Account Registered Succesfully.");
       }

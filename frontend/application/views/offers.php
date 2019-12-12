@@ -12,36 +12,12 @@
   ?>
   <link href="<?php echo base_url('assets/'); ?>css/style-catalogue.css" rel="stylesheet">
   <style>
-        .work-box:hover img {
-            -webkit-transform: scale(1.3);
-            transform: scale(1.0);
-        }
-
-        .carousel img {
-          object-fit: cover;
-          width:100% !important;
-        }
-
-        .blur_images {          
-          /* Add the blur effect */
-          filter: blur(8px);
-          -webkit-filter: blur(8px);
-          
-          /* Full height */
-          height: 100%; 
-          
-          /* Center and scale the image nicely */
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
 
         h1{
           font-weight: bold;
           font-size: 60px;
           -webkit-text-stroke: 2px black;
         }
-
 
   </style>
 </head>
@@ -62,6 +38,7 @@
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
+        
         <?php 
           $counter = 0;
 
