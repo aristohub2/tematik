@@ -176,13 +176,13 @@
           columns : [
               { width : '5%' },
               { width : '5%' },
-              { width : '10%' },
-              { width : '10%' },        
-              { width : '10%' },
+              { width : '5%' },
+              { width : '20%' },        
+              { width : '7%' },
               { width : '30%' },
-              { width : '10%' },        
-              { width : '10%' },
-              { width : '10%' }        
+              { width : '14%' },        
+              { width : '7%' },
+              { width : '7%' }        
           ]
       } );
 

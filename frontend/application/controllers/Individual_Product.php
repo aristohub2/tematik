@@ -35,18 +35,18 @@ class Individual_Product extends CI_Controller {
 				if(count($value) == 1){
 					if($counter == 1){
 						//fornow
-						$data['rcm_id'][0] = $value[0]['IdProduct'];
-						$data['rcm_path'][0] = $value[0]['ProductPath'];
-						$data['rcm_ctg'][0] = $value[0]['category'];
-						$data['rcm_name'][0] = $value[0]['Name'];
-						$data['rcm_id'][1] = $value[0]['IdProduct'];
-						$data['rcm_path'][1] = $value[0]['ProductPath'];
-						$data['rcm_ctg'][1] = $value[0]['category'];
-						$data['rcm_name'][1] = $value[0]['Name'];
-						$data['rcm_id'][2] = $value[0]['IdProduct'];
-						$data['rcm_path'][2] = $value[0]['ProductPath'];
-						$data['rcm_ctg'][2] = $value[0]['category'];
-						$data['rcm_name'][2] = $value[0]['Name'];
+						// $data['rcm_id'][0] = $value[0]['IdProduct'];
+						// $data['rcm_path'][0] = $value[0]['ProductPath'];
+						// $data['rcm_ctg'][0] = $value[0]['category'];
+						// $data['rcm_name'][0] = $value[0]['Name'];
+						// $data['rcm_id'][1] = $value[0]['IdProduct'];
+						// $data['rcm_path'][1] = $value[0]['ProductPath'];
+						// $data['rcm_ctg'][1] = $value[0]['category'];
+						// $data['rcm_name'][1] = $value[0]['Name'];
+						// $data['rcm_id'][2] = $value[0]['IdProduct'];
+						// $data['rcm_path'][2] = $value[0]['ProductPath'];
+						// $data['rcm_ctg'][2] = $value[0]['category'];
+						// $data['rcm_name'][2] = $value[0]['Name'];
 					}
 					$data['rcm_id'][$counter] = $value[0]['IdProduct'];
 					$data['rcm_path'][$counter] = $value[0]['ProductPath'];

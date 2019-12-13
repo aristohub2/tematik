@@ -566,3 +566,7 @@ body {
     margin: 4px 2px;
     border-radius: 4px;
   }
+
+  .mid img{
+    width: 100%
+  }
