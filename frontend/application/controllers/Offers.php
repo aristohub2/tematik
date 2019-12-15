@@ -6,10 +6,6 @@ class Offers extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('mf_offers');
-		$this->load->model('mf_bracelets');
-		$this->load->model('mf_earrings');
-		$this->load->model('mf_pendants');
-		$this->load->model('mf_rings');
 			
 	}
 
@@ -21,10 +17,6 @@ class Offers extends CI_Controller {
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 
 		$data['banner'] = $this->mf_offers->get_banners();
-		$data['f_bracelet'] = $this->mf_bracelets->get_featured_products();
-		$data['f_earring'] = $this->mf_earrings->get_featured_products();
-		$data['f_pendant'] = $this->mf_pendants->get_featured_products();
-		$data['f_ring'] = $this->mf_rings->get_featured_products();
 
 		
 		$this->load->view('offers.php',$data);

@@ -97,7 +97,7 @@ class m_bracelet extends CI_Model
 
 		//query product
 		if($hideMode=="U"){
-			$sql = "call sp_tmtk_bracelet('".$hideMode."','".$bracelet_id."','".$bracelet_name."','".$bracelet_description."','".$upload_id."');";
+			$sql = "call sp_tmtk_bracelet('".$hideMode."','".$bracelet_id."','".$bracelet_name."','".addslashes($bracelet_description)."','".$upload_id."');";
 			$this->db->query($sql);
 			foreach ($tags as $key) {
 				$sql = "call sp_tmtk_tag('I','null','".$bracelet_id."','".$key."','1');";
@@ -108,7 +108,7 @@ class m_bracelet extends CI_Model
 
 		}
 		else{
-			$sql = "call sp_tmtk_bracelet('".$hideMode."','".$idmax[0]['max']."','".$bracelet_name."','".$bracelet_description."','".$upload_id."');";
+			$sql = "call sp_tmtk_bracelet('".$hideMode."','".$idmax[0]['max']."','".$bracelet_name."','".addslashes($bracelet_description)."','".$upload_id."');";
 			$this->db->query($sql);
 				foreach ($tags as $key) {
 					$sql = "call sp_tmtk_tag('I','null','".$idmax[0]['max']."','".$key."','1');";

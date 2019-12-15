@@ -32,7 +32,7 @@ class m_welcome extends CI_Model
 		if(trim($hideMode) !== "I") 
 			$UUID = trim($banner_id); 
 
-		$sql = "call sp_tmtk_banner('".$hideMode."','".$banner_id."','".$banner_title."','".$banner_description."','".$banner_path."')";
+		$sql = "call sp_tmtk_banner('".$hideMode."','".$banner_id."','".$banner_title."','".addslashes($banner_description)."','".$banner_path."')";
 		$hasil=$this->db->query($sql);
 		return $sReturn; 
 	}

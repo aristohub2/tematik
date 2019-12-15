@@ -97,7 +97,7 @@ class m_pendant extends CI_Model
 
 		//query product
 		if($hideMode=="U"){
-			$sql = "call sp_tmtk_pendant('".$hideMode."','".$pendant_id."','".$pendant_name."','".$pendant_description."','".$upload_id."');";
+			$sql = "call sp_tmtk_pendant('".$hideMode."','".$pendant_id."','".$pendant_name."','".addslashes($pendant_description)."','".$upload_id."');";
 			$this->db->query($sql);
 			foreach ($tags as $key) {
 				$sql = "call sp_tmtk_tag('I','null','".$pendant_id."','".$key."','3');";
@@ -108,7 +108,7 @@ class m_pendant extends CI_Model
 
 		}
 		else{
-			$sql = "call sp_tmtk_pendant('".$hideMode."','".$idmax[0]['max']."','".$pendant_name."','".$pendant_description."','".$upload_id."');";
+			$sql = "call sp_tmtk_pendant('".$hideMode."','".$idmax[0]['max']."','".$pendant_name."','".addslashes($pendant_description)."','".$upload_id."');";
 			$this->db->query($sql);
 				foreach ($tags as $key) {
 					$sql = "call sp_tmtk_tag('I','null','".$idmax[0]['max']."','".$key."','3');";

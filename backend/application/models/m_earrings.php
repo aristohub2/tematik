@@ -96,7 +96,7 @@ class m_earrings extends CI_Model
 
 		//query product
 		if($hideMode=="U"){
-			$sql = "call sp_tmtk_earrings('".$hideMode."','".$earrings_id."','".$earrings_name."','".$earrings_description."','".$upload_id."');";
+			$sql = "call sp_tmtk_earrings('".$hideMode."','".$earrings_id."','".$earrings_name."','".addslashes($earrings_description)."','".$upload_id."');";
 			$this->db->query($sql);
 			foreach ($tags as $key) {
 				$sql = "call sp_tmtk_tag('I','null','".$earrings_id."','".$key."','2');";
@@ -107,7 +107,7 @@ class m_earrings extends CI_Model
 
 		}
 		else{
-			$sql = "call sp_tmtk_earrings('".$hideMode."','".$idmax[0]['max']."','".$earrings_name."','".$earrings_description."','".$upload_id."');";
+			$sql = "call sp_tmtk_earrings('".$hideMode."','".$idmax[0]['max']."','".$earrings_name."','".addslashes($earrings_description)."','".$upload_id."');";
 			$this->db->query($sql);
 				foreach ($tags as $key) {
 					$sql = "call sp_tmtk_tag('I','null','".$idmax[0]['max']."','".$key."','2');";

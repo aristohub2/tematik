@@ -97,7 +97,7 @@ class m_ring extends CI_Model
 
 		//query product
 		if($hideMode=="U"){
-			$sql = "call sp_tmtk_ring('".$hideMode."','".$ring_id."','".$ring_name."','".$ring_description."','".$upload_id."');";
+			$sql = "call sp_tmtk_ring('".$hideMode."','".$ring_id."','".$ring_name."','".addslashes($ring_description)."','".$upload_id."');";
 			$this->db->query($sql);
 			foreach ($tags as $key) {
 				$sql = "call sp_tmtk_tag('I','null','".$ring_id."','".$key."','4');";
@@ -108,7 +108,7 @@ class m_ring extends CI_Model
 
 		}
 		else{
-			$sql = "call sp_tmtk_ring('".$hideMode."','".$idmax[0]['max']."','".$ring_name."','".$ring_description."','".$upload_id."');";
+			$sql = "call sp_tmtk_ring('".$hideMode."','".$idmax[0]['max']."','".$ring_name."','".addslashes($ring_description)."','".$upload_id."');";
 			$this->db->query($sql);
 				foreach ($tags as $key) {
 					$sql = "call sp_tmtk_tag('I','null','".$idmax[0]['max']."','".$key."','4');";

@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.6-MariaDB : Database - tematik
+MySQL - 5.5.16 : Database - tematik
 *********************************************************************
 */
 
@@ -40,7 +40,7 @@ DROP TABLE IF EXISTS `tmtk_banner`;
 CREATE TABLE `tmtk_banner` (
   `IdBanner` int(11) NOT NULL,
   `BannerTitle` varchar(200) DEFAULT NULL,
-  `BannerDescription` varchar(200) DEFAULT NULL,
+  `BannerDescription` text,
   `BannerPath` varchar(200) DEFAULT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -59,7 +59,7 @@ DROP TABLE IF EXISTS `tmtk_bracelet`;
 CREATE TABLE `tmtk_bracelet` (
   `IdProduct` int(11) NOT NULL,
   `Name` varchar(50) DEFAULT NULL,
-  `Description` varchar(1000) DEFAULT NULL,
+  `Description` text,
   `UploadFk` varchar(100) NOT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -69,13 +69,15 @@ CREATE TABLE `tmtk_bracelet` (
 
 /*Data for the table `tmtk_bracelet` */
 
+insert  into `tmtk_bracelet`(`IdProduct`,`Name`,`Description`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'Tiffany 1837® Cuff','Graphic angles and clean lines blend to create the beautiful clarity of the Tiffany T collection.','5df5d107c0377','2019-12-12',NULL,NULL),(2,'Tiffany 1837® Makers','A simple yet bold design, this narrow cuff is made of solid 18k gold. Crafted with a makers symbol i','5df1ca50cdf70','2019-12-12',NULL,NULL),(3,'Tiffany Infinity Bra','Tiffany Infinity is a powerful symbol of continuous connection, energy and vitality. The addition of','5df1c9bf0e7af','2019-12-12',NULL,NULL),(4,'Tiffany T Square Bra','Graphic angles and clean lines blend to create the beautiful clarity of the Tiffany T collection. Th','5df1c9e69a920','2019-12-12',NULL,NULL),(5,'Tiffany T Tigers Eye','Graphic angles and clean lines blend to create the beautiful clarity of the Tiffany T collection. Th','5df1ca1e1255a','2019-12-12',NULL,NULL);
+
 /*Table structure for table `tmtk_company` */
 
 DROP TABLE IF EXISTS `tmtk_company`;
 
 CREATE TABLE `tmtk_company` (
   `id_number` int(11) NOT NULL,
-  `year` date DEFAULT NULL,
+  `year` year(4) DEFAULT NULL,
   `description` varchar(500) DEFAULT NULL,
   `sStatusDelete` char(1) DEFAULT NULL,
   PRIMARY KEY (`id_number`)
@@ -83,7 +85,7 @@ CREATE TABLE `tmtk_company` (
 
 /*Data for the table `tmtk_company` */
 
-insert  into `tmtk_company`(`id_number`,`year`,`description`,`sStatusDelete`) values (0,NULL,'okimjasd',NULL),(1,'2019-12-23','yuyuyuyuyuyu','V'),(2,'2019-12-02','tyttyty','V'),(3,'2019-12-04','makan ',NULL),(4,'2019-12-18','zxczxczxczxc',NULL),(5,'2019-12-04','4567567567567','V'),(6,'2019-12-28','zxczxc',NULL),(7,'2019-12-28','asdasdasdzxc',NULL),(8,'2019-12-18','po',NULL);
+insert  into `tmtk_company`(`id_number`,`year`,`description`,`sStatusDelete`) values (0,NULL,'okimjasd',NULL),(1,2019,'yuyuyuyuyuyu','V'),(2,2019,'tyttyty','V'),(3,2019,'makan ',NULL),(4,2019,'zxczxczxczxc',NULL),(5,2019,'4567567567567','V'),(6,2019,'zxczxc',NULL),(7,2019,'asdasdasdzxc',NULL),(8,2019,'po',NULL);
 
 /*Table structure for table `tmtk_earrings` */
 
@@ -92,7 +94,7 @@ DROP TABLE IF EXISTS `tmtk_earrings`;
 CREATE TABLE `tmtk_earrings` (
   `IdProduct` int(11) NOT NULL,
   `Name` varchar(50) DEFAULT NULL,
-  `Description` varchar(100) DEFAULT NULL,
+  `Description` text,
   `UploadFk` varchar(50) DEFAULT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -101,6 +103,8 @@ CREATE TABLE `tmtk_earrings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tmtk_earrings` */
+
+insert  into `tmtk_earrings`(`IdProduct`,`Name`,`Description`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'Large Snowman Earrin','A symbol of all that we treasure, this earring is the ultimate collectors piece. Cherish links are c','5df1cb1de642b','2019-12-12',NULL,NULL),(2,'Teardrop Earrings in','Playful enough for day, fancy enough for night, these teardrop earrings are irresistible. Two Lollip','5df1ccad3821c','2019-12-12',NULL,NULL),(3,'Small Earrings in 18','An expression of all that we treasure, the Cherish link in crafted in gold and covered in glimmering','5df1ccd6994a5','2019-12-12',NULL,NULL),(4,'0.65ctw 18k Yellow G','Eternally brilliant, these Shared-Prong Diamond Hoop Earrings are the ultimate in style and class. W','5df1cd12509d1','2019-12-12',NULL,NULL);
 
 /*Table structure for table `tmtk_login` */
 
@@ -123,7 +127,7 @@ DROP TABLE IF EXISTS `tmtk_pendant`;
 CREATE TABLE `tmtk_pendant` (
   `IdProduct` int(11) NOT NULL,
   `Name` varchar(50) DEFAULT NULL,
-  `Description` varchar(1000) DEFAULT NULL,
+  `Description` text,
   `UploadFk` varchar(100) NOT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -132,6 +136,8 @@ CREATE TABLE `tmtk_pendant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tmtk_pendant` */
+
+insert  into `tmtk_pendant`(`IdProduct`,`Name`,`Description`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,'Medium O Pendant','Add a splash of sophisticated style and discover a whole new way of collecting, displaying and showi','5df1c8510f160','2019-12-12',NULL,NULL),(2,'Timeless Elegance','Captivate with this exquisite sterling silver halo necklace featuring a square-cut cubic zirconia ce','5df1c88da1e64','2019-12-12',NULL,NULL),(3,'Vintage Circle Colli','Enhance any neckline in a spectacular fashion with this striking geometric design in PANDORA Rose. T','5df1c8cf55c6c','2019-12-12',NULL,NULL),(4,'Sparkling Cross Pend','The classic emblem of faith is beautifully reimagined in this sterling silver version. The cross pen','5df1c8ea5f10e','2019-12-12',NULL,NULL);
 
 /*Table structure for table `tmtk_product_uploads` */
 
@@ -149,6 +155,8 @@ CREATE TABLE `tmtk_product_uploads` (
 
 /*Data for the table `tmtk_product_uploads` */
 
+insert  into `tmtk_product_uploads`(`IdUpload`,`ProductId`,`ProductPath`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values ('5df1c8510f160',1,'uploads/pendants/03019534afca62c38deb211a4b5f9d2a.jpg','2019-12-12',NULL,NULL),('5df1c8510f160',2,'uploads/pendants/f05bd546fc119cc4409522ec211c66ca.jpg','2019-12-12',NULL,NULL),('5df1c88da1e64',3,'uploads/pendants/89d451e7eca9a06fbfa91dc1e0ee1566.jpg','2019-12-12',NULL,NULL),('5df1c88da1e64',4,'uploads/pendants/7d694eda88758d2cd8c9ba081502545d.jpg','2019-12-12',NULL,NULL),('5df1c8cf55c6c',5,'uploads/pendants/64039f24bf58973082b9a777053045c5.jpg','2019-12-12',NULL,NULL),('5df1c8cf55c6c',6,'uploads/pendants/2a795cd8245f76cd7d2875e83337b84e.jpg','2019-12-12',NULL,NULL),('5df1c8ea5f10e',7,'uploads/pendants/73735736607a61deffaafdaf80fc5703.jpg','2019-12-12',NULL,NULL),('5df1c8ea5f10e',8,'uploads/pendants/4b104b65bda4bf996b8d1f81ce57c78b.jpg','2019-12-12',NULL,NULL),('5df1c9711f3bd',9,'uploads/bracelets/232d79b7284c8db70caf03dd39912b76.jpg','2019-12-12','V','2019-12-15'),('5df1c9711f3bd',10,'uploads/bracelets/1494e04ad65a644626a68cca0b726b7c.jpg','2019-12-12','V','2019-12-15'),('5df1c99f99028',11,'uploads/bracelets/f1ce0495475cd007ba3271f3fd96f94e.jpg','2019-12-12','V','2019-12-12'),('5df1c99f99028',12,'uploads/bracelets/47f8fe15c8d59b4b105a59f61edef2c7.jpg','2019-12-12','V','2019-12-12'),('5df1c99f99028',13,'uploads/bracelets/a538b4344176cf5dad11b4ab00969eca.jpg','2019-12-12','V','2019-12-12'),('5df1c99f99028',14,'uploads/bracelets/7530870ba1e847d95dbf75964a175333.jpg','2019-12-12','V','2019-12-12'),('5df1c99f99028',15,'uploads/bracelets/2e7a164014298e5277b77a04858805d4.jpg','2019-12-12','V','2019-12-12'),('5df1c9bf0e7af',16,'uploads/bracelets/1c864c798b2e78ff43622d40cb94a69d.jpg','2019-12-12',NULL,NULL),('5df1c9bf0e7af',17,'uploads/bracelets/1611e9af2ea3dca939684b52f9c39894.jpg','2019-12-12',NULL,NULL),('5df1c9e69a920',18,'uploads/bracelets/a90cb08651e04cb8f7e5f929aa8eaab8.jpg','2019-12-12',NULL,NULL),('5df1c9e69a920',19,'uploads/bracelets/979d33e98735f36bb65289142c19eea8.jpg','2019-12-12',NULL,NULL),('5df1c9e69a920',20,'uploads/bracelets/8d599bae05c522074029ce090abe1f7b.jpg','2019-12-12',NULL,NULL),('5df1c9e69a920',21,'uploads/bracelets/466d739cdfd78e8211bbff7641dc21b8.jpg','2019-12-12',NULL,NULL),('5df1ca1e1255a',22,'uploads/bracelets/521e918c48040c77c36ea35bcdbc78c2.jpg','2019-12-12',NULL,NULL),('5df1ca1e1255a',23,'uploads/bracelets/c8acf157dc7f622cc11caaf2b47687c4.jpg','2019-12-12',NULL,NULL),('5df1ca1e1255a',24,'uploads/bracelets/16d634eebf254138108f52d787b892a2.jpg','2019-12-12',NULL,NULL),('5df1ca1e1255a',25,'uploads/bracelets/61571368df718813852d60d01b06713d.jpg','2019-12-12',NULL,NULL),('5df1ca50cdf70',26,'uploads/bracelets/32641bcc63fb129951dfcd08193ca50d.jpg','2019-12-12',NULL,NULL),('5df1ca50cdf70',27,'uploads/bracelets/54fb8369a90ae4a91db4af2035bbae1a.jpg','2019-12-12',NULL,NULL),('5df1ca50cdf70',28,'uploads/bracelets/75ec04c89ab4c25945b8eca35e2c739c.jpg','2019-12-12',NULL,NULL),('5df1ca50cdf70',29,'uploads/bracelets/0e3c0b1ad5b89cf883dfde431b76d811.jpg','2019-12-12',NULL,NULL),('5df1ca50cdf70',30,'uploads/bracelets/e2c80f3d6a289bbdfe4634040f01627f.jpg','2019-12-12',NULL,NULL),('5df1cb1de642b',31,'uploads/earrings/8bf74347653fe4be63f06b537fd897b8.jpg','2019-12-12',NULL,NULL),('5df1cb1de642b',32,'uploads/earrings/b254ecda28ee47e3e558dba2c2386a2c.jpg','2019-12-12',NULL,NULL),('5df1cb62e5c11',33,'uploads/rings/2f539005cb65d0907c2f3334ea7dda3f.jpg','2019-12-12',NULL,NULL),('5df1cb62e5c11',34,'uploads/rings/ab1e86986d673fc870d37eb5b12e9046.jpg','2019-12-12',NULL,NULL),('5df1cb62e5c11',35,'uploads/rings/4d3cff473b88a59bc163571784e1cd57.jpg','2019-12-12',NULL,NULL),('5df1cb62e5c11',36,'uploads/rings/2b9849aaad09dff726ad46d70cdd25ba.jpg','2019-12-12',NULL,NULL),('5df1cb62e5c11',37,'uploads/rings/d9e0f12e465f2035baaacecbfa353e4c.jpg','2019-12-12',NULL,NULL),('5df1cc704942c',38,'uploads/rings/bd8d56090d717b8771a1b3f74d647f5c.jpg','2019-12-12',NULL,NULL),('5df1cc704942c',39,'uploads/rings/ec6e5069b02f9d7b9496818eb34c7e39.jpg','2019-12-12',NULL,NULL),('5df1cc704942c',40,'uploads/rings/bfd5612be97d9322d49638f9017afd5a.jpg','2019-12-12',NULL,NULL),('5df1cc704942c',41,'uploads/rings/2bab37f8351063dd288bc64ee3386fe9.jpg','2019-12-12',NULL,NULL),('5df1ccad3821c',42,'uploads/earrings/ba7dc21c01271e00b0fc270a04e90fed.jpg','2019-12-12',NULL,NULL),('5df1ccad3821c',43,'uploads/earrings/119ef2029acd23b67ac6710c12a4f020.jpg','2019-12-12',NULL,NULL),('5df1ccd6994a5',44,'uploads/earrings/3eea7b3339c544826393ad11ea11ed83.jpg','2019-12-12',NULL,NULL),('5df1ccd6994a5',45,'uploads/earrings/eb17d4c43ba5986e7d52b52a5fa1154b.jpg','2019-12-12',NULL,NULL),('5df1cd12509d1',46,'uploads/earrings/ddbb125ee522e8682aa8526c3eae187b.jpg','2019-12-12',NULL,NULL),('5df1cd12509d1',47,'uploads/earrings/0fd856d840498c0053769b57706bdb31.jpg','2019-12-12',NULL,NULL),('5df1cd12509d1',48,'uploads/earrings/9af6e73e304782c99d68a236d68c4054.jpg','2019-12-12',NULL,NULL),('5df5d021d04e1',49,'uploads/bracelets/1b44c189b15371fd8214476efb379104.jpg','2019-12-15','V','2019-12-15'),('5df5d107c0377',50,'uploads/bracelets/1554edef737a697cc120e589b411266c.jpg','2019-12-15',NULL,NULL);
+
 /*Table structure for table `tmtk_ring` */
 
 DROP TABLE IF EXISTS `tmtk_ring`;
@@ -156,7 +164,7 @@ DROP TABLE IF EXISTS `tmtk_ring`;
 CREATE TABLE `tmtk_ring` (
   `IdProduct` int(11) NOT NULL,
   `Name` varchar(100) DEFAULT NULL,
-  `Description` varchar(1000) DEFAULT NULL,
+  `Description` text,
   `UploadFk` varchar(100) NOT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -165,6 +173,8 @@ CREATE TABLE `tmtk_ring` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `tmtk_ring` */
+
+insert  into `tmtk_ring`(`IdProduct`,`Name`,`Description`,`UploadFk`,`dCreateOn`,`sStatusDelete`,`dDeletedOn`) values (1,'Classic Round Cut St','Classic, elegant and symbolic of your everlasting love, this ring will win her heart. It showcases a','5df1cb62e5c11','2019-12-12',NULL,NULL),(2,'Halo Heart Cut Sterl','Make the moment you ask for her hand that much more magical with this exquisite bridal set. Expertly','5df1cc704942c','2019-12-12',NULL,NULL);
 
 /*Table structure for table `tmtk_tag` */
 
@@ -183,7 +193,7 @@ CREATE TABLE `tmtk_tag` (
 
 /*Data for the table `tmtk_tag` */
 
-insert  into `tmtk_tag`(`IdTag`,`IdProduct_fk`,`IdAttribute_fk`,`ProductCategory`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,1,1,1,'2019-12-11','V','2019-12-11'),(2,1,2,1,'2019-12-11','V','2019-12-11'),(3,1,1,1,'2019-12-11','V','2019-12-11'),(4,1,1,1,'2019-12-11','V','2019-12-11'),(5,1,2,1,'2019-12-11','V','2019-12-11'),(6,1,1,1,'2019-12-11','V','2019-12-11'),(7,1,1,1,'2019-12-11','V','2019-12-11'),(8,1,2,1,'2019-12-11','V','2019-12-11'),(9,1,2,1,'2019-12-11','V','2019-12-11'),(10,1,2,1,'2019-12-11','V','2019-12-11'),(11,1,1,1,'2019-12-11','V','2019-12-11'),(12,1,2,1,'2019-12-11','V','2019-12-11'),(13,2,5,1,'2019-12-11',NULL,NULL),(14,2,6,1,'2019-12-11',NULL,NULL),(15,2,4,1,'2019-12-11',NULL,NULL),(16,2,5,1,'2019-12-11',NULL,NULL),(17,3,4,1,'2019-12-11',NULL,NULL),(18,3,5,1,'2019-12-11',NULL,NULL),(19,2,5,1,'2019-12-11',NULL,NULL),(20,2,6,1,'2019-12-11',NULL,NULL),(21,2,5,1,'2019-12-11',NULL,NULL),(22,2,6,1,'2019-12-11',NULL,NULL),(23,3,5,1,'2019-12-11',NULL,NULL),(24,3,6,1,'2019-12-11',NULL,NULL),(25,4,6,1,'2019-12-11',NULL,NULL),(26,5,6,1,'2019-12-11','V','2019-12-11'),(27,6,6,1,'2019-12-11','V','2019-12-11'),(28,7,6,1,'2019-12-11','V','2019-12-11'),(29,8,6,1,'2019-12-11',NULL,NULL),(30,9,6,1,'2019-12-11',NULL,NULL),(31,10,6,1,'2019-12-11','V','2019-12-12'),(32,11,6,1,'2019-12-11',NULL,NULL),(33,12,6,1,'2019-12-11',NULL,NULL),(34,13,6,1,'2019-12-11',NULL,NULL),(35,14,6,1,'2019-12-11',NULL,NULL),(36,15,6,1,'2019-12-11',NULL,NULL),(37,16,6,1,'2019-12-11',NULL,NULL),(38,17,6,1,'2019-12-11',NULL,NULL),(39,18,5,1,'2019-12-11',NULL,NULL),(40,18,6,1,'2019-12-11',NULL,NULL),(41,19,5,1,'2019-12-11',NULL,NULL),(42,19,6,1,'2019-12-11',NULL,NULL),(43,20,6,1,'2019-12-11',NULL,NULL),(52,10,4,2,'2019-12-11','V','2019-12-12'),(53,10,4,2,'2019-12-11','V','2019-12-12'),(54,5,5,3,'2019-12-11','V','2019-12-11'),(55,5,6,3,'2019-12-11','V','2019-12-11'),(56,5,5,3,'2019-12-11',NULL,NULL),(57,3,5,4,'2019-12-11',NULL,NULL),(58,3,6,4,'2019-12-11',NULL,NULL),(59,3,5,4,'2019-12-11',NULL,NULL),(60,3,6,4,'2019-12-11',NULL,NULL),(61,4,6,4,'2019-12-11',NULL,NULL),(62,5,4,4,'2019-12-11',NULL,NULL),(63,5,6,4,'2019-12-11',NULL,NULL),(64,6,5,4,'2019-12-11','V','2019-12-11'),(65,6,6,4,'2019-12-11','V','2019-12-11'),(66,6,5,4,'2019-12-11','V','2019-12-11'),(67,7,5,4,'2019-12-11','V','2019-12-11'),(68,7,6,4,'2019-12-11','V','2019-12-11'),(69,7,6,4,'2019-12-11','V','2019-12-11'),(70,7,5,4,'2019-12-11',NULL,NULL),(71,7,6,4,'2019-12-11',NULL,NULL),(72,1,1,1,'2019-12-11','V','2019-12-11'),(73,1,1,1,'2019-12-11',NULL,NULL),(74,21,4,1,'2019-12-11',NULL,NULL),(75,10,4,2,'2019-12-11','V','2019-12-12'),(76,10,6,2,'2019-12-11','V','2019-12-12'),(77,11,5,2,'2019-12-11',NULL,NULL),(78,6,4,3,'2019-12-11','V','2019-12-11'),(79,8,5,4,'2019-12-11',NULL,NULL),(80,8,6,4,'2019-12-11',NULL,NULL),(81,8,7,4,'2019-12-11',NULL,NULL),(82,10,3,2,'2019-12-12',NULL,NULL);
+insert  into `tmtk_tag`(`IdTag`,`IdProduct_fk`,`IdAttribute_fk`,`ProductCategory`,`dCreateOn`,`sStatusDelete`,`dDeleteOn`) values (1,1,1,1,'2019-12-11','V','2019-12-15'),(2,1,2,1,'2019-12-11','V','2019-12-15'),(3,1,1,1,'2019-12-11','V','2019-12-15'),(4,1,1,1,'2019-12-11','V','2019-12-15'),(5,1,2,1,'2019-12-11','V','2019-12-15'),(6,1,1,1,'2019-12-11','V','2019-12-15'),(7,1,1,1,'2019-12-11','V','2019-12-15'),(8,1,2,1,'2019-12-11','V','2019-12-15'),(9,1,2,1,'2019-12-11','V','2019-12-15'),(10,1,2,1,'2019-12-11','V','2019-12-15'),(11,1,1,1,'2019-12-11','V','2019-12-15'),(12,1,2,1,'2019-12-11','V','2019-12-15'),(13,2,5,1,'2019-12-11','V','2019-12-12'),(14,2,6,1,'2019-12-11','V','2019-12-12'),(15,2,4,1,'2019-12-11','V','2019-12-12'),(16,2,5,1,'2019-12-11','V','2019-12-12'),(17,3,4,1,'2019-12-11',NULL,NULL),(18,3,5,1,'2019-12-11',NULL,NULL),(19,2,5,1,'2019-12-11','V','2019-12-12'),(20,2,6,1,'2019-12-11','V','2019-12-12'),(21,2,5,1,'2019-12-11','V','2019-12-12'),(22,2,6,1,'2019-12-11','V','2019-12-12'),(23,3,5,1,'2019-12-11',NULL,NULL),(24,3,6,1,'2019-12-11',NULL,NULL),(25,4,6,1,'2019-12-11',NULL,NULL),(26,5,6,1,'2019-12-11','V','2019-12-11'),(27,6,6,1,'2019-12-11','V','2019-12-11'),(28,7,6,1,'2019-12-11','V','2019-12-11'),(29,8,6,1,'2019-12-11',NULL,NULL),(30,9,6,1,'2019-12-11',NULL,NULL),(31,10,6,1,'2019-12-11','V','2019-12-12'),(32,11,6,1,'2019-12-11',NULL,NULL),(33,12,6,1,'2019-12-11',NULL,NULL),(34,13,6,1,'2019-12-11',NULL,NULL),(35,14,6,1,'2019-12-11',NULL,NULL),(36,15,6,1,'2019-12-11',NULL,NULL),(37,16,6,1,'2019-12-11',NULL,NULL),(38,17,6,1,'2019-12-11',NULL,NULL),(39,18,5,1,'2019-12-11',NULL,NULL),(40,18,6,1,'2019-12-11',NULL,NULL),(41,19,5,1,'2019-12-11',NULL,NULL),(42,19,6,1,'2019-12-11',NULL,NULL),(43,20,6,1,'2019-12-11',NULL,NULL),(52,10,4,2,'2019-12-11','V','2019-12-12'),(53,10,4,2,'2019-12-11','V','2019-12-12'),(54,5,5,3,'2019-12-11','V','2019-12-11'),(55,5,6,3,'2019-12-11','V','2019-12-11'),(56,5,5,3,'2019-12-11',NULL,NULL),(57,3,5,4,'2019-12-11',NULL,NULL),(58,3,6,4,'2019-12-11',NULL,NULL),(59,3,5,4,'2019-12-11',NULL,NULL),(60,3,6,4,'2019-12-11',NULL,NULL),(61,4,6,4,'2019-12-11',NULL,NULL),(62,5,4,4,'2019-12-11',NULL,NULL),(63,5,6,4,'2019-12-11',NULL,NULL),(64,6,5,4,'2019-12-11','V','2019-12-11'),(65,6,6,4,'2019-12-11','V','2019-12-11'),(66,6,5,4,'2019-12-11','V','2019-12-11'),(67,7,5,4,'2019-12-11','V','2019-12-11'),(68,7,6,4,'2019-12-11','V','2019-12-11'),(69,7,6,4,'2019-12-11','V','2019-12-11'),(70,7,5,4,'2019-12-11',NULL,NULL),(71,7,6,4,'2019-12-11',NULL,NULL),(72,1,1,1,'2019-12-11','V','2019-12-15'),(73,1,1,1,'2019-12-11','V','2019-12-15'),(74,21,4,1,'2019-12-11',NULL,NULL),(75,10,4,2,'2019-12-11','V','2019-12-12'),(76,10,6,2,'2019-12-11','V','2019-12-12'),(77,11,5,2,'2019-12-11',NULL,NULL),(78,6,4,3,'2019-12-11','V','2019-12-11'),(79,8,5,4,'2019-12-11',NULL,NULL),(80,8,6,4,'2019-12-11',NULL,NULL),(81,8,7,4,'2019-12-11',NULL,NULL),(82,10,3,2,'2019-12-12',NULL,NULL),(83,1,4,3,'2019-12-12','V','2019-12-15'),(84,1,6,3,'2019-12-12','V','2019-12-15'),(85,2,4,3,'2019-12-12','V','2019-12-12'),(86,2,6,3,'2019-12-12','V','2019-12-12'),(87,3,1,3,'2019-12-12',NULL,NULL),(88,3,4,3,'2019-12-12',NULL,NULL),(89,4,2,3,'2019-12-12',NULL,NULL),(90,4,4,3,'2019-12-12',NULL,NULL),(91,1,4,1,'2019-12-12','V','2019-12-15'),(92,1,6,1,'2019-12-12','V','2019-12-15'),(93,2,1,1,'2019-12-12','V','2019-12-12'),(94,2,4,1,'2019-12-12','V','2019-12-12'),(95,3,2,1,'2019-12-12',NULL,NULL),(96,3,4,1,'2019-12-12',NULL,NULL),(97,4,1,1,'2019-12-12',NULL,NULL),(98,4,4,1,'2019-12-12',NULL,NULL),(99,5,1,1,'2019-12-12',NULL,NULL),(100,5,4,1,'2019-12-12',NULL,NULL),(101,2,1,1,'2019-12-12',NULL,NULL),(102,2,5,1,'2019-12-12',NULL,NULL),(103,1,1,2,'2019-12-12','V','2019-12-15'),(104,1,4,2,'2019-12-12','V','2019-12-15'),(105,1,4,4,'2019-12-12','V','2019-12-15'),(106,1,6,4,'2019-12-12','V','2019-12-15'),(107,2,4,4,'2019-12-12',NULL,NULL),(108,2,6,4,'2019-12-12',NULL,NULL),(109,2,1,2,'2019-12-12',NULL,NULL),(110,2,3,2,'2019-12-12',NULL,NULL),(111,2,4,2,'2019-12-12',NULL,NULL),(112,3,1,2,'2019-12-12',NULL,NULL),(113,3,3,2,'2019-12-12',NULL,NULL),(114,3,4,2,'2019-12-12',NULL,NULL),(115,4,1,2,'2019-12-12',NULL,NULL),(116,4,3,2,'2019-12-12',NULL,NULL),(117,4,4,2,'2019-12-12',NULL,NULL),(118,1,1,1,'2019-12-15','V','2019-12-15'),(119,1,4,1,'2019-12-15','V','2019-12-15'),(120,1,6,1,'2019-12-15','V','2019-12-15'),(121,1,1,1,'2019-12-15',NULL,NULL),(122,1,4,1,'2019-12-15',NULL,NULL),(123,1,6,1,'2019-12-15',NULL,NULL);
 
 /* Procedure structure for procedure `sp_tmtk_about` */
 
@@ -261,7 +271,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_banner`(`p_sMode` CHAR(1), `p_IdBanner` INT, `p_BannerTitle` CHAR(200), `p_BannerDescription` CHAR(200), `p_BannerPath` CHAR(200))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_banner`(IN `p_sMode` CHAR(1), IN `p_IdBanner` INT, IN `p_BannerTitle` CHAR(200), IN `p_BannerDescription` TEXT, IN `p_BannerPath` CHAR(200))
 BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
@@ -301,7 +311,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_bracelet`(`p_sMode` CHAR(1), `p_IdBracelet` INT, `p_BraceletName` CHAR(20), `p_BraceletDescription` CHAR(100), `p_BraceletUploadFk` CHAR(200))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_bracelet`(`p_sMode` CHAR(1), `p_IdBracelet` INT, `p_BraceletName` CHAR(20), `p_BraceletDescription` text, `p_BraceletUploadFk` CHAR(200))
 BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
@@ -341,7 +351,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_earrings`(`p_sMode` CHAR(1), `p_IdEarring` INT, `p_EarringName` CHAR(20), `p_EarringDescription` CHAR(100), `p_EarringUploadFk` CHAR(200))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_earrings`(`p_sMode` CHAR(1), `p_IdEarring` INT, `p_EarringName` CHAR(20), `p_EarringDescription` TEXT, `p_EarringUploadFk` CHAR(200))
 BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
@@ -381,7 +391,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_pendant`(`p_sMode` CHAR(1), `p_IdPendant` INT, `p_PendantName` CHAR(20), `p_PendantDescription` CHAR(100), `p_PendantUploadFk` CHAR(200))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_pendant`(`p_sMode` CHAR(1), `p_IdPendant` INT, `p_PendantName` CHAR(20), `p_PendantDescription` TEXT, `p_PendantUploadFk` CHAR(200))
 BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
@@ -460,7 +470,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_ring`(`p_sMode` CHAR(1), `p_IdRing` INT, `p_RingName` CHAR(20), `p_RingDescription` CHAR(100), `p_RingUploadFk` CHAR(200))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_ring`(`p_sMode` CHAR(1), `p_IdRing` INT, `p_RingName` CHAR(20), `p_RingDescription` TEXT, `p_RingUploadFk` CHAR(200))
 BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN

@@ -96,7 +96,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_bracelets')?>">
               <div class="work-img">
-                <img src="<?php echo base_url($f_bracelet); ?>" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_bracelet); ?>" alt="" class="img-fluid img_catalogue">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -112,7 +112,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_earrings')?>">
               <div class="work-img">
-                <img src="<?php echo base_url($f_earring); ?>" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_earring); ?>" alt="" class="img-fluid img_catalogue">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -128,7 +128,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_pendants')?>">
               <div class="work-img">
-                <img src="<?php echo base_url($f_pendant); ?>" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_pendant); ?>" alt="" class="img-fluid img_catalogue">
               </div>
               <div class="work-content">
                 <div class="row">
@@ -144,7 +144,7 @@
           <div class="work-box">
             <a href="<?php echo base_url('index.php/Products_rings')?>">
               <div class="work-img">
-                <img src="<?php echo base_url($f_ring); ?>" alt="" class="img-fluid">
+                <img src="<?php echo base_url($f_ring); ?>" alt="" class="img-fluid img_catalogue">
               </div>
               <div class="work-content">
                 <div class="row">

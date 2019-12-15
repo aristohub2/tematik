@@ -1100,7 +1100,7 @@ footer .credits a {
 .work-box img {
     object-fit: cover;
     width:100% !important;
-    max-height: 50vh;
+    /*min-height: 50vh;*/
 
 }
 
@@ -1127,4 +1127,15 @@ footer .credits a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.img_catalogue {
+    object-fit: cover;
+    width:100% !important;
+    height: 10vh;
+
+}
+
+#mainlogo_side{
+  position: absolute;
 }

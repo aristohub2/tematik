@@ -1,6 +1,8 @@
 <!--/ Nav Start /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
 
+    <a id="mainlogo_side" class="nav-link js-scroll hidden" href="<?php echo base_url('index.php/')?>">Passion Prive</a>
+
     <div class="container">
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +15,7 @@
         <div id="logo-company">
           <h3><a class="nav-link js-scroll hidden" href="<?php echo base_url('index.php/')?>">Passion Prive</a></h3>
         </div>
-        
+
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link js-scroll" href="<?php echo base_url('index.php/Catalogue')?>">Catalogue</a>

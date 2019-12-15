@@ -35,7 +35,7 @@ class m_about extends CI_Model
 
 		 
 
-		$sql = "call sp_tmtk_banner('".$hideMode."','".$banner_id."','".$banner_title."','".$banner_description."','".$banner_path."')";
+		$sql = "call sp_tmtk_banner('".$hideMode."','".$banner_id."','".$banner_title."','".addslashes($banner_description)."','".$banner_path."')";
 		$hasil=$this->db->query($sql);
 		var_dump($sql);
 		 

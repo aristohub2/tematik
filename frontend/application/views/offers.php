@@ -74,7 +74,7 @@
     </div>
   </div>
 
-  <!--/ Section Portfolio Star /-->
+  <!--/ Offering /-->
   <section id="work" class="portfolio-mf sect-pt4 route">
     <div class="container">
       <div class="row">
@@ -91,70 +91,37 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
-          <div class="work-box">
-            <a href="<?php echo base_url('index.php/Promo')?>?p=1">
-              <div class="work-img">
-                <img src="<?php echo base_url($banner[0]['BannerPath']); ?>" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">Offers #1</h2>
+
+        <?php 
+          $counter = 0;
+
+          foreach ($banner as $key) {
+
+            echo '
+            <div class="col-md-12">
+              <div class="work-box">
+                <a href="'. base_url('index.php/Promo') .'?p='.($counter+1).'">
+                  <div class="work-img">
+                    <img src="'. base_url($key['BannerPath']) .'" alt="" class="img-fluid">
                   </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="work-box">
-            <a href="<?php echo base_url('index.php/Promo')?>?p=2">
-              <div class="work-img">
-                <img src="<?php echo base_url($banner[1]['BannerPath']); ?>" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">Offers #2</h2>
+                  <div class="work-content">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <h2 class="w-title">'. $key['BannerTitle'] .'</h2>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="work-box">
-            <a href="<?php echo base_url('index.php/Promo')?>?p=3">
-              <div class="work-img">
-                <img src="<?php echo base_url($banner[2]['BannerPath']); ?>" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">Offers #3</h2>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="work-box">
-            <a href="<?php echo base_url('index.php/Promo')?>?p=4">
-              <div class="work-img">
-                <img src="<?php echo base_url($banner[3]['BannerPath']); ?>" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">Offers #4</h2>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>        
+            </div>
+            ';
+                    
+            $counter++;
+          }
+        ?> 
+
+        
+
       </div>
     </div>
 
