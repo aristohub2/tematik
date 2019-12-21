@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2019 at 02:04 PM
+-- Generation Time: Dec 15, 2019 at 05:43 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -112,7 +112,7 @@ END;
 END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_bracelet` (`p_sMode` CHAR(1), `p_IdBracelet` INT, `p_BraceletName` CHAR(20), `p_BraceletDescription` CHAR(100), `p_BraceletUploadFk` CHAR(200))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_bracelet` (`p_sMode` CHAR(1), `p_IdBracelet` INT, `p_BraceletName` CHAR(20), `p_BraceletDescription` TEXT, `p_BraceletUploadFk` CHAR(200))  BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
 DECLARE oId INT;
@@ -144,7 +144,7 @@ END;
 END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_earrings` (`p_sMode` CHAR(1), `p_IdEarring` INT, `p_EarringName` CHAR(20), `p_EarringDescription` CHAR(100), `p_EarringUploadFk` CHAR(200))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_earrings` (`p_sMode` CHAR(1), `p_IdEarring` INT, `p_EarringName` CHAR(20), `p_EarringDescription` TEXT, `p_EarringUploadFk` CHAR(200))  BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
 DECLARE oId INT;
@@ -176,7 +176,7 @@ END;
 END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_pendant` (`p_sMode` CHAR(1), `p_IdPendant` INT, `p_PendantName` CHAR(20), `p_PendantDescription` CHAR(100), `p_PendantUploadFk` CHAR(200))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_pendant` (`p_sMode` CHAR(1), `p_IdPendant` INT, `p_PendantName` CHAR(20), `p_PendantDescription` TEXT, `p_PendantUploadFk` CHAR(200))  BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
 DECLARE oId INT;
@@ -239,7 +239,7 @@ END;
 END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_ring` (`p_sMode` CHAR(1), `p_IdRing` INT, `p_RingName` CHAR(20), `p_RingDescription` CHAR(100), `p_RingUploadFk` CHAR(200))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_ring` (`p_sMode` CHAR(1), `p_IdRing` INT, `p_RingName` CHAR(20), `p_RingDescription` TEXT, `p_RingUploadFk` CHAR(200))  BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
 DECLARE oId INT;
@@ -304,7 +304,7 @@ END;
 END IF;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_timeline` (`p_sMode` CHAR(1), `p_id_number` INT, `p_year` DATE, `p_description` TEXT(500))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tmtk_timeline` (`p_sMode` CHAR(1), `p_id_number` INT, `p_year` YEAR, `p_description` TEXT(500))  BEGIN
 IF p_sMode = 'I' THEN 
 BEGIN
 DECLARE oId INT;
@@ -393,9 +393,9 @@ INSERT INTO `tmtk_banner` (`IdBanner`, `BannerTitle`, `BannerDescription`, `Bann
 (8, 'Earrings', 'Earrings Banner', 'uploads/banner/720d7fdcf0934406426da23d3c79de2d.jpg', NULL, NULL, NULL),
 (9, 'Pendant', 'Pendant Banner', 'uploads/banner/ec3923120fc261f51ba522ae2161c51f.jpg', NULL, NULL, NULL),
 (10, 'RIng', 'Ring Banner', 'uploads/banner/752c9924185c06fd300572568610cb63.jpg', NULL, NULL, NULL),
-(11, 'Golden Experience', 'Because Gold is Brilliant', 'uploads/banner/a4a0bfa80351863c8e00919cc963033d.jpg', NULL, NULL, NULL),
-(12, 'Diamond is Unbreakable', 'Strong and Shine Like Diamond', 'uploads/banner/b426e2a64596a98b4a53a71dde93119f.jpg', NULL, NULL, NULL),
-(13, 'Saphhire and Ruby', 'Our latest Collaboration products Just for you', 'uploads/banner/aa35f9dbcf405414761e8a9f5183561e.png', NULL, NULL, NULL),
+(11, 'Golden Experience', 'Because Gold is Brilliant\r\n\r\n<BR>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p', 'uploads/banner/a4a0bfa80351863c8e00919cc963033d.jpg', NULL, NULL, NULL),
+(12, 'Diamond is Unbreakable', 'Strong and Shine Like Diamond\r\n\r\n<BR>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p', 'uploads/banner/b426e2a64596a98b4a53a71dde93119f.jpg', NULL, NULL, NULL),
+(13, 'Saphhire and Ruby', 'Our latest Collaboration products Just for you\r\n\r\n<BR>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p', 'uploads/banner/aa35f9dbcf405414761e8a9f5183561e.png', NULL, NULL, NULL),
 (14, '50% off', 'Christmas Sale is here !', 'uploads/banner/2661d509736004e7eb523bd823945f08.jpg', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -407,7 +407,7 @@ INSERT INTO `tmtk_banner` (`IdBanner`, `BannerTitle`, `BannerDescription`, `Bann
 CREATE TABLE `tmtk_bracelet` (
   `IdProduct` int(11) NOT NULL,
   `Name` varchar(50) DEFAULT NULL,
-  `Description` varchar(1000) DEFAULT NULL,
+  `Description` text DEFAULT NULL,
   `UploadFk` varchar(100) NOT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -419,7 +419,7 @@ CREATE TABLE `tmtk_bracelet` (
 --
 
 INSERT INTO `tmtk_bracelet` (`IdProduct`, `Name`, `Description`, `UploadFk`, `dCreateOn`, `sStatusDelete`, `dDeleteOn`) VALUES
-(1, 'Tiffany 1837® Cuff', 'Proudly inscribed with the year Tiffany was founded, the Tiffany 1837® collection is defined by slee', '5df1c9711f3bd', '2019-12-12', NULL, NULL),
+(1, 'Tiffany 1837® Cuff', 'Graphic angles and clean lines blend to create the beautiful clarity of the Tiffany T collection.', '5df5d107c0377', '2019-12-12', NULL, NULL),
 (2, 'Tiffany 1837® Makers', 'A simple yet bold design, this narrow cuff is made of solid 18k gold. Crafted with a makers symbol i', '5df1ca50cdf70', '2019-12-12', NULL, NULL),
 (3, 'Tiffany Infinity Bra', 'Tiffany Infinity is a powerful symbol of continuous connection, energy and vitality. The addition of', '5df1c9bf0e7af', '2019-12-12', NULL, NULL),
 (4, 'Tiffany T Square Bra', 'Graphic angles and clean lines blend to create the beautiful clarity of the Tiffany T collection. Th', '5df1c9e69a920', '2019-12-12', NULL, NULL),
@@ -433,7 +433,7 @@ INSERT INTO `tmtk_bracelet` (`IdProduct`, `Name`, `Description`, `UploadFk`, `dC
 
 CREATE TABLE `tmtk_company` (
   `id_number` int(11) NOT NULL,
-  `year` date DEFAULT NULL,
+  `year` year(4) DEFAULT NULL,
   `description` varchar(500) DEFAULT NULL,
   `sStatusDelete` char(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -443,15 +443,17 @@ CREATE TABLE `tmtk_company` (
 --
 
 INSERT INTO `tmtk_company` (`id_number`, `year`, `description`, `sStatusDelete`) VALUES
-(0, NULL, 'okimjasd', NULL),
-(1, '2019-12-23', 'yuyuyuyuyuyu', 'V'),
-(2, '2019-12-02', 'tyttyty', 'V'),
-(3, '2019-12-04', 'makan ', NULL),
-(4, '2019-12-18', 'zxczxczxczxc', NULL),
-(5, '2019-12-04', '4567567567567', 'V'),
-(6, '2019-12-28', 'zxczxc', NULL),
-(7, '2019-12-28', 'asdasdasdzxc', NULL),
-(8, '2019-12-18', 'po', NULL);
+(0, 1998, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p', NULL),
+(1, 2019, 'yuyuyuyuyuyu', 'V'),
+(2, 2019, 'tyttyty', 'V'),
+(3, 1998, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p', NULL),
+(4, 2002, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', NULL),
+(5, 2019, '4567567567567', 'V'),
+(6, 2004, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five ', NULL),
+(7, 2007, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry', NULL),
+(8, 2009, 'pe specimen book. It has survived not only five ', NULL),
+(9, 2016, 'Lorem Ipsum is simply dummy text of the printing and typesetting industr', NULL),
+(10, 2019, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p', NULL);
 
 -- --------------------------------------------------------
 
@@ -462,7 +464,7 @@ INSERT INTO `tmtk_company` (`id_number`, `year`, `description`, `sStatusDelete`)
 CREATE TABLE `tmtk_earrings` (
   `IdProduct` int(11) NOT NULL,
   `Name` varchar(50) DEFAULT NULL,
-  `Description` varchar(100) DEFAULT NULL,
+  `Description` text DEFAULT NULL,
   `UploadFk` varchar(50) DEFAULT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -507,7 +509,7 @@ INSERT INTO `tmtk_login` (`id_user`, `user`, `password`) VALUES
 CREATE TABLE `tmtk_pendant` (
   `IdProduct` int(11) NOT NULL,
   `Name` varchar(50) DEFAULT NULL,
-  `Description` varchar(1000) DEFAULT NULL,
+  `Description` text DEFAULT NULL,
   `UploadFk` varchar(100) NOT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -552,8 +554,8 @@ INSERT INTO `tmtk_product_uploads` (`IdUpload`, `ProductId`, `ProductPath`, `dCr
 ('5df1c8cf55c6c', 6, 'uploads/pendants/2a795cd8245f76cd7d2875e83337b84e.jpg', '2019-12-12', NULL, NULL),
 ('5df1c8ea5f10e', 7, 'uploads/pendants/73735736607a61deffaafdaf80fc5703.jpg', '2019-12-12', NULL, NULL),
 ('5df1c8ea5f10e', 8, 'uploads/pendants/4b104b65bda4bf996b8d1f81ce57c78b.jpg', '2019-12-12', NULL, NULL),
-('5df1c9711f3bd', 9, 'uploads/bracelets/232d79b7284c8db70caf03dd39912b76.jpg', '2019-12-12', NULL, NULL),
-('5df1c9711f3bd', 10, 'uploads/bracelets/1494e04ad65a644626a68cca0b726b7c.jpg', '2019-12-12', NULL, NULL),
+('5df1c9711f3bd', 9, 'uploads/bracelets/232d79b7284c8db70caf03dd39912b76.jpg', '2019-12-12', 'V', '2019-12-15'),
+('5df1c9711f3bd', 10, 'uploads/bracelets/1494e04ad65a644626a68cca0b726b7c.jpg', '2019-12-12', 'V', '2019-12-15'),
 ('5df1c99f99028', 11, 'uploads/bracelets/f1ce0495475cd007ba3271f3fd96f94e.jpg', '2019-12-12', 'V', '2019-12-12'),
 ('5df1c99f99028', 12, 'uploads/bracelets/47f8fe15c8d59b4b105a59f61edef2c7.jpg', '2019-12-12', 'V', '2019-12-12'),
 ('5df1c99f99028', 13, 'uploads/bracelets/a538b4344176cf5dad11b4ab00969eca.jpg', '2019-12-12', 'V', '2019-12-12'),
@@ -591,7 +593,9 @@ INSERT INTO `tmtk_product_uploads` (`IdUpload`, `ProductId`, `ProductPath`, `dCr
 ('5df1ccd6994a5', 45, 'uploads/earrings/eb17d4c43ba5986e7d52b52a5fa1154b.jpg', '2019-12-12', NULL, NULL),
 ('5df1cd12509d1', 46, 'uploads/earrings/ddbb125ee522e8682aa8526c3eae187b.jpg', '2019-12-12', NULL, NULL),
 ('5df1cd12509d1', 47, 'uploads/earrings/0fd856d840498c0053769b57706bdb31.jpg', '2019-12-12', NULL, NULL),
-('5df1cd12509d1', 48, 'uploads/earrings/9af6e73e304782c99d68a236d68c4054.jpg', '2019-12-12', NULL, NULL);
+('5df1cd12509d1', 48, 'uploads/earrings/9af6e73e304782c99d68a236d68c4054.jpg', '2019-12-12', NULL, NULL),
+('5df5d021d04e1', 49, 'uploads/bracelets/1b44c189b15371fd8214476efb379104.jpg', '2019-12-15', 'V', '2019-12-15'),
+('5df5d107c0377', 50, 'uploads/bracelets/1554edef737a697cc120e589b411266c.jpg', '2019-12-15', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -602,7 +606,7 @@ INSERT INTO `tmtk_product_uploads` (`IdUpload`, `ProductId`, `ProductPath`, `dCr
 CREATE TABLE `tmtk_ring` (
   `IdProduct` int(11) NOT NULL,
   `Name` varchar(100) DEFAULT NULL,
-  `Description` varchar(1000) DEFAULT NULL,
+  `Description` text DEFAULT NULL,
   `UploadFk` varchar(100) NOT NULL,
   `dCreateOn` date DEFAULT NULL,
   `sStatusDelete` varchar(10) DEFAULT NULL,
@@ -638,18 +642,18 @@ CREATE TABLE `tmtk_tag` (
 --
 
 INSERT INTO `tmtk_tag` (`IdTag`, `IdProduct_fk`, `IdAttribute_fk`, `ProductCategory`, `dCreateOn`, `sStatusDelete`, `dDeleteOn`) VALUES
-(1, 1, 1, 1, '2019-12-11', 'V', '2019-12-11'),
-(2, 1, 2, 1, '2019-12-11', 'V', '2019-12-11'),
-(3, 1, 1, 1, '2019-12-11', 'V', '2019-12-11'),
-(4, 1, 1, 1, '2019-12-11', 'V', '2019-12-11'),
-(5, 1, 2, 1, '2019-12-11', 'V', '2019-12-11'),
-(6, 1, 1, 1, '2019-12-11', 'V', '2019-12-11'),
-(7, 1, 1, 1, '2019-12-11', 'V', '2019-12-11'),
-(8, 1, 2, 1, '2019-12-11', 'V', '2019-12-11'),
-(9, 1, 2, 1, '2019-12-11', 'V', '2019-12-11'),
-(10, 1, 2, 1, '2019-12-11', 'V', '2019-12-11'),
-(11, 1, 1, 1, '2019-12-11', 'V', '2019-12-11'),
-(12, 1, 2, 1, '2019-12-11', 'V', '2019-12-11'),
+(1, 1, 1, 1, '2019-12-11', 'V', '2019-12-15'),
+(2, 1, 2, 1, '2019-12-11', 'V', '2019-12-15'),
+(3, 1, 1, 1, '2019-12-11', 'V', '2019-12-15'),
+(4, 1, 1, 1, '2019-12-11', 'V', '2019-12-15'),
+(5, 1, 2, 1, '2019-12-11', 'V', '2019-12-15'),
+(6, 1, 1, 1, '2019-12-11', 'V', '2019-12-15'),
+(7, 1, 1, 1, '2019-12-11', 'V', '2019-12-15'),
+(8, 1, 2, 1, '2019-12-11', 'V', '2019-12-15'),
+(9, 1, 2, 1, '2019-12-11', 'V', '2019-12-15'),
+(10, 1, 2, 1, '2019-12-11', 'V', '2019-12-15'),
+(11, 1, 1, 1, '2019-12-11', 'V', '2019-12-15'),
+(12, 1, 2, 1, '2019-12-11', 'V', '2019-12-15'),
 (13, 2, 5, 1, '2019-12-11', 'V', '2019-12-12'),
 (14, 2, 6, 1, '2019-12-11', 'V', '2019-12-12'),
 (15, 2, 4, 1, '2019-12-11', 'V', '2019-12-12'),
@@ -701,8 +705,8 @@ INSERT INTO `tmtk_tag` (`IdTag`, `IdProduct_fk`, `IdAttribute_fk`, `ProductCateg
 (69, 7, 6, 4, '2019-12-11', 'V', '2019-12-11'),
 (70, 7, 5, 4, '2019-12-11', NULL, NULL),
 (71, 7, 6, 4, '2019-12-11', NULL, NULL),
-(72, 1, 1, 1, '2019-12-11', 'V', '2019-12-11'),
-(73, 1, 1, 1, '2019-12-11', NULL, NULL),
+(72, 1, 1, 1, '2019-12-11', 'V', '2019-12-15'),
+(73, 1, 1, 1, '2019-12-11', 'V', '2019-12-15'),
 (74, 21, 4, 1, '2019-12-11', NULL, NULL),
 (75, 10, 4, 2, '2019-12-11', 'V', '2019-12-12'),
 (76, 10, 6, 2, '2019-12-11', 'V', '2019-12-12'),
@@ -712,16 +716,16 @@ INSERT INTO `tmtk_tag` (`IdTag`, `IdProduct_fk`, `IdAttribute_fk`, `ProductCateg
 (80, 8, 6, 4, '2019-12-11', NULL, NULL),
 (81, 8, 7, 4, '2019-12-11', NULL, NULL),
 (82, 10, 3, 2, '2019-12-12', NULL, NULL),
-(83, 1, 4, 3, '2019-12-12', NULL, NULL),
-(84, 1, 6, 3, '2019-12-12', NULL, NULL),
+(83, 1, 4, 3, '2019-12-12', 'V', '2019-12-15'),
+(84, 1, 6, 3, '2019-12-12', 'V', '2019-12-15'),
 (85, 2, 4, 3, '2019-12-12', 'V', '2019-12-12'),
 (86, 2, 6, 3, '2019-12-12', 'V', '2019-12-12'),
 (87, 3, 1, 3, '2019-12-12', NULL, NULL),
 (88, 3, 4, 3, '2019-12-12', NULL, NULL),
 (89, 4, 2, 3, '2019-12-12', NULL, NULL),
 (90, 4, 4, 3, '2019-12-12', NULL, NULL),
-(91, 1, 4, 1, '2019-12-12', NULL, NULL),
-(92, 1, 6, 1, '2019-12-12', NULL, NULL),
+(91, 1, 4, 1, '2019-12-12', 'V', '2019-12-15'),
+(92, 1, 6, 1, '2019-12-12', 'V', '2019-12-15'),
 (93, 2, 1, 1, '2019-12-12', 'V', '2019-12-12'),
 (94, 2, 4, 1, '2019-12-12', 'V', '2019-12-12'),
 (95, 3, 2, 1, '2019-12-12', NULL, NULL),
@@ -732,10 +736,10 @@ INSERT INTO `tmtk_tag` (`IdTag`, `IdProduct_fk`, `IdAttribute_fk`, `ProductCateg
 (100, 5, 4, 1, '2019-12-12', NULL, NULL),
 (101, 2, 1, 1, '2019-12-12', NULL, NULL),
 (102, 2, 5, 1, '2019-12-12', NULL, NULL),
-(103, 1, 1, 2, '2019-12-12', NULL, NULL),
-(104, 1, 4, 2, '2019-12-12', NULL, NULL),
-(105, 1, 4, 4, '2019-12-12', NULL, NULL),
-(106, 1, 6, 4, '2019-12-12', NULL, NULL),
+(103, 1, 1, 2, '2019-12-12', 'V', '2019-12-15'),
+(104, 1, 4, 2, '2019-12-12', 'V', '2019-12-15'),
+(105, 1, 4, 4, '2019-12-12', 'V', '2019-12-15'),
+(106, 1, 6, 4, '2019-12-12', 'V', '2019-12-15'),
 (107, 2, 4, 4, '2019-12-12', NULL, NULL),
 (108, 2, 6, 4, '2019-12-12', NULL, NULL),
 (109, 2, 1, 2, '2019-12-12', NULL, NULL),
@@ -746,7 +750,13 @@ INSERT INTO `tmtk_tag` (`IdTag`, `IdProduct_fk`, `IdAttribute_fk`, `ProductCateg
 (114, 3, 4, 2, '2019-12-12', NULL, NULL),
 (115, 4, 1, 2, '2019-12-12', NULL, NULL),
 (116, 4, 3, 2, '2019-12-12', NULL, NULL),
-(117, 4, 4, 2, '2019-12-12', NULL, NULL);
+(117, 4, 4, 2, '2019-12-12', NULL, NULL),
+(118, 1, 1, 1, '2019-12-15', 'V', '2019-12-15'),
+(119, 1, 4, 1, '2019-12-15', 'V', '2019-12-15'),
+(120, 1, 6, 1, '2019-12-15', 'V', '2019-12-15'),
+(121, 1, 1, 1, '2019-12-15', NULL, NULL),
+(122, 1, 4, 1, '2019-12-15', NULL, NULL),
+(123, 1, 6, 1, '2019-12-15', NULL, NULL);
 
 --
 -- Indexes for dumped tables

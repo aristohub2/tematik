@@ -39,8 +39,9 @@ class m_pendant extends CI_Model
                             <td class="mid">'.$row['Description'].'</td>
                             <td class="mid">'.$row['dCreateOn'].'</td>
                             <td class="mid"><a href="'.base_url('../frontend/'.$row['ProductPath'].'').'" target="_blank"><img class="img-top" src="'.base_url('../frontend/'.$row['ProductPath'].'').'"  class=" height="20%" width="20%" ;"></a></td>
+                            <input id="id'.$row['IdProduct'].'" type="hidden" value="'.$row['Description'].'">
                             <td class="mid">'.substr($tag_arr, 0,-1).'</td>
-                            <td class="mid"><button class="btn btn-primary" type="button" onclick="edit('.$row['IdProduct'].',\''.$row['Name'].'\',\''.$row['Description'].'\')"><span><i class="fa fa-pen" aria-hidden="true"></i> Edit</span></button></td>
+                            <td class="mid"><button class="btn btn-primary" type="button" onclick="edit('.$row['IdProduct'].',\''.$row['Name'].'\')"><span><i class="fa fa-pen" aria-hidden="true"></i> Edit</span></button></td>
                             <td class="mid"><button class="btn btn-danger" type="button" data-toggle="modal" data-target="#editmodal" onclick="show_modal('.$row['IdProduct'].')"><span><i class="fa fa-trash" aria-hidden="true"></i> Delete</span></button></td>                             
                         </tr>';
             $counter++;

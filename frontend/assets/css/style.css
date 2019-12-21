@@ -1129,13 +1129,6 @@ footer .credits a {
   background-size: cover;
 }
 
-.img_catalogue {
-    object-fit: cover;
-    width:100% !important;
-    height: 10vh;
-
-}
-
 #mainlogo_side{
   position: absolute;
 }

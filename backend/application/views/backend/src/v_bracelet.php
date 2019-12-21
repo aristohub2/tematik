@@ -218,7 +218,7 @@
       NavTab(event, 'change');
       $("#BraceletId").val(id);
       $("#BraceletName").val(name);
-      $("#BraceletDesc").val(desc);
+      $("#BraceletDesc").val($('#id'+id).val());
       $('#canceledit').show();
       console.log($("#files"));
 

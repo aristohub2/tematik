@@ -31,7 +31,7 @@ class mf_about extends CI_Model
 
 	public function get_company_timeline(){
 
-		$query = "SELECT *, YEAR(`year`) as year FROM tmtk_company WHERE id_number NOT LIKE '0'";
+		$query = "SELECT *, YEAR(`year`) as year FROM tmtk_company WHERE id_number NOT LIKE '0' AND sStatusDelete IS NULL";
 
 		$query_res = $this->db->query($query);
 

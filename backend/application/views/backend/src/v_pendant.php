@@ -228,7 +228,7 @@
       $('#canceledit').show();
       $("#PendantId").val(id);
       $("#PendantName").val(name);
-      $("#PendantDesc").val(desc);
+      $("#PendantDesc").val($('#id'+id).val());
       
       $.post("<?php echo base_url('index.php/c_pendant/gf_tag_database'); ?>",
       {

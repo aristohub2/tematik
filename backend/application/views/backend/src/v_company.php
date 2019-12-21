@@ -86,7 +86,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php echo $list?>
+                        <?php echo $list ?>
                       </tbody>
                     </table>
                 </div>
@@ -203,14 +203,14 @@
       
   });
 
-  function edit(id,year,desc){
+  function edit(id,year){
     NavTab(event, 'timeline');
     activate(2);
     $('#canceledit').show();
-
+    // $('#id'+id_tl);
     $("#id_tl").val(id);
     $("#year_tl").val(year);
-    $("#desc_tl").val(desc);
+    $("#desc_tl").val($('#id'+id).val());
     
     $("#hideMode").val("U");
   }

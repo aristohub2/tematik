@@ -20,7 +20,7 @@ class c_company extends CI_Controller {
 
 		$data['about'] = $this->m_company->load_about();
 		$data['list'] = $this->m_company->load_list();
-
+		// var_dump($data['list']);
 		$this->load->view('backend/src/v_company',$data);
 	}
 

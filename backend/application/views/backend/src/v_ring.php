@@ -228,7 +228,7 @@
       $('#canceledit').show();
       $("#RingId").val(id);
       $("#RingName").val(name);
-      $("#RingDesc").val(desc);
+      $("#RingDesc").val($('#id'+id).val());
       
       $.post("<?php echo base_url('index.php/c_ring/gf_tag_database'); ?>",
       {

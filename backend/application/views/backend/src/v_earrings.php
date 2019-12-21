@@ -228,7 +228,7 @@
       $('#canceledit').show();
       $("#EarringsId").val(id);
       $("#EarringsName").val(name);
-      $("#EarringsDescription").val(desc);
+      $("#EarringsDescription").val($('#id'+id).val());
       
       $.post("<?php echo base_url('index.php/c_earrings/gf_tag_database'); ?>",
       {

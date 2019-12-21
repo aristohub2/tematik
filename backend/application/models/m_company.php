@@ -18,7 +18,7 @@ class m_company extends CI_Model
 		$sql = "SELECT * from tmtk_company WHERE id_number > 0 and sStatusDelete is null ORDER BY 1";
 		$result= $this->db->query($sql);
 		$sReturn=null;
-		$counter = 1;
+		$counter = 1; 
 		if($result->num_rows()>0){
 			foreach ($result->result_array() as $row)
 			{
@@ -27,7 +27,8 @@ class m_company extends CI_Model
 			        	<th scope="row">'.$counter.'</th>
                       	<th scope="row">'.date ( "Y" , strtotime ( $row['year'] )).'</th>
                       	<td>'.$row['description'].'</td>
-                      	<td class="mid"><button class="btn btn-primary" type="button" onclick="edit('.$row['id_number'].',\''.$row['year'].'\',\''.$row['description'].'\')"><span><i class="fa fa-pen" aria-hidden="true"></i> Edit</span></button></td>
+                      	<td class="mid"><button class="btn btn-primary" type="button" onclick="edit('.$row['id_number'].',\''.$row['year'].'\')"><span><i class="fa fa-pen" aria-hidden="true"></i> Edit</span></button></td>
+                      	<input id="id'.$row['id_number'].'" type="hidden" value="'.$row['description'].'">
                       	<td class="mid"><button class="btn btn-danger" type="button" data-toggle="modal" data-target="#editmodal" onclick="show_modal('.$row['id_number'].')"><span><i class="fa fa-trash" aria-hidden="true"></i> Delete</span></button></td>  
                     </tr>';
                     $counter++;
